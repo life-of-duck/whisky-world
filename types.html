@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ウイスキーの種類 — WHISKY WORLD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .type-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.2rem 2rem;
+      transition: all 0.3s;
+    }
+    .type-card:hover {
+      border-color: var(--gold-dark);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .type-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .type-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+    .type-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.3;
+    }
+    .type-name-en {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      display: block;
+      margin-top: 0.2rem;
+    }
+    .type-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 2;
+      margin-bottom: 1.2rem;
+    }
+    .type-example {
+      font-size: 0.82rem;
+      color: var(--gold-dark);
+      border-top: 1px solid var(--border);
+      padding-top: 0.8rem;
+    }
+    .type-example strong {
+      color: var(--gold);
+    }
+    .type-beginner {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--gold);
+      font-size: 0.72rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 100px;
+      letter-spacing: 0.08em;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .types-intro {
+      background: rgba(201, 168, 76, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 2;
+    }
+    .types-intro strong {
+      color: var(--gold-light);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><span>🥃</span> WHISKY WORLD</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="making.html">作られ方</a></li>
+      <li><a href="types.html">種類</a></li>
+      <li><a href="world.html">世界の産地</a></li>
+      <li><a href="cask.html">カスク</a></li>
+      <li><a href="distilleries.html">蒸留所</a></li>
+      <li><a href="brands.html">銘柄</a></li>
+      <li><a href="index.html#diagnosis" class="nav-diagnosis">ウイスキー診断</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="detail-hero">
+    <div class="detail-hero-inner">
+      <a href="index.html" class="detail-back">← トップへ戻る</a>
+      <span class="detail-eyebrow">Whisky Types</span>
+      <h1 class="detail-title">ウイスキーの<br>種類を知ろう</h1>
+      <div class="divider"></div>
+      <p class="detail-desc">
+        シングルモルト・ブレンデッド・ピュアモルト…<br>
+        種類の違いがわかると、ラベルの読み方が変わる。
+      </p>
+    </div>
+  </div>
+
+  <div class="detail-content">
+    <div class="detail-content-inner">
+
+      <div class="types-intro">
+        ウイスキーは大きく <strong>「モルトウイスキー」</strong>（大麦麦芽のみ）と <strong>「グレーンウイスキー」</strong>（その他の穀物も使用）に分けられます。それらをどう組み合わせるかで、以下のような種類が生まれます。<br>ラベルに書かれた種類を知るだけで、飲む前からある程度の味わいが想像できるようになります。
+      </div>
+
+      <div class="steps-grid">
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">🏆</span>
+            <div>
+              <div class="type-name">
+                シングルモルト
+                <span class="type-beginner">人気No.1</span>
+              </div>
+              <span class="type-name-en">Single Malt Whisky</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            <strong style="color:var(--gold-light)">「ひとつの蒸留所」で「大麦麦芽（モルト）のみ」</strong>を原料として作られたウイスキー。<br><br>
+            その蒸留所の個性がダイレクトに出るため、マニアから初心者まで最も注目される種類。蒸留所ごとに全く異なる味わいを持つことが最大の魅力。グレンフィディック・マッカラン・山崎などが代表格。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">蒸留所の個性</span>
+            <span class="tag">大麦麦芽100%</span>
+            <span class="tag">複雑な風味</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>グレンフィディック、マッカラン、ラガヴーリン、山崎、余市</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">🎨</span>
+            <div>
+              <div class="type-name">ブレンデッドウイスキー</div>
+              <span class="type-name-en">Blended Whisky</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            <strong style="color:var(--gold-light)">モルトウイスキー＋グレーンウイスキー</strong>を複数組み合わせたもの。<br><br>
+            世界で最も多く飲まれているウイスキーの形態。軽くて飲みやすく、価格も手ごろ。数十〜数百種類の原酒をブレンドして一定の味を作り出すブレンダーの技術が光ります。ジョニーウォーカー・バランタイン・響などが有名。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">飲みやすい</span>
+            <span class="tag">リーズナブル</span>
+            <span class="tag">世界シェアNo.1</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>ジョニーウォーカー、バランタイン、響、デュワーズ、シーバスリーガル</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">🌿</span>
+            <div>
+              <div class="type-name">ブレンデッドモルト<br>（ピュアモルト）</div>
+              <span class="type-name-en">Blended Malt / Pure Malt</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            <strong style="color:var(--gold-light)">複数の蒸留所のモルトウイスキーのみ</strong>をブレンドしたもの。グレーンウイスキーは一切使用しない。<br><br>
+            かつては「ヴァッテッドモルト」「ピュアモルト」とも呼ばれていました。複数蒸留所の良さを組み合わせるため、深みとバランスの良さが特徴。ニッカ「竹鶴」やモンキーショルダーが代表的。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">複数蒸留所</span>
+            <span class="tag">モルト100%</span>
+            <span class="tag">バランス◎</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>竹鶴（ニッカ）、モンキーショルダー、ジョニーウォーカー グリーン</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">🌾</span>
+            <div>
+              <div class="type-name">シングルグレーン</div>
+              <span class="type-name-en">Single Grain Whisky</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            <strong style="color:var(--gold-light)">ひとつの蒸留所</strong>で、トウモロコシやライ麦などの<strong style="color:var(--gold-light)">穀物（グレーン）</strong>を原料に連続式蒸留器で作られるウイスキー。<br><br>
+            モルトに比べて軽くクリーンな味わい。主にブレンデッドの「ベース」として使われますが、単体でも独自の魅力があります。カフェスチルを使った連続蒸留でつくる知多（サントリー）が日本では有名。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">軽やか</span>
+            <span class="tag">クリーン</span>
+            <span class="tag">連続式蒸留</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>知多（サントリー）、キャメロンブリッジ、カフェグレーン（ニッカ）</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">💎</span>
+            <div>
+              <div class="type-name">シングルカスク</div>
+              <span class="type-name-en">Single Cask Whisky</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            <strong style="color:var(--gold-light)">たったひとつの樽だけ</strong>から瓶詰めされた、究極の一点もの。<br><br>
+            同じ銘柄でもカスク番号が違えば風味が異なり、完売したら二度と同じものは手に入りません。加水・混合なしの「カスクストレングス」で出荷されることが多く、樽の個性がそのまま味わえます。コレクター垂涎の希少品。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">一点もの</span>
+            <span class="tag">希少</span>
+            <span class="tag">カスクストレングス</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>グレンフィディック シングルカスク、カバラン ソリスト シリーズ</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">🔥</span>
+            <div>
+              <div class="type-name">カスクストレングス</div>
+              <span class="type-name-en">Cask Strength Whisky</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            樽から取り出した原酒を<strong style="color:var(--gold-light)">加水せずそのまま瓶詰め</strong>したウイスキー。アルコール度数は通常50〜65度程度。<br><br>
+            水を加えていないため、樽の風味が最大限に凝縮されています。自分で少量の水を加えて「加水」することで、香りが花開く体験ができます。上級者向けとされますが、少量の水で劇的に変化するのを楽しむのもカスクストレングスの醍醐味。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">高度数</span>
+            <span class="tag">加水なし</span>
+            <span class="tag">濃縮された風味</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>アベラワー アブナーハ、ブッカーズ、ニッカ フロム ザ バレル</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">❄️</span>
+            <div>
+              <div class="type-name">ノンチルフィルタード</div>
+              <span class="type-name-en">Non-Chill Filtered</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            通常のウイスキーは冷却してろ過（チルフィルタリング）することで、低温で白く濁るのを防ぎます。<strong style="color:var(--gold-light)">ノンチルはそのろ過をしない</strong>製法。<br><br>
+            ろ過で除去されてしまう風味成分（エステル類・脂肪酸など）がそのまま残るため、より豊かで複雑な香りと口当たりが楽しめます。加水すると少し白濁することがありますが、これは品質の問題ではなく自然な反応です。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">自然な風味</span>
+            <span class="tag">無ろ過</span>
+            <span class="tag">愛好家に人気</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>グレンフィディック 15年 ソレラリザーブ、タリスカー 10年</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-header">
+            <span class="type-icon">🏷️</span>
+            <div>
+              <div class="type-name">NAS（ノーエイジステートメント）</div>
+              <span class="type-name-en">No Age Statement</span>
+            </div>
+          </div>
+          <p class="type-desc">
+            ラベルに<strong style="color:var(--gold-light)">熟成年数が記載されていない</strong>ウイスキー。「NAS」と略されます。<br><br>
+            「年数が書いてないから品質が低い」は誤解。NASでも極めて高品質な銘柄は多く、複数年数の原酒をブレンドすることで年数表記では表現できない複雑さを生み出せます。アードベッグ ウーガダール・ニッカ フロム ザ バレルなどが代表的。
+          </p>
+          <div class="region-tags" style="margin-bottom:1rem">
+            <span class="tag">年数表記なし</span>
+            <span class="tag">複数年数ブレンド</span>
+            <span class="tag">品質は様々</span>
+          </div>
+          <p class="type-example"><strong>代表例：</strong>アードベッグ ウーガダール、ニッカ フロム ザ バレル、響 Japanese Harmony</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🥃 WHISKY WORLD</div>
+    <p class="footer-desc">大人の教養を、深く。</p>
+    <div class="footer-links">
+      <a href="making.html">作られ方</a>
+      <a href="types.html">種類</a>
+      <a href="world.html">世界の産地</a>
+      <a href="cask.html">カスク</a>
+      <a href="distilleries.html">蒸留所</a>
+      <a href="brands.html">銘柄</a>
+      <a href="index.html#diagnosis">ウイスキー診断</a>
+    </div>
+    <p class="footer-copy">© 2026 WHISKY WORLD. All rights reserved. — お酒は20歳になってから。</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.type-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

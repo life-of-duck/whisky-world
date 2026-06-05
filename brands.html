@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界のウイスキー銘柄 — WHISKY WORLD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><span>🥃</span> WHISKY WORLD</a>
+        <ul class="nav-links" id="navLinks">
+      <li><a href="making.html">作られ方</a></li>
+      <li><a href="types.html">種類</a></li>
+      <li><a href="world.html">世界の産地</a></li>
+      <li><a href="cask.html">カスク</a></li>
+      <li><a href="distilleries.html">蒸留所</a></li>
+      <li><a href="brands.html">銘柄</a></li>
+      <li><a href="index.html#diagnosis" class="nav-diagnosis">ウイスキー診断</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="detail-hero">
+    <div class="detail-hero-inner">
+      <a href="index.html" class="detail-back">← トップへ戻る</a>
+      <span class="detail-eyebrow">Whisky Brands</span>
+      <h1 class="detail-title">知っておきたい<br>世界の銘柄</h1>
+      <div class="divider"></div>
+      <p class="detail-desc">
+        産地別に代表的な銘柄を厳選。<br>
+        気になるものから試してみよう。
+      </p>
+    </div>
+  </div>
+
+  <div class="detail-content">
+    <div class="detail-content-inner">
+
+      <div class="brands-filter">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="scotland">スコットランド</button>
+        <button class="filter-btn" data-filter="japan">日本</button>
+        <button class="filter-btn" data-filter="usa">アメリカ</button>
+        <button class="filter-btn" data-filter="ireland">アイルランド</button>
+        <button class="filter-btn" data-filter="other">その他</button>
+      </div>
+
+      <div class="brands-grid">
+
+        <div class="brand-card" data-region="scotland">
+          <div class="brand-header">
+            <span class="brand-name">グレンリベット 12年</span>
+            <span class="brand-age">12年熟成</span>
+          </div>
+          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / スペイサイド</p>
+          <p class="brand-desc">世界で最も売れているシングルモルトの一つ。蜂蜜・洋ナシ・花の香りが軽やかに広がる。ウイスキー初心者への贈り物に最適な一本。</p>
+          <div class="brand-profile">
+            <span class="tag">🍯 蜂蜜</span><span class="tag">🌸 花</span><span class="tag">入門向け</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="scotland">
+          <div class="brand-header">
+            <span class="brand-name">マッカラン 12年 シェリーオーク</span>
+            <span class="brand-age">12年熟成</span>
+          </div>
+          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / スペイサイド</p>
+          <p class="brand-desc">シェリー樽100%の贅沢なリッチさ。ドライフルーツ・チョコ・スパイスの複雑な風味。「ウイスキーのロールスロイス」の入門版。</p>
+          <div class="brand-profile">
+            <span class="tag">🍫 チョコ</span><span class="tag">🍇 シェリー</span><span class="tag">リッチ</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="scotland">
+          <div class="brand-header">
+            <span class="brand-name">ラガヴーリン 16年</span>
+            <span class="brand-age">16年熟成</span>
+          </div>
+          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / アイラ</p>
+          <p class="brand-desc">アイラウイスキーの王様。重厚なピートスモーク、潮の香り、そしてシェリーの甘み。これを飲むためにウイスキーを始める人が世界中にいる。</p>
+          <div class="brand-profile">
+            <span class="tag">💨 ヘビーピート</span><span class="tag">🌊 潮</span><span class="tag">究極</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="scotland">
+          <div class="brand-header">
+            <span class="brand-name">タリスカー 10年</span>
+            <span class="brand-age">10年熟成</span>
+          </div>
+          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / アイランズ</p>
+          <p class="brand-desc">スカイ島の海風が育む個性派。コショウのようなスパイシーさと潮のしょっぱさ、フルーツの甘さが共存。飲むたびに「これだ」と思わせる独自の世界観。</p>
+          <div class="brand-profile">
+            <span class="tag">🌶️ ペッパー</span><span class="tag">🌊 潮</span><span class="tag">個性的</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="scotland">
+          <div class="brand-header">
+            <span class="brand-name">グレンモーレンジィ 10年</span>
+            <span class="brand-age">10年熟成</span>
+          </div>
+          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / ハイランド</p>
+          <p class="brand-desc">バニラとオレンジピールが優しく広がる上品な一本。「女性が選ぶシングルモルトNo.1」としても人気。エレガントな香りを存分に楽しみたい夜に。</p>
+          <div class="brand-profile">
+            <span class="tag">🍊 オレンジ</span><span class="tag">🍦 バニラ</span><span class="tag">エレガント</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="japan">
+          <div class="brand-header">
+            <span class="brand-name">山崎 12年</span>
+            <span class="brand-age">12年熟成</span>
+          </div>
+          <p class="brand-origin">🇯🇵 日本 / サントリー</p>
+          <p class="brand-desc">日本ウイスキーを世界に知らしめた傑作。ミズナラ樽由来のオリエンタルな香りと、繊細なフルーツの甘み。入手困難になりつつある日本の宝。</p>
+          <div class="brand-profile">
+            <span class="tag">🌺 ミズナラ</span><span class="tag">🍑 桃</span><span class="tag">日本の誇り</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="japan">
+          <div class="brand-header">
+            <span class="brand-name">響 Japanese Harmony</span>
+            <span class="brand-age">NAS</span>
+          </div>
+          <p class="brand-origin">🇯🇵 日本 / サントリー</p>
+          <p class="brand-desc">山崎・白州・知多の3つの蒸留所の原酒を24種類以上ブレンド。「日本の四季の調和」をコンセプトに、複雑かつ繊細な世界観を表現した最高峰ブレンデッド。</p>
+          <div class="brand-profile">
+            <span class="tag">🌸 繊細</span><span class="tag">🎵 調和</span><span class="tag">プレミアム</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="japan">
+          <div class="brand-header">
+            <span class="brand-name">ニッカ フロム ザ バレル</span>
+            <span class="brand-age">NAS</span>
+          </div>
+          <p class="brand-origin">🇯🇵 日本 / ニッカ</p>
+          <p class="brand-desc">小さなボトルに詰まった圧倒的なコスパ。51.4度のカスクストレングスで、濃密なフルーツとバニラが爆発する。世界が選ぶ「最高コスパ」ウイスキー。</p>
+          <div class="brand-profile">
+            <span class="tag">💪 力強い</span><span class="tag">🏆 コスパ最高</span><span class="tag">濃密</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="japan">
+          <div class="brand-header">
+            <span class="brand-name">白州 12年</span>
+            <span class="brand-age">12年熟成</span>
+          </div>
+          <p class="brand-origin">🇯🇵 日本 / サントリー</p>
+          <p class="brand-desc">南アルプスの森の蒸留所で生まれた「森香るウイスキー」。清々しいグリーンのフレッシュさと軽いスモークが共存する、他に類を見ない個性的な一本。</p>
+          <div class="brand-profile">
+            <span class="tag">🌿 フレッシュ</span><span class="tag">🌲 森</span><span class="tag">軽やか</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="usa">
+          <div class="brand-header">
+            <span class="brand-name">メーカーズマーク</span>
+            <span class="brand-age">NAS</span>
+          </div>
+          <p class="brand-origin">🇺🇸 アメリカ / ケンタッキー</p>
+          <p class="brand-desc">赤いワックスシールでおなじみのバーボン。小麦を使ったマッシュビルで甘くまろやか。バーボン入門として世界中で愛される。ロックでもハイボールでも映える一本。</p>
+          <div class="brand-profile">
+            <span class="tag">🍮 キャラメル</span><span class="tag">🍦 バニラ</span><span class="tag">入門バーボン</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="usa">
+          <div class="brand-header">
+            <span class="brand-name">ブッカーズ</span>
+            <span class="brand-age">6〜8年熟成</span>
+          </div>
+          <p class="brand-origin">🇺🇸 アメリカ / ケンタッキー</p>
+          <p class="brand-desc">加水なし・無ろ過のカスクストレングスバーボン。60度以上の圧倒的な濃さと複雑さ。本物のバーボンの力強さを体感したい人向けの、マニア憧れの銘柄。</p>
+          <div class="brand-profile">
+            <span class="tag">🔥 強烈</span><span class="tag">🥃 カスクストレングス</span><span class="tag">マニア向け</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="usa">
+          <div class="brand-header">
+            <span class="brand-name">ジャックダニエル ブラック</span>
+            <span class="brand-age">NAS</span>
+          </div>
+          <p class="brand-origin">🇺🇸 アメリカ / テネシー</p>
+          <p class="brand-desc">世界で最も売れているウイスキー。テネシー産のチャコールで濾過する「チャコールメローイング」製法が独特の甘くスムースな味わいを生む。コーラ割りは世界共通の楽しみ方。</p>
+          <div class="brand-profile">
+            <span class="tag">🍬 スムース</span><span class="tag">🌍 世界No.1</span><span class="tag">テネシー</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="ireland">
+          <div class="brand-header">
+            <span class="brand-name">ジェムソン</span>
+            <span class="brand-age">NAS</span>
+          </div>
+          <p class="brand-origin">🇮🇪 アイルランド</p>
+          <p class="brand-desc">世界で最も売れているアイリッシュウイスキー。3回蒸留のスムースさとほのかなスパイシーさが特徴。バーのど定番で、飲んだことがない人は一度は試してほしい一本。</p>
+          <div class="brand-profile">
+            <span class="tag">🍀 スムース</span><span class="tag">🌶️ 軽スパイシー</span><span class="tag">定番</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="ireland">
+          <div class="brand-header">
+            <span class="brand-name">レッドブレスト 12年</span>
+            <span class="brand-age">12年熟成</span>
+          </div>
+          <p class="brand-origin">🇮🇪 アイルランド</p>
+          <p class="brand-desc">アイリッシュウイスキーの最高峰の一つ。バーボン樽とシェリー樽の複雑さが絡み合い、フルーツ・スパイス・クリームの豊かな風味。アイリッシュの奥深さを知るための一本。</p>
+          <div class="brand-profile">
+            <span class="tag">🍒 フルーツ</span><span class="tag">🍷 シェリー</span><span class="tag">複雑</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="other">
+          <div class="brand-header">
+            <span class="brand-name">カバラン ソリスト バーボン</span>
+            <span class="brand-age">NAS</span>
+          </div>
+          <p class="brand-origin">🇹🇼 台湾</p>
+          <p class="brand-desc">台湾の奇跡。創業10年未満で世界のトップに躍り出た新星。熱帯気候による急速熟成が生む、驚くほど濃密なフルーツとバニラ。固定観念を壊す一本。</p>
+          <div class="brand-profile">
+            <span class="tag">🍍 トロピカル</span><span class="tag">⚡ 衝撃</span><span class="tag">台湾</span>
+          </div>
+        </div>
+
+        <div class="brand-card" data-region="other">
+          <div class="brand-header">
+            <span class="brand-name">アムルット フュージョン</span>
+            <span class="brand-age">NAS</span>
+          </div>
+          <p class="brand-origin">🇮🇳 インド</p>
+          <p class="brand-desc">インド産大麦とスコットランド産ピートモルトを掛け合わせた革新作。高地での急速熟成による濃縮感と、スモーキーさの融合が衝撃的。ウイスキー界の常識を変えた存在。</p>
+          <div class="brand-profile">
+            <span class="tag">🌶️ スパイシー</span><span class="tag">🔥 スモーク</span><span class="tag">インド</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🥃 WHISKY WORLD</div>
+    <p class="footer-desc">大人の教養を、深く。</p>
+    <div class="footer-links">
+      <a href="making.html">作られ方</a>
+      <a href="types.html">種類</a>
+      <a href="world.html">世界の産地</a>
+      <a href="cask.html">カスク</a>
+      <a href="distilleries.html">蒸留所</a>
+      <a href="brands.html">銘柄</a>
+      <a href="index.html#diagnosis">ウイスキー診断</a>
+    </div>
+    <p class="footer-copy">© 2026 WHISKY WORLD. All rights reserved. — お酒は20歳になってから。</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.brand-card').forEach(card => {
+          card.setAttribute('data-hidden', filter !== 'all' && card.dataset.region !== filter ? 'true' : 'false');
+        });
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.brand-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
