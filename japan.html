@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本のウイスキー — WHISKY WORLD</title>
+  <meta name="description" content="サントリー・ニッカ・クラフト蒸留所。日本ウイスキーの3グループの個性と代表銘柄を徹底解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="日本のウイスキー — WHISKY WORLD">
+  <meta property="og:description" content="サントリー・ニッカ・クラフト蒸留所。日本ウイスキーの3グループの個性と代表銘柄を徹底解説。">
+  <meta property="og:site_name" content="WHISKY WORLD">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .region-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 2rem;
+    }
+    .region-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .region-detail-card:hover {
+      border-color: rgba(201,168,76,0.45);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .region-detail-header {
+      padding: 2rem 2rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .region-detail-flag {
+      font-size: 2.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .region-detail-meta { flex: 1; }
+    .region-detail-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+    .region-detail-en {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .region-detail-founded {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+    }
+    .region-detail-body { padding: 1.6rem 2rem; }
+    .region-detail-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 2;
+      margin-bottom: 1.2rem;
+    }
+    .region-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
+    .distillery-list {
+      background: rgba(201,168,76,0.04);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1.4rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+    .distillery-list-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .distillery-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+    .distillery-item-name {
+      color: var(--text-primary);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .distillery-item-note {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+    .region-detail-brands {
+      border-top: 1px solid var(--border);
+      padding-top: 1.4rem;
+    }
+    .region-detail-brands-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .brand-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem 1rem;
+      align-items: start;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.07);
+    }
+    .brand-row:last-child { border-bottom: none; }
+    .brand-row-num {
+      font-size: 0.72rem;
+      color: var(--gold-dark);
+      font-family: Georgia, serif;
+      font-weight: 700;
+      padding-top: 0.15rem;
+      min-width: 1.2rem;
+    }
+    .brand-row-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+    .brand-row-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 560px) {
+      .region-detail-grid { grid-template-columns: 1fr; }
+      .region-detail-header { padding: 1.5rem 1.4rem 1.2rem; }
+      .region-detail-body { padding: 1.4rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><span>🥃</span> WHISKY WORLD</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="making.html">作られ方</a></li>
+      <li><a href="types.html">種類</a></li>
+      <li><a href="world.html">世界の産地</a></li>
+      <li><a href="cask.html">カスク</a></li>
+      <li><a href="distilleries.html">蒸留所</a></li>
+      <li><a href="brands.html">銘柄</a></li>
+      <li><a href="index.html#diagnosis" class="nav-diagnosis">ウイスキー診断</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="detail-hero">
+    <div class="detail-hero-inner">
+      <a href="world.html" class="detail-back">← 世界の産地へ戻る</a>
+      <span class="detail-eyebrow">Japanese Whisky</span>
+      <h1 class="detail-title">🇯🇵 日本の<br>ウイスキー</h1>
+      <div class="divider"></div>
+      <p class="detail-desc">
+        スコッチを手本に、日本の繊細さと職人精神で独自の進化を遂げた日本ウイスキー。<br>
+        サントリー・ニッカ・クラフト蒸留所、3つのグループを深掘りします。
+      </p>
+    </div>
+  </div>
+
+  <div class="detail-content">
+    <div class="detail-content-inner">
+      <div class="region-detail-grid">
+
+        <!-- SUNTORY -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🌅</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">サントリー</div>
+              <div class="region-detail-en">Suntory Whisky</div>
+              <span class="region-detail-founded">創業 1899年 / 山崎蒸留所設立 1923年</span>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              「日本ウイスキーの父」鳥井信治郎が1923年に日本初の本格モルトウイスキー蒸留所「山崎」を設立。スコットランドで技術を学んだ竹鶴政孝と二人三脚で日本のウイスキー文化を作り上げました。ミズナラ（水楢）という日本固有の木を樽材として使用し、オリエンタルで神秘的な香りを生み出すことで世界的な評価を得ています。
+            </p>
+            <div class="distillery-list">
+              <span class="distillery-list-title">主な蒸留所</span>
+              <div class="distillery-item">
+                <span class="distillery-item-name">山崎蒸留所</span>
+                <span class="distillery-item-note">大阪・京都府境。日本初の本格蒸留所（1923年）</span>
+              </div>
+              <div class="distillery-item">
+                <span class="distillery-item-name">白州蒸留所</span>
+                <span class="distillery-item-note">山梨・南アルプス山麓。標高700mの森の中（1973年）</span>
+              </div>
+              <div class="distillery-item">
+                <span class="distillery-item-name">知多蒸留所</span>
+                <span class="distillery-item-note">愛知・知多。グレーンウイスキー専門（1972年）</span>
+              </div>
+            </div>
+            <div class="region-detail-tags">
+              <span class="tag">ミズナラ</span>
+              <span class="tag">繊細</span>
+              <span class="tag">フルーティー</span>
+              <span class="tag">オリエンタル</span>
+              <span class="tag">世界的評価◎</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">山崎 12年</div>
+                  <div class="brand-row-note">日本ウイスキーを世界に知らしめた最高峰。ミズナラ樽由来のオリエンタルな香り、桃・柑橘・バニラが重なり合う複雑な味わい。入手困難が続く幻の一本。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">白州 12年</div>
+                  <div class="brand-row-note">南アルプスの清涼感をそのまま閉じ込めたような爽やかさ。グリーンアップル・ミント・スモークがバランスよく共存する「森香る」ジャパニーズ。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">響 Japanese Harmony</div>
+                  <div class="brand-row-note">山崎・白州・知多の原酒を職人がブレンドした最高峰のブレンデッド。調和と洗練を追求した複雑さと華やかさ。ボトルの24面カットは日本の季節を表す。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NIKKA -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🌊</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">ニッカウヰスキー</div>
+              <div class="region-detail-en">Nikka Whisky</div>
+              <span class="region-detail-founded">創業 1934年 / 余市蒸留所設立 1934年</span>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              竹鶴政孝がスコットランドで習得した本場の技術を日本に持ち帰り設立。石炭直火蒸留という伝統的かつ手間のかかる製法を今も守り続けています。余市（北海道）と宮城峡（宮城）の2蒸留所がまったく異なる個性を持ち、それをブレンドすることで深みを生み出しています。
+            </p>
+            <div class="distillery-list">
+              <span class="distillery-list-title">主な蒸留所</span>
+              <div class="distillery-item">
+                <span class="distillery-item-name">余市蒸留所</span>
+                <span class="distillery-item-note">北海道余市。石炭直火蒸留による力強くスモーキーな個性</span>
+              </div>
+              <div class="distillery-item">
+                <span class="distillery-item-name">宮城峡蒸留所</span>
+                <span class="distillery-item-note">宮城・仙台。スチーム間接加熱による華やかでフルーティーな個性</span>
+              </div>
+              <div class="distillery-item">
+                <span class="distillery-item-name">カフェ式蒸留器</span>
+                <span class="distillery-item-note">ニッカ独自のグレーンウイスキー製造。甘みとコクが特徴</span>
+              </div>
+            </div>
+            <div class="region-detail-tags">
+              <span class="tag">直火蒸留</span>
+              <span class="tag">力強い</span>
+              <span class="tag">フルーティー</span>
+              <span class="tag">潮香</span>
+              <span class="tag">伝統製法</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ニッカ フロム ザ バレル</div>
+                  <div class="brand-row-note">500mlの四角いボトルに詰まった51度の傑作。余市・宮城峡の原酒を再貯蔵することで生まれる濃密な味わい。コスパは世界最高クラスと評される。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">余市 シングルモルト</div>
+                  <div class="brand-row-note">石炭直火蒸留が生む骨太でスモーキーな力強さ。北海道の海風・潮・フルーツが複雑に絡み合う。スコッチのアイラモルトに近い個性を持つ国産シングルモルト。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">宮城峡 シングルモルト</div>
+                  <div class="brand-row-note">余市とは対照的に、華やかでフルーティーな繊細さが魅力。リンゴ・ローズ・バニラが漂う軽やかなスタイル。余市と飲み比べると2蒸留所の違いが際立つ。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CRAFT -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">⚗️</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">クラフト蒸留所</div>
+              <div class="region-detail-en">Japanese Craft Distilleries</div>
+              <span class="region-detail-founded">2000年代以降に急増した独立系蒸留所</span>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              2000年代以降、全国各地にクラフト蒸留所が急増。地元の原料・水・気候を生かした個性的なウイスキーが続々と登場しています。秩父（埼玉）・マルス（長野・鹿児島）・江井ヶ嶋（兵庫）などがその先駆け。大手2社とは異なる自由なアプローチで日本ウイスキーの多様性を広げています。
+            </p>
+            <div class="distillery-list">
+              <span class="distillery-list-title">主な蒸留所</span>
+              <div class="distillery-item">
+                <span class="distillery-item-name">秩父蒸留所</span>
+                <span class="distillery-item-note">埼玉・秩父。ベンチャーウイスキー社。フロアモルティングにこだわる</span>
+              </div>
+              <div class="distillery-item">
+                <span class="distillery-item-name">マルス信州蒸留所</span>
+                <span class="distillery-item-note">長野・中央アルプス。標高798mの清澄な環境で熟成</span>
+              </div>
+              <div class="distillery-item">
+                <span class="distillery-item-name">江井ヶ嶋蒸留所</span>
+                <span class="distillery-item-note">兵庫・明石。1888年創業の老舗。あかしウイスキーで有名</span>
+              </div>
+            </div>
+            <div class="region-detail-tags">
+              <span class="tag">クラフト</span>
+              <span class="tag">個性的</span>
+              <span class="tag">希少</span>
+              <span class="tag">地元原料</span>
+              <span class="tag">革新的</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">秩父 The Floor Malted</div>
+                  <div class="brand-row-note">国産大麦100%を自社でフロアモルティング（床麦芽）する超こだわりの一本。日本の小規模蒸留所からここまでのものができるのかと世界を驚かせた。国際的に高い評価を獲得。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">マルス 駒ヶ岳</div>
+                  <div class="brand-row-note">中央アルプス駒ヶ岳山麓の清澄な空気と水で熟成。ドライフルーツ・スパイス・ミズナラを感じる上品な甘み。限定リリースのたびに即完売する人気銘柄。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">あかし ホワイトオーク シングルモルト</div>
+                  <div class="brand-row-note">1888年創業の老舗江井ヶ嶋蒸留所が作る、瀬戸内海の潮風と温暖な気候が育む軽やかな一本。手頃な価格で本格的な日本のシングルモルトを楽しめる隠れた名品。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🥃 WHISKY WORLD</div>
+    <p class="footer-desc">大人の教養を、深く。</p>
+    <div class="footer-links">
+      <a href="making.html">作られ方</a>
+      <a href="types.html">種類</a>
+      <a href="world.html">世界の産地</a>
+      <a href="cask.html">カスク</a>
+      <a href="distilleries.html">蒸留所</a>
+      <a href="brands.html">銘柄</a>
+      <a href="index.html#diagnosis">ウイスキー診断</a>
+    </div>
+    <p class="footer-copy">© 2026 WHISKY WORLD. All rights reserved. — お酒は20歳になってから。</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.region-detail-card').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 80}ms`;
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+    const cur = location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-links a').forEach(a => { if (a.getAttribute('href') === cur) a.classList.add('nav-active'); });
+  </script>
+</body>
+</html>

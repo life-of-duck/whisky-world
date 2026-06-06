@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アメリカのウイスキー — WHISKY WORLD</title>
+  <meta name="description" content="バーボン・テネシー・ライ。アメリカウイスキー3スタイルの個性と代表銘柄を徹底解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="アメリカのウイスキー — WHISKY WORLD">
+  <meta property="og:description" content="バーボン・テネシー・ライ。アメリカウイスキー3スタイルの個性と代表銘柄を徹底解説。">
+  <meta property="og:site_name" content="WHISKY WORLD">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .region-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 2rem;
+    }
+    .region-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .region-detail-card:hover {
+      border-color: rgba(201,168,76,0.45);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .region-detail-header {
+      padding: 2rem 2rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .region-detail-flag {
+      font-size: 2.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .region-detail-meta { flex: 1; }
+    .region-detail-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+    .region-detail-en {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .region-detail-rule {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+    }
+    .region-detail-body { padding: 1.6rem 2rem; }
+    .region-detail-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 2;
+      margin-bottom: 1.2rem;
+    }
+    .region-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
+    .region-detail-brands {
+      border-top: 1px solid var(--border);
+      padding-top: 1.4rem;
+    }
+    .region-detail-brands-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .brand-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem 1rem;
+      align-items: start;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.07);
+    }
+    .brand-row:last-child { border-bottom: none; }
+    .brand-row-num {
+      font-size: 0.72rem;
+      color: var(--gold-dark);
+      font-family: Georgia, serif;
+      font-weight: 700;
+      padding-top: 0.15rem;
+      min-width: 1.2rem;
+    }
+    .brand-row-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+    .brand-row-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    /* Law callout */
+    .law-callout {
+      background: rgba(201,168,76,0.05);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.4rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .law-callout-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .law-callout li {
+      margin-left: 1.2rem;
+      color: var(--text-secondary);
+    }
+    @media (max-width: 560px) {
+      .region-detail-grid { grid-template-columns: 1fr; }
+      .region-detail-header { padding: 1.5rem 1.4rem 1.2rem; }
+      .region-detail-body { padding: 1.4rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><span>🥃</span> WHISKY WORLD</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="making.html">作られ方</a></li>
+      <li><a href="types.html">種類</a></li>
+      <li><a href="world.html">世界の産地</a></li>
+      <li><a href="cask.html">カスク</a></li>
+      <li><a href="distilleries.html">蒸留所</a></li>
+      <li><a href="brands.html">銘柄</a></li>
+      <li><a href="index.html#diagnosis" class="nav-diagnosis">ウイスキー診断</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="detail-hero">
+    <div class="detail-hero-inner">
+      <a href="world.html" class="detail-back">← 世界の産地へ戻る</a>
+      <span class="detail-eyebrow">American Whiskey</span>
+      <h1 class="detail-title">🇺🇸 アメリカの<br>ウイスキー</h1>
+      <div class="divider"></div>
+      <p class="detail-desc">
+        バーボン・テネシー・ライ。<br>
+        それぞれ法律で定義された異なる個性を持つ、<br>アメリカ産ウイスキー3スタイルを解説します。
+      </p>
+    </div>
+  </div>
+
+  <div class="detail-content">
+    <div class="detail-content-inner">
+      <div class="region-detail-grid">
+
+        <!-- BOURBON -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🍯</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">バーボン</div>
+              <div class="region-detail-en">Bourbon Whiskey</div>
+              <span class="region-detail-rule">主産地：ケンタッキー州</span>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              アメリカを代表するウイスキースタイル。トウモロコシの甘みとバニラ・キャラメルの香りが特徴で、世界中で最も親しまれているアメリカンウイスキーです。ケンタッキー州産が約95%を占めますが、法律上はアメリカ国内ならどこでも製造できます。
+            </p>
+            <div class="law-callout">
+              <span class="law-callout-title">法律で定められた条件</span>
+              <ul>
+                <li>原料にトウモロコシを51%以上使用</li>
+                <li>アメリカ国内産の新品の焦がしオーク樽で熟成</li>
+                <li>蒸留時のアルコール度数は80%以下</li>
+                <li>熟成年数の規定なし（ただし2年以上でストレート表記可）</li>
+              </ul>
+            </div>
+            <div class="region-detail-tags">
+              <span class="tag">バニラ</span>
+              <span class="tag">キャラメル</span>
+              <span class="tag">甘い</span>
+              <span class="tag">新樽</span>
+              <span class="tag">ケンタッキー</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ワイルドターキー 101</div>
+                  <div class="brand-row-note">バーボンの王道中の王道。ライ麦多めのマッシュビルが生むスパイシーさと、6〜8年熟成のバニラ・キャラメルの甘みが絶妙に共存。50.5%の力強さながら飲みやすく、「バーボンらしさ」を最もよく体現する一本。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">メーカーズマーク</div>
+                  <div class="brand-row-note">赤いワックスシールが象徴的。ライ麦の代わりに冬小麦を使用することで、他のバーボンより柔らかくまろやかな甘みを実現。バーボン入門として世界中で親しまれている定番。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">I.W. ハーパー 12年</div>
+                  <div class="brand-row-note">日本で長年親しまれてきた上品なバーボン。12年熟成由来のなめらかさとバニラ・ドライフルーツの芳醇な香りが特徴。日本市場向けに展開されてきた歴史があり、日本人のバーボン入門として特別な存在。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TENNESSEE -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🪵</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">テネシーウイスキー</div>
+              <div class="region-detail-en">Tennessee Whiskey</div>
+              <span class="region-detail-rule">主産地：テネシー州</span>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              バーボンの条件を満たしながら、テネシー州独自の「リンカーンカウンティプロセス」を経るウイスキー。蒸留後にサトウカエデの炭（チャコール）でゆっくりと濾過することで、バーボンより一層まろやかで甘みのある仕上がりになります。テネシー州での製造が法律で義務づけられています。
+            </p>
+            <div class="law-callout">
+              <span class="law-callout-title">テネシーウイスキーの特徴</span>
+              <ul>
+                <li>バーボンの全条件＋テネシー州内での製造が必須</li>
+                <li>チャコール（木炭）濾過「リンカーンカウンティプロセス」が必須</li>
+                <li>炭の層を数日かけてゆっくり通過させ、雑味を取り除く</li>
+                <li>バーボンより口当たりが滑らかでクリーンになる</li>
+              </ul>
+            </div>
+            <div class="region-detail-tags">
+              <span class="tag">チャコール濾過</span>
+              <span class="tag">まろやか</span>
+              <span class="tag">スムース</span>
+              <span class="tag">バニラ</span>
+              <span class="tag">テネシー</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ジャックダニエル ブラック（No.7）</div>
+                  <div class="brand-row-note">アメリカで最も有名なウイスキーのひとつ。黒いラベルと四角いボトルが象徴的。バニラ・カラメル・トースト香がバランスよく、飲みやすいのにしっかりした個性。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ジャックダニエル シングルバレル</div>
+                  <div class="brand-row-note">倉庫の最上段（熱が最も当たる場所）で熟成された樽のみを選別。1樽ごとに個性が異なるプレミアムライン。通常のNo.7より力強く複雑な味わい。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ジョージ・ディッケル No.12</div>
+                  <div class="brand-row-note">冬季のみ蒸留を行うこだわりの蒸留所。ジャックダニエルよりマイルドで繊細。スペルを「whisky」と表記するテネシー唯一のブランド。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RYE -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🌾</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">ライウイスキー</div>
+              <div class="region-detail-en">Rye Whiskey</div>
+              <span class="region-detail-rule">主産地：ケンタッキー・インディアナ州など</span>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              ライ麦の辛みとスパイシーさが際立つ骨太なスタイル。バーボンの甘さとは対照的で、ドライで複雑な味わいが特徴です。カクテル文化と深く結びついており、マンハッタンやサゼラック（クラシックカクテル）のベーススピリッツとして欠かせない存在。近年の「クラフトカクテル」ブームで再注目されています。
+            </p>
+            <div class="law-callout">
+              <span class="law-callout-title">法律で定められた条件</span>
+              <ul>
+                <li>原料にライ麦を51%以上使用</li>
+                <li>新品の焦がしオーク樽で熟成</li>
+                <li>蒸留時のアルコール度数は80%以下</li>
+                <li>カナダ産ライとは別物（カナダは規制が異なる）</li>
+              </ul>
+            </div>
+            <div class="region-detail-tags">
+              <span class="tag">スパイシー</span>
+              <span class="tag">ドライ</span>
+              <span class="tag">複雑</span>
+              <span class="tag">カクテル向き</span>
+              <span class="tag">骨太</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ブルレット ライ 95</div>
+                  <div class="brand-row-note">ライ麦を95%使用した超ハイライ系の代表格。黒胡椒・ミント・バニラのスパイシーかつ複雑な風味。バーボン愛好家がライに移行するときの定番一本。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">サゼラック ライ 6年</div>
+                  <div class="brand-row-note">ニューオーリンズのクラシックカクテル「サゼラック」の名を冠する伝統ブランド。6年熟成でバランスよくスパイシー。カクテルの教科書として世界中のバーテンダーに愛用される。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ウィレット ファミリー エステート ライ</div>
+                  <div class="brand-row-note">家族経営の小規模蒸留所が生む希少なシングルバレルライ。ライ麦由来の力強いスパイスと長期熟成による甘みが共存。ライウイスキーの最高峰のひとつ。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🥃 WHISKY WORLD</div>
+    <p class="footer-desc">大人の教養を、深く。</p>
+    <div class="footer-links">
+      <a href="making.html">作られ方</a>
+      <a href="types.html">種類</a>
+      <a href="world.html">世界の産地</a>
+      <a href="cask.html">カスク</a>
+      <a href="distilleries.html">蒸留所</a>
+      <a href="brands.html">銘柄</a>
+      <a href="index.html#diagnosis">ウイスキー診断</a>
+    </div>
+    <p class="footer-copy">© 2026 WHISKY WORLD. All rights reserved. — お酒は20歳になってから。</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.region-detail-card').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 80}ms`;
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+    const cur = location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-links a').forEach(a => { if (a.getAttribute('href') === cur) a.classList.add('nav-active'); });
+  </script>
+</body>
+</html>

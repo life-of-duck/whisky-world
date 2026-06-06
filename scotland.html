@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スコットランドのウイスキー産地 — WHISKY WORLD</title>
+  <meta name="description" content="スペイサイド・ハイランド・アイラ・ローランド。スコットランド4大産地の個性と代表銘柄を徹底解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="スコットランドのウイスキー産地 — WHISKY WORLD">
+  <meta property="og:description" content="スペイサイド・ハイランド・アイラ・ローランド。スコットランド4大産地の個性と代表銘柄を徹底解説。">
+  <meta property="og:site_name" content="WHISKY WORLD">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .region-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 2rem;
+    }
+    .region-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .region-detail-card:hover {
+      border-color: rgba(201,168,76,0.45);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .region-detail-header {
+      padding: 2rem 2rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .region-detail-flag {
+      font-size: 2.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .region-detail-meta { flex: 1; }
+    .region-detail-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+    .region-detail-en {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .region-detail-body { padding: 1.6rem 2rem; }
+    .region-detail-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 2;
+      margin-bottom: 1.2rem;
+    }
+    .region-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
+    .region-detail-brands {
+      border-top: 1px solid var(--border);
+      padding-top: 1.4rem;
+    }
+    .region-detail-brands-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .brand-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem 1rem;
+      align-items: start;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.07);
+    }
+    .brand-row:last-child { border-bottom: none; }
+    .brand-row-num {
+      font-size: 0.72rem;
+      color: var(--gold-dark);
+      font-family: Georgia, serif;
+      font-weight: 700;
+      padding-top: 0.15rem;
+      min-width: 1.2rem;
+    }
+    .brand-row-content {}
+    .brand-row-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+    .brand-row-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 560px) {
+      .region-detail-grid { grid-template-columns: 1fr; }
+      .region-detail-header { padding: 1.5rem 1.4rem 1.2rem; }
+      .region-detail-body { padding: 1.4rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><span>🥃</span> WHISKY WORLD</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="making.html">作られ方</a></li>
+      <li><a href="types.html">種類</a></li>
+      <li><a href="world.html">世界の産地</a></li>
+      <li><a href="cask.html">カスク</a></li>
+      <li><a href="distilleries.html">蒸留所</a></li>
+      <li><a href="brands.html">銘柄</a></li>
+      <li><a href="index.html#diagnosis" class="nav-diagnosis">ウイスキー診断</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="detail-hero">
+    <div class="detail-hero-inner">
+      <a href="world.html" class="detail-back">← 世界の産地へ戻る</a>
+      <span class="detail-eyebrow">Scotland</span>
+      <h1 class="detail-title">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド<br>4大産地</h1>
+      <div class="divider"></div>
+      <p class="detail-desc">
+        ウイスキーの聖地。産地によって味がまるで別物。<br>
+        スペイサイド・ハイランド・アイラ・ローランドの個性を知れば、<br>選ぶ楽しさが格段に広がります。
+      </p>
+    </div>
+  </div>
+
+  <div class="detail-content">
+    <div class="detail-content-inner">
+      <div class="region-detail-grid">
+
+        <!-- SPEYSIDE -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🌿</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">スペイサイド</div>
+              <div class="region-detail-en">Speyside</div>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              スコットランドで最も蒸留所が密集する地域。スペイ川流域に50以上の蒸留所が点在し、世界の主要銘柄の多くをここが生み出しています。フルーティーで華やか、蜂蜜やシェリーの甘みが特徴。スコッチ入門にも最適な、親しみやすいスタイルが揃います。
+            </p>
+            <div class="region-detail-tags">
+              <span class="tag">フルーティー</span>
+              <span class="tag">シェリー</span>
+              <span class="tag">蜂蜜</span>
+              <span class="tag">華やか</span>
+              <span class="tag">入門向き</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">マッカラン 12年 シェリーオーク</div>
+                  <div class="brand-row-note">シェリー樽100%熟成の王様。ドライフルーツ・チョコレート・スパイスが凝縮。「ウイスキーのロールスロイス」と称される。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">グレンフィディック 12年</div>
+                  <div class="brand-row-note">世界で最も売れているシングルモルト。洋ナシとクリームの優しい甘み。スペイサイドの教科書として世界中で親しまれている。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">グレンリベット 12年</div>
+                  <div class="brand-row-note">蜂蜜・柑橘・フローラルな香りが心地よい定番。スペイサイドスタイルの原点とも言える存在。初めてのシングルモルトに。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HIGHLAND -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🏔️</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">ハイランド</div>
+              <div class="region-detail-en">Highland</div>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              スコットランド最大の産地。北部・東部・西部・沿岸部など広大なエリアに及び、スタイルも多彩です。力強くどっしりしたものからエレガントで繊細なものまで幅広く、一括りにはできない奥深さがあります。スモークは軽めでフルーティー、スパイシー、ハチミツ系が多い傾向。
+            </p>
+            <div class="region-detail-tags">
+              <span class="tag">力強い</span>
+              <span class="tag">どっしり</span>
+              <span class="tag">スパイシー</span>
+              <span class="tag">蜂蜜</span>
+              <span class="tag">多様性</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">グレンモーレンジィ 10年</div>
+                  <div class="brand-row-note">バニラとオレンジピールが漂うエレガントなハイランド。世界最長クラスのポットスチルで生まれる繊細な香りが魅力。入門から上級者まで幅広く愛される。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ダルモア 12年</div>
+                  <div class="brand-row-note">シェリー樽熟成による重厚なリッチさ。オレンジピール・シナモン・ダークチョコが複雑に絡み合う。シカのエンブレムでも有名な名門蒸留所。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">オーバン 14年</div>
+                  <div class="brand-row-note">海沿いの小さな蒸留所が生む、ハイランドとアイランズの中間スタイル。潮の香りとフルーティーな甘みが共存する唯一無二の個性。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ISLAY -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🌊</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">アイラ</div>
+              <div class="region-detail-en">Islay</div>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              スコットランド西岸に浮かぶ小島。強烈なピートスモーク・潮・ヨードが特徴で、好き嫌いは真っ二つに分かれます。しかしその独特な個性に一度魅せられると抜け出せない、熱狂的なファンが多い「聖地」。8つの蒸留所が集まる世界屈指のウイスキーの島です。
+            </p>
+            <div class="region-detail-tags">
+              <span class="tag">ヘビーピート</span>
+              <span class="tag">潮</span>
+              <span class="tag">スモーキー</span>
+              <span class="tag">ヨード</span>
+              <span class="tag">個性的</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ラガヴーリン 16年</div>
+                  <div class="brand-row-note">圧倒的なピートスモーク、その奥に深いシェリーの甘み。アイラのウイスキーを語るとき最初に名が挙がる、究極の一本。16年という熟成が生む奥深さは格別。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">アードベッグ 10年</div>
+                  <div class="brand-row-note">世界で最も評価が高いアイラモルトのひとつ。スモークの強さの奥に驚くほどの甘さが隠れている。ウイスキー界で伝説的な評価を持つ蒸留所。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">ボウモア 12年</div>
+                  <div class="brand-row-note">アイラ最古の蒸留所（1779年創業）。スモークと甘いフルーツのバランスが絶妙で、アイラウイスキー入門として最適な一本。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOWLAND -->
+        <div class="region-detail-card">
+          <div class="region-detail-header">
+            <div class="region-detail-flag">🌾</div>
+            <div class="region-detail-meta">
+              <div class="region-detail-name">ローランド</div>
+              <div class="region-detail-en">Lowland</div>
+            </div>
+          </div>
+          <div class="region-detail-body">
+            <p class="region-detail-desc">
+              スコットランド南部の平野地帯。3回蒸留を行う蒸留所が多く、スコッチの中でも最も軽くてなめらかなスタイルが特徴です。ピートをほとんど使わず、フローラルで草のような爽やかな香りが漂います。重いウイスキーが苦手な方や、食前酒・デイタイム向きの一本を探している方に最適。
+            </p>
+            <div class="region-detail-tags">
+              <span class="tag">軽やか</span>
+              <span class="tag">スムース</span>
+              <span class="tag">フローラル</span>
+              <span class="tag">3回蒸留</span>
+              <span class="tag">食前向き</span>
+            </div>
+            <div class="region-detail-brands">
+              <span class="region-detail-brands-label">代表銘柄</span>
+              <div class="brand-row">
+                <div class="brand-row-num">01</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">オーヘントッシャン アメリカンオーク</div>
+                  <div class="brand-row-note">ローランドを代表する3回蒸留の軽やかなシングルモルト。バニラとピーチの甘みが心地よく、スコッチ入門に最適。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">02</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">グレンキンチー 12年</div>
+                  <div class="brand-row-note">エディンバラの南に位置するローランドの名蒸留所。草原・花・レモンを思わせる爽やかで繊細な味わいが特徴。</div>
+                </div>
+              </div>
+              <div class="brand-row">
+                <div class="brand-row-num">03</div>
+                <div class="brand-row-content">
+                  <div class="brand-row-name">オーヘントッシャン 3 Wood</div>
+                  <div class="brand-row-note">3種類の樽（バーボン・オロロソシェリー・ペドロヒメネス）で熟成。ローランドの繊細さとシェリーの甘みが見事に融合した複雑な一本。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">🥃 WHISKY WORLD</div>
+    <p class="footer-desc">大人の教養を、深く。</p>
+    <div class="footer-links">
+      <a href="making.html">作られ方</a>
+      <a href="types.html">種類</a>
+      <a href="world.html">世界の産地</a>
+      <a href="cask.html">カスク</a>
+      <a href="distilleries.html">蒸留所</a>
+      <a href="brands.html">銘柄</a>
+      <a href="index.html#diagnosis">ウイスキー診断</a>
+    </div>
+    <p class="footer-copy">© 2026 WHISKY WORLD. All rights reserved. — お酒は20歳になってから。</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.region-detail-card').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 80}ms`;
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+    const cur = location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-links a').forEach(a => { if (a.getAttribute('href') === cur) a.classList.add('nav-active'); });
+  </script>
+</body>
+</html>
