@@ -427,6 +427,26 @@ section {
   box-shadow: var(--shadow);
 }
 
+.region-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.region-card-link .region-name::after {
+  content: ' →';
+  font-size: 0.85em;
+  color: var(--gold-dark);
+  transition: color 0.3s, margin-left 0.2s;
+  margin-left: 0.2rem;
+}
+
+.region-card-link:hover .region-name::after {
+  color: var(--gold);
+  margin-left: 0.5rem;
+}
+
 .region-flag {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -479,8 +499,11 @@ section {
 
 .cask-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+}
+.cask-card:nth-child(7) {
+  grid-column: 2;
 }
 
 .cask-card {
@@ -500,9 +523,9 @@ section {
 }
 
 .cask-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
 }
 
 .cask-name {
@@ -531,6 +554,37 @@ section {
   color: var(--text-secondary);
   font-size: 0.88rem;
   line-height: 1.9;
+  margin-bottom: 1.2rem;
+}
+
+.cask-brands {
+  border-top: 1px solid var(--border);
+  padding-top: 0.9rem;
+  text-align: left;
+}
+
+.cask-brands-label {
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.cask-brands-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.brand-chip {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
 }
 
 /* ===========================
@@ -539,6 +593,49 @@ section {
 
 #distilleries {
   background: var(--bg-deep);
+}
+
+.distillery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.4rem 1.1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+
+.filter-btn:hover {
+  border-color: var(--gold-dark);
+  color: var(--gold);
+}
+
+.filter-btn.active {
+  background: rgba(201,168,76,0.15);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.distillery-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.distillery-count span {
+  color: var(--gold);
+  font-weight: 700;
 }
 
 .distillery-grid {
@@ -567,8 +664,24 @@ section {
 .distillery-header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 0.8rem;
+}
+
+.distillery-badge {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 0.1rem;
+}
+
+.distillery-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.distillery-header-text .distillery-region-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 
 .distillery-name {
@@ -599,6 +712,22 @@ section {
   font-size: 0.88rem;
   line-height: 1.9;
   flex: 1;
+}
+
+.distillery-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.distillery-tag {
+  background: rgba(201,168,76,0.07);
+  border: 1px solid rgba(201,168,76,0.18);
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  padding: 0.18rem 0.65rem;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 
 .distillery-known {
@@ -1192,4 +1321,84 @@ footer {
 /* 画面が狭い場合は非表示 */
 @media (max-width: 1100px) {
   .hero-bottles { display: none; }
+}
+
+/* ===========================
+   REGION RECOMMENDED BRANDS
+   =========================== */
+
+.region-brands {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.region-brands-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.region-brand-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.region-brand-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid rgba(201,168,76,0.2);
+}
+
+.region-brand-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+
+.region-brand-note {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+/* ===========================
+   SCROLL ANIMATIONS
+   =========================== */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   NAV ACTIVE STATE
+   =========================== */
+
+.nav-active {
+  color: var(--gold) !important;
+  position: relative;
+}
+
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0.9rem;
+  right: 0.9rem;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
 }

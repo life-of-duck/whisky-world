@@ -4,16 +4,185 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ウイスキーの作られ方 — WHISKY WORLD</title>
+  <meta name="description" content="穀物が黄金の液体になるまで。原料・製麦・発酵・蒸留・熟成など、ウイスキーができるまでの工程を詳しく解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ウイスキーの作られ方 — WHISKY WORLD">
+  <meta property="og:description" content="穀物が黄金の液体になるまで。原料・製麦・発酵・蒸留・熟成など、ウイスキーができるまでの工程を詳しく解説。">
+  <meta property="og:url" content="https://life-of-duck.github.io/whisky-world/making.html">
+  <meta property="og:site_name" content="WHISKY WORLD">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://life-of-duck.github.io/whisky-world/making.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== PROCESS FLOW ===== */
+    .flow-section {
+      background: var(--bg-deep);
+      padding: 40px 2rem 60px;
+      overflow: hidden;
+    }
+    .flow-label {
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.45em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .flow-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+    }
+    .flow-scroll::-webkit-scrollbar { height: 4px; }
+    .flow-scroll::-webkit-scrollbar-track { background: var(--border); }
+    .flow-scroll::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+    .flow-diagram-svg {
+      display: block;
+      min-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ===== STEP CARDS (new layout) ===== */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+    .step-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .step-panel:hover {
+      border-color: rgba(201,168,76,0.45);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+    }
+    .step-panel:hover .step-illus svg {
+      filter: brightness(1.15);
+    }
+    .step-illus {
+      background: rgba(201,168,76,0.03);
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      min-height: 200px;
+    }
+    .step-illus svg {
+      width: 100%;
+      max-width: 150px;
+      transition: filter 0.3s;
+    }
+    .step-body {
+      padding: 2rem 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.9rem;
+    }
+    .step-hd {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .step-num {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.18);
+      font-family: Georgia, serif;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .step-ttl {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
+    .step-txt {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.95;
+    }
+    .step-fact {
+      background: rgba(201,168,76,0.06);
+      border-left: 3px solid var(--gold-dark);
+      padding: 0.65rem 1rem;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+    }
+    .step-fact strong { color: var(--gold-light); }
+
+    /* ===== ABV JOURNEY ===== */
+    .abv-section {
+      background: var(--bg-dark);
+      padding: 70px 2rem;
+    }
+    .abv-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .abv-title {
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .abv-heading {
+      text-align: center;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+    }
+    .abv-sub {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      margin-bottom: 3rem;
+    }
+    .abv-chart-wrap {
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .abv-chart-svg {
+      display: block;
+      min-width: 640px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 720px) {
+      .step-panel { grid-template-columns: 1fr; }
+      .step-illus {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        min-height: 160px;
+        padding: 1.5rem;
+      }
+      .step-illus svg { max-width: 120px; }
+      .step-body { padding: 1.5rem 1.4rem; }
+    }
+  </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-logo"><span>🥃</span> WHISKY WORLD</a>
-        <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks">
       <li><a href="making.html">作られ方</a></li>
       <li><a href="types.html">種類</a></li>
       <li><a href="world.html">世界の産地</a></li>
@@ -27,6 +196,7 @@
     </div>
   </nav>
 
+  <!-- ===== HERO ===== -->
   <div class="detail-hero">
     <div class="detail-hero-inner">
       <a href="index.html" class="detail-back">← トップへ戻る</a>
@@ -35,91 +205,576 @@
       <div class="divider"></div>
       <p class="detail-desc">
         穀物が黄金の液体になるまで。<br>
-        シンプルな原料が、長い時間をかけて複雑な味わいへと変わる8つの工程。
+        シンプルな原料が、長い時間をかけて複雑な味わいへと<br>変わる8つの工程。
       </p>
     </div>
   </div>
 
+  <!-- ===== PROCESS FLOW DIAGRAM ===== -->
+  <div class="flow-section">
+    <span class="flow-label">The Process — 全8工程</span>
+    <div class="flow-scroll">
+      <svg class="flow-diagram-svg" viewBox="0 0 880 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.2"/>
+          </marker>
+          <filter id="gf"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- Connecting lines -->
+        <line x1="68" y1="48" x2="100" y2="48" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+        <line x1="178" y1="48" x2="210" y2="48" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+        <line x1="288" y1="48" x2="320" y2="48" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+        <line x1="398" y1="48" x2="430" y2="48" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+        <line x1="508" y1="48" x2="540" y2="48" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+        <line x1="618" y1="48" x2="650" y2="48" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+        <line x1="728" y1="48" x2="760" y2="48" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arr)"/>
+
+        <!-- Step 1: 原料 -->
+        <circle cx="44" cy="48" r="26" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#gf)"/>
+        <text x="44" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.85)">🌾</text>
+        <text x="44" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP, serif">原料</text>
+        <text x="44" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.4)" font-family="Noto Serif JP, serif">穀物を選ぶ</text>
+
+        <!-- Step 2: 製麦 -->
+        <circle cx="154" cy="48" r="26" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#gf)"/>
+        <text x="154" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.85)">🌱</text>
+        <text x="154" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP, serif">製麦</text>
+        <text x="154" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.4)" font-family="Noto Serif JP, serif">発芽・乾燥</text>
+
+        <!-- Step 3: 糖化 -->
+        <circle cx="264" cy="48" r="26" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#gf)"/>
+        <text x="264" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.85)">🫙</text>
+        <text x="264" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP, serif">糖化</text>
+        <text x="264" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.4)" font-family="Noto Serif JP, serif">甘い麦汁へ</text>
+
+        <!-- Step 4: 発酵 -->
+        <circle cx="374" cy="48" r="26" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#gf)"/>
+        <text x="374" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.85)">🧫</text>
+        <text x="374" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP, serif">発酵</text>
+        <text x="374" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.4)" font-family="Noto Serif JP, serif">ABV 8〜10%</text>
+
+        <!-- Step 5: 蒸留 -->
+        <circle cx="484" cy="48" r="26" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.7)" stroke-width="2" filter="url(#gf)"/>
+        <text x="484" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.95)">⚗️</text>
+        <text x="484" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.85)" font-family="Noto Serif JP, serif" font-weight="bold">蒸留</text>
+        <text x="484" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.5)" font-family="Noto Serif JP, serif">ABV 65〜70%</text>
+
+        <!-- Step 6: 熟成 -->
+        <circle cx="594" cy="48" r="26" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#gf)"/>
+        <text x="594" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.85)">🪵</text>
+        <text x="594" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP, serif">熟成</text>
+        <text x="594" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.4)" font-family="Noto Serif JP, serif">3〜25年以上</text>
+
+        <!-- Step 7: ブレンド -->
+        <circle cx="704" cy="48" r="26" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#gf)"/>
+        <text x="704" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.85)">🔬</text>
+        <text x="704" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP, serif">ブレンド</text>
+        <text x="704" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.4)" font-family="Noto Serif JP, serif">職人の芸術</text>
+
+        <!-- Step 8: 瓶詰め -->
+        <circle cx="814" cy="48" r="26" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#gf)"/>
+        <text x="814" y="53" text-anchor="middle" font-size="20" fill="rgba(201,168,76,0.85)">🥃</text>
+        <text x="814" y="92" text-anchor="middle" font-size="10.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP, serif">瓶詰め</text>
+        <text x="814" y="106" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.4)" font-family="Noto Serif JP, serif">ABV 40〜63%</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== STEP CARDS ===== -->
   <div class="detail-content">
     <div class="detail-content-inner">
-      <div class="steps-grid">
+      <div class="steps-list">
 
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-icon">🌾</div>
-          <h3 class="step-title">原料　— 大麦・穀物</h3>
-          <p class="step-text">
-            ウイスキーの主原料は大麦（モルト）やトウモロコシ、ライ麦など。使う穀物の種類が、後の風味の個性を決める最初の選択になります。スコッチは主に大麦を、バーボンはトウモロコシを51%以上使うことが法律で定められています。
-          </p>
+        <!-- 01 原料 -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Barley stalk left -->
+              <line x1="52" y1="145" x2="52" y2="28" stroke="rgba(201,168,76,0.5)" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Barley head center -->
+              <ellipse cx="52" cy="20" rx="7" ry="13" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.55)" stroke-width="1.2"/>
+              <!-- Side grains -->
+              <ellipse cx="39" cy="42" rx="5" ry="10" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.45)" stroke-width="1" transform="rotate(-28 39 42)"/>
+              <ellipse cx="65" cy="42" rx="5" ry="10" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.45)" stroke-width="1" transform="rotate(28 65 42)"/>
+              <ellipse cx="38" cy="60" rx="5" ry="10" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.38)" stroke-width="1" transform="rotate(-28 38 60)"/>
+              <ellipse cx="66" cy="60" rx="5" ry="10" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.38)" stroke-width="1" transform="rotate(28 66 60)"/>
+              <ellipse cx="38" cy="78" rx="4" ry="9" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.3)" stroke-width="1" transform="rotate(-28 38 78)"/>
+              <ellipse cx="66" cy="78" rx="4" ry="9" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.3)" stroke-width="1" transform="rotate(28 66 78)"/>
+
+              <!-- Barley stalk right -->
+              <line x1="88" y1="145" x2="88" y2="35" stroke="rgba(201,168,76,0.4)" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="88" cy="27" rx="6" ry="11" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.45)" stroke-width="1"/>
+              <ellipse cx="77" cy="48" rx="4" ry="8" fill="rgba(201,168,76,0.16)" stroke="rgba(201,168,76,0.35)" stroke-width="1" transform="rotate(-28 77 48)"/>
+              <ellipse cx="99" cy="48" rx="4" ry="8" fill="rgba(201,168,76,0.16)" stroke="rgba(201,168,76,0.35)" stroke-width="1" transform="rotate(28 99 48)"/>
+              <ellipse cx="76" cy="64" rx="4" ry="8" fill="rgba(201,168,76,0.13)" stroke="rgba(201,168,76,0.3)" stroke-width="1" transform="rotate(-28 76 64)"/>
+              <ellipse cx="100" cy="64" rx="4" ry="8" fill="rgba(201,168,76,0.13)" stroke="rgba(201,168,76,0.3)" stroke-width="1" transform="rotate(28 100 64)"/>
+
+              <!-- Corn kernel (right) -->
+              <ellipse cx="124" cy="90" rx="15" ry="22" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.4)" stroke-width="1.3"/>
+              <!-- Kernel rows -->
+              <ellipse cx="119" cy="78" rx="4" ry="5.5" fill="rgba(201,168,76,0.28)"/>
+              <ellipse cx="129" cy="78" rx="4" ry="5.5" fill="rgba(201,168,76,0.28)"/>
+              <ellipse cx="119" cy="89" rx="4" ry="5.5" fill="rgba(201,168,76,0.25)"/>
+              <ellipse cx="129" cy="89" rx="4" ry="5.5" fill="rgba(201,168,76,0.25)"/>
+              <ellipse cx="119" cy="100" rx="4" ry="5.5" fill="rgba(201,168,76,0.22)"/>
+              <ellipse cx="129" cy="100" rx="4" ry="5.5" fill="rgba(201,168,76,0.22)"/>
+              <!-- Corn husk lines -->
+              <path d="M109,82 Q106,90 109,100" stroke="rgba(201,168,76,0.3)" stroke-width="1" fill="none"/>
+              <path d="M139,82 Q142,90 139,100" stroke="rgba(201,168,76,0.3)" stroke-width="1" fill="none"/>
+
+              <!-- Ground -->
+              <line x1="20" y1="145" x2="140" y2="145" stroke="rgba(201,168,76,0.2)" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">01</div>
+              <h3 class="step-ttl">原料 — 大麦・穀物</h3>
+            </div>
+            <p class="step-txt">
+              ウイスキーの主原料は大麦（モルト）やトウモロコシ、ライ麦など。使う穀物の種類が、後の風味の個性を決める最初の選択になります。スコッチは主に大麦を、バーボンはトウモロコシを51%以上使うことが法律で定められています。
+            </p>
+            <div class="step-fact">
+              <strong>スコッチ</strong>は大麦100%　／　<strong>バーボン</strong>はトウモロコシ51%以上　／　<strong>ライウイスキー</strong>はライ麦51%以上
+            </div>
+          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-icon">🌱</div>
-          <h3 class="step-title">製麦　— デンプンを糖に</h3>
-          <p class="step-text">
-            大麦を水に浸けて発芽させます。この工程で、デンプンがアルコールのもとになる「糖分」に変わります。発芽を止めるために乾燥させる際、泥炭（ピート）を使うとあの独特のスモーク香が生まれます。アイラ島のウイスキーがスモーキーなのはこの工程のためです。
-          </p>
+        <!-- 02 製麦 -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Left: Sprouting grain -->
+              <!-- Grain seed -->
+              <ellipse cx="38" cy="108" rx="12" ry="8" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.5)" stroke-width="1.3"/>
+              <!-- Sprout shoot upward -->
+              <path d="M38,100 Q38,85 40,70 Q42,60 38,52" stroke="rgba(120,180,60,0.6)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Sprout leaf left -->
+              <path d="M39,76 Q28,68 26,58 Q33,60 39,70" fill="rgba(120,180,60,0.25)" stroke="rgba(120,180,60,0.45)" stroke-width="1"/>
+              <!-- Sprout leaf right -->
+              <path d="M39,68 Q50,60 52,50 Q45,52 39,62" fill="rgba(120,180,60,0.2)" stroke="rgba(120,180,60,0.4)" stroke-width="1"/>
+              <!-- Roots -->
+              <path d="M32,116 Q26,126 22,132" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M38,116 Q36,128 36,136" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M44,116 Q50,126 54,132" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Arrow -->
+              <path d="M60,80 L72,80" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" marker-end="url(#arr2)"/>
+              <defs>
+                <marker id="arr2" markerWidth="7" markerHeight="7" refX="5" refY="2.5" orient="auto">
+                  <path d="M0,0 L5,2.5 L0,5" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+                </marker>
+              </defs>
+
+              <!-- Right: Kiln with peat smoke -->
+              <!-- Kiln body (pagoda shape) -->
+              <rect x="82" y="90" width="50" height="45" rx="3" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"/>
+              <!-- Pagoda roof tiers -->
+              <polygon points="107,52 126,78 88,78" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+              <polygon points="107,62 120,80 94,80" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+              <!-- Kiln vent -->
+              <rect x="102" y="44" width="10" height="10" rx="1" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <!-- Door -->
+              <rect x="100" y="108" width="14" height="18" rx="2" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+              <!-- Peat smoke wisps -->
+              <path d="M107,44 Q104,36 107,28 Q110,20 107,12" stroke="rgba(180,120,60,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M113,42 Q116,34 113,26 Q110,18 114,10" stroke="rgba(180,120,60,0.35)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M101,42 Q98,34 101,26" stroke="rgba(180,120,60,0.28)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <!-- Smoke label area glimmer -->
+              <text x="107" y="8" text-anchor="middle" font-size="8" fill="rgba(180,120,60,0.55)" font-family="Georgia,serif">ピート</text>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">02</div>
+              <h3 class="step-ttl">製麦 — デンプンを糖に</h3>
+            </div>
+            <p class="step-txt">
+              大麦を水に浸けて発芽させます。この工程で、デンプンがアルコールのもとになる「糖分」に変わります。発芽を止めるために乾燥させる際、泥炭（ピート）を使うとあの独特のスモーク香が生まれます。アイラ島のウイスキーがスモーキーなのはこの工程のためです。
+            </p>
+            <div class="step-fact">
+              ピートを<strong>たくさん使う</strong>ほどスモーキーに。アードベッグは<strong>55ppm</strong>、ラフロイグは<strong>約40ppm</strong>のフェノール値。非ピート系は<strong>2〜5ppm</strong>以下。
+            </div>
+          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-icon">🫙</div>
-          <h3 class="step-title">糖化　— 甘いジュースへ</h3>
-          <p class="step-text">
-            粉砕した麦芽にお湯を加えて「麦汁（ウォート）」を作ります。この透明で甘い液体が、アルコール発酵の出発点。蒸留所によって温度や時間が微妙に異なり、それが風味の差につながります。
-          </p>
+        <!-- 03 糖化 -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Mash tun body (wide cylinder) -->
+              <ellipse cx="80" cy="55" rx="48" ry="10" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.45)" stroke-width="1.3"/>
+              <rect x="32" y="55" width="96" height="72" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.35)" stroke-width="1.3"/>
+              <ellipse cx="80" cy="127" rx="48" ry="10" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.4)" stroke-width="1.3"/>
+              <!-- Liquid inside (amber) -->
+              <ellipse cx="80" cy="103" rx="46" ry="9" fill="rgba(180,100,20,0.3)" stroke="rgba(180,100,20,0.4)" stroke-width="1"/>
+              <rect x="34" y="103" width="92" height="22" fill="rgba(180,100,20,0.18)"/>
+              <!-- Liquid surface shimmer -->
+              <path d="M38,103 Q55,98 80,103 Q105,108 122,103" stroke="rgba(201,168,76,0.4)" stroke-width="1" fill="none"/>
+              <!-- Rotation arms (mash paddles) -->
+              <line x1="80" y1="55" x2="80" y2="105" stroke="rgba(201,168,76,0.35)" stroke-width="2" stroke-dasharray="3,3"/>
+              <line x1="46" y1="80" x2="114" y2="80" stroke="rgba(201,168,76,0.3)" stroke-width="1.8"/>
+              <circle cx="80" cy="80" r="4" fill="rgba(201,168,76,0.4)" stroke="rgba(201,168,76,0.6)" stroke-width="1"/>
+              <!-- Steam rising -->
+              <path d="M55,52 Q52,42 55,32 Q58,22 55,14" stroke="rgba(255,255,255,0.25)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M80,52 Q77,40 80,30 Q83,20 80,10" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M105,52 Q108,42 105,32" stroke="rgba(255,255,255,0.18)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Hot water tap -->
+              <rect x="120" y="28" width="14" height="6" rx="2" fill="rgba(201,168,76,0.3)" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+              <path d="M127,34 L127,50 Q127,55 122,55" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" fill="none"/>
+              <!-- Label -->
+              <text x="80" y="148" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.5)" font-family="Georgia,serif">マッシュタン</text>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">03</div>
+              <h3 class="step-ttl">糖化 — 甘いジュースへ</h3>
+            </div>
+            <p class="step-txt">
+              粉砕した麦芽にお湯を加えて「麦汁（ウォート）」を作ります。この透明で甘い液体が、アルコール発酵の出発点。蒸留所によって温度や時間が微妙に異なり、それが風味の差につながります。
+            </p>
+            <div class="step-fact">
+              お湯の温度は<strong>約60〜80℃</strong>。高すぎると酵素が死んで糖に変わらない。マッシュタン内で回転する攪拌アームが麦芽とお湯を均一に混ぜる。
+            </div>
+          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">04</div>
-          <div class="step-icon">🧫</div>
-          <h3 class="step-title">発酵　— アルコールが生まれる</h3>
-          <p class="step-text">
-            麦汁に酵母（イースト）を加えると発酵が始まり、アルコールと二酸化炭素が生まれます。約2〜4日かかり、アルコール度数8〜10%程度の「ウォッシュ」ができあがります。フルーティーさや複雑さの基礎がここで決まります。発酵槽の素材（木製か金属か）でも味が変わります。
-          </p>
+        <!-- 04 発酵 -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Washback (tall fermentation vessel) -->
+              <!-- Staves (vertical lines suggesting wood) -->
+              <rect x="38" y="30" width="84" height="112" rx="6" fill="rgba(201,168,76,0.07)" stroke="rgba(201,168,76,0.35)" stroke-width="1.3"/>
+              <line x1="52" y1="30" x2="52" y2="142" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+              <line x1="66" y1="30" x2="66" y2="142" stroke="rgba(201,168,76,0.12)" stroke-width="0.8"/>
+              <line x1="80" y1="30" x2="80" y2="142" stroke="rgba(201,168,76,0.12)" stroke-width="0.8"/>
+              <line x1="94" y1="30" x2="94" y2="142" stroke="rgba(201,168,76,0.12)" stroke-width="0.8"/>
+              <line x1="108" y1="30" x2="108" y2="142" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+              <!-- Hoops -->
+              <rect x="36" y="45" width="88" height="5" rx="1" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+              <rect x="36" y="95" width="88" height="5" rx="1" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+              <rect x="36" y="128" width="88" height="5" rx="1" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+              <!-- Liquid (frothy) -->
+              <rect x="40" y="80" width="80" height="62" fill="rgba(180,100,20,0.18)"/>
+              <!-- Froth surface -->
+              <path d="M40,80 Q50,72 60,80 Q70,88 80,80 Q90,72 100,80 Q110,88 120,80" stroke="rgba(255,220,120,0.4)" stroke-width="2" fill="rgba(255,220,100,0.12)"/>
+              <!-- CO2 bubbles -->
+              <circle cx="58" cy="105" r="3" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <circle cx="72" cy="95" r="4" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+              <circle cx="90" cy="108" r="2.5" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <circle cx="105" cy="98" r="3.5" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+              <circle cx="65" cy="118" r="2" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+              <circle cx="95" cy="120" r="2.5" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+              <!-- Bubbles rising above -->
+              <circle cx="62" cy="65" r="2" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
+              <circle cx="78" cy="58" r="1.5" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+              <circle cx="100" cy="62" r="2.5" fill="none" stroke="rgba(201,168,76,0.28)" stroke-width="0.8"/>
+              <!-- CO2 gas arrows -->
+              <path d="M70,60 L70,50" stroke="rgba(201,168,76,0.3)" stroke-width="1" marker-end="url(#arr3)"/>
+              <path d="M90,55 L90,44" stroke="rgba(201,168,76,0.25)" stroke-width="1" marker-end="url(#arr3)"/>
+              <defs>
+                <marker id="arr3" markerWidth="6" markerHeight="6" refX="4" refY="2" orient="auto">
+                  <path d="M0,0 L4,2 L0,4" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+                </marker>
+              </defs>
+              <!-- CO2 label -->
+              <text x="80" y="18" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.45)" font-family="Georgia,serif">CO₂</text>
+              <text x="80" y="154" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.5)" font-family="Georgia,serif">ウォッシュバック</text>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">04</div>
+              <h3 class="step-ttl">発酵 — アルコールが生まれる</h3>
+            </div>
+            <p class="step-txt">
+              麦汁に酵母（イースト）を加えると発酵が始まり、アルコールと二酸化炭素が生まれます。約2〜4日かかり、アルコール度数8〜10%程度の「ウォッシュ」ができあがります。フルーティーさや複雑さの基礎がここで決まります。発酵槽の素材（木製か金属か）でも味が変わります。
+            </p>
+            <div class="step-fact">
+              <strong>木製タンク</strong>は乳酸菌が棲みつき複雑なフルーツ香を生む。<strong>ステンレス製</strong>はクリーンで均一な仕上がり。グレンフィディックは木製にこだわる。
+            </div>
+          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">05</div>
-          <div class="step-icon">⚗️</div>
-          <h3 class="step-title">蒸留　— 純化と個性の凝縮</h3>
-          <p class="step-text">
-            銅製の蒸留器（ポットスチル）で加熱し、アルコールを蒸発させて再度液化します。この工程を2〜3回繰り返すことでアルコール度数を高め、余計なものを取り除きます。蒸留器の形（首の長さ・角度）が香りの個性を大きく左右します。背の高い蒸留器は軽くエレガントに、低いものはどっしりした風味になります。
-          </p>
+        <!-- 05 蒸留 -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="glow5"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <!-- Pot still body (onion shape) -->
+              <path d="M60,145 L60,108 Q55,95 55,82 Q55,55 80,42 Q105,55 105,82 Q105,95 100,108 L100,145 Z"
+                    fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" filter="url(#glow5)"/>
+              <!-- Still neck -->
+              <path d="M72,42 Q72,26 80,18 Q88,26 88,42" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+              <!-- Lyne arm angled up -->
+              <path d="M88,24 Q100,20 110,18 Q118,16 122,12" stroke="rgba(201,168,76,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Condenser (worm tub) -->
+              <rect x="118" y="8" width="24" height="50" rx="5" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"/>
+              <!-- Coil lines in condenser -->
+              <path d="M121,18 Q138,22 121,28 Q138,34 121,40 Q138,46 121,52" stroke="rgba(201,168,76,0.35)" stroke-width="1.3" fill="none"/>
+              <!-- Distillate drip -->
+              <path d="M130,58 L130,68" stroke="rgba(180,130,40,0.6)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="130" cy="72" r="3" fill="rgba(180,130,40,0.5)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <!-- Heat fire below -->
+              <path d="M65,148 Q68,140 72,145 Q75,135 80,142 Q85,134 88,141 Q92,136 95,145 Q98,140 100,148" stroke="rgba(200,80,20,0.55)" stroke-width="2" fill="rgba(200,80,20,0.12)" stroke-linecap="round"/>
+              <!-- Vapor arrows inside neck -->
+              <path d="M79,50 L79,30" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="2,2"/>
+              <path d="M83,48 L83,28" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2,2"/>
+              <!-- ABV label -->
+              <text x="130" y="84" text-anchor="middle" font-size="8.5" fill="rgba(201,168,76,0.6)" font-family="Georgia,serif">65-70%</text>
+              <text x="80" y="156" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.5)" font-family="Georgia,serif">ポットスチル</text>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">05</div>
+              <h3 class="step-ttl">蒸留 — 純化と個性の凝縮</h3>
+            </div>
+            <p class="step-txt">
+              銅製の蒸留器（ポットスチル）で加熱し、アルコールを蒸発させて再度液化します。この工程を2〜3回繰り返すことでアルコール度数を高め、余計なものを取り除きます。蒸留器の形（首の長さ・角度）が香りの個性を大きく左右します。
+            </p>
+            <div class="step-fact">
+              <strong>首が長い</strong>蒸留器 → 軽くエレガントな香り（グレンモーレンジィ）<br>
+              <strong>首が短い</strong>蒸留器 → どっしりリッチな風味（マッカラン）
+            </div>
+          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">06</div>
-          <div class="step-icon">🪵</div>
-          <h3 class="step-title">熟成　— 樽が魔法をかける</h3>
-          <p class="step-text">
-            無色透明の原酒を木製の樽に入れて何年も寝かせます。樽の種類（シェリー・バーボン・ポートなど）・サイズ・熟成年数・保管場所の温度や湿度によって、色・香り・味わいが劇的に変わります。熟成こそがウイスキーを「芸術」にする工程。ウイスキーの風味の70%以上は熟成によって生まれると言われています。
-          </p>
+        <!-- 06 熟成 -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Barrel side view -->
+              <!-- Main body (bulge shape) -->
+              <path d="M40,30 Q22,65 22,80 Q22,95 40,130 L120,130 Q138,95 138,80 Q138,65 120,30 Z"
+                    fill="rgba(140,80,20,0.12)" stroke="rgba(201,168,76,0.45)" stroke-width="1.5"/>
+              <!-- Barrel staves (vertical lines) -->
+              <line x1="55" y1="32" x2="47" y2="128" stroke="rgba(201,168,76,0.18)" stroke-width="1"/>
+              <line x1="70" y1="30" x2="70" y2="130" stroke="rgba(201,168,76,0.15)" stroke-width="0.8"/>
+              <line x1="80" y1="30" x2="80" y2="130" stroke="rgba(201,168,76,0.15)" stroke-width="0.8"/>
+              <line x1="90" y1="30" x2="90" y2="130" stroke="rgba(201,168,76,0.15)" stroke-width="0.8"/>
+              <line x1="105" y1="32" x2="113" y2="128" stroke="rgba(201,168,76,0.18)" stroke-width="1"/>
+              <!-- Hoops (3) -->
+              <path d="M34,52 Q80,46 126,52" stroke="rgba(201,168,76,0.4)" stroke-width="2.5" fill="none"/>
+              <path d="M26,80 Q80,74 134,80" stroke="rgba(201,168,76,0.4)" stroke-width="2.5" fill="none"/>
+              <path d="M34,108 Q80,114 126,108" stroke="rgba(201,168,76,0.4)" stroke-width="2.5" fill="none"/>
+              <!-- Amber liquid inside (gradient effect) -->
+              <path d="M26,80 Q80,74 134,80 L136,130 Q118,136 80,136 Q42,136 24,130 Z"
+                    fill="rgba(180,90,10,0.25)" stroke="none"/>
+              <!-- Liquid surface shimmer -->
+              <path d="M30,80 Q55,75 80,80 Q105,85 130,80" stroke="rgba(201,168,76,0.35)" stroke-width="1.2" fill="none"/>
+              <!-- End caps -->
+              <ellipse cx="80" cy="30" rx="40" ry="8" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.4)" stroke-width="1.3"/>
+              <ellipse cx="80" cy="130" rx="40" ry="8" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.4)" stroke-width="1.3"/>
+              <!-- Bung (opening) -->
+              <ellipse cx="80" cy="30" rx="8" ry="4" fill="rgba(201,168,76,0.3)" stroke="rgba(201,168,76,0.55)" stroke-width="1.2"/>
+              <!-- Year counter -->
+              <text x="80" y="86" text-anchor="middle" font-size="22" font-weight="bold" fill="rgba(201,168,76,0.22)" font-family="Georgia,serif">3〜</text>
+              <text x="80" y="103" text-anchor="middle" font-size="11" fill="rgba(201,168,76,0.4)" font-family="Georgia,serif">25+ Years</text>
+              <!-- Label area -->
+              <text x="80" y="150" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.5)" font-family="Georgia,serif">オーク樽</text>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">06</div>
+              <h3 class="step-ttl">熟成 — 樽が魔法をかける</h3>
+            </div>
+            <p class="step-txt">
+              無色透明の原酒を木製の樽に入れて何年も寝かせます。樽の種類（シェリー・バーボン・ポートなど）・サイズ・熟成年数・保管場所の温度や湿度によって、色・香り・味わいが劇的に変わります。熟成こそがウイスキーを「芸術」にする工程。
+            </p>
+            <div class="step-fact">
+              ウイスキーの風味の<strong>60〜70%は樽熟成</strong>で生まれると言われている。最初は無色透明。3年で淡いゴールド、12年で深いアンバー、25年で濃いマホガニー色になる。
+            </div>
+          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">07</div>
-          <div class="step-icon">🔬</div>
-          <h3 class="step-title">ブレンド　— 職人の芸術</h3>
-          <p class="step-text">
-            複数の樽から選んだ原酒をブレンドして、一定の品質と個性を保ちます。ブレンデッドウイスキーではモルト原酒とグレーン原酒を組み合わせ、より複雑な味わいを生み出します。熟練のブレンダーは数百種類の原酒を嗅ぎ分け、毎年同じ味わいを再現する職人技を持っています。
-          </p>
+        <!-- 07 ブレンド -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Multiple small barrels at top -->
+              <!-- Barrel A -->
+              <rect x="14" y="12" width="28" height="32" rx="4" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"/>
+              <line x1="14" y1="24" x2="42" y2="24" stroke="rgba(201,168,76,0.3)" stroke-width="1.8"/>
+              <line x1="14" y1="36" x2="42" y2="36" stroke="rgba(201,168,76,0.3)" stroke-width="1.8"/>
+              <text x="28" y="22" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.55)" font-family="Georgia,serif">A</text>
+              <!-- Barrel B -->
+              <rect x="66" y="12" width="28" height="32" rx="4" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"/>
+              <line x1="66" y1="24" x2="94" y2="24" stroke="rgba(201,168,76,0.3)" stroke-width="1.8"/>
+              <line x1="66" y1="36" x2="94" y2="36" stroke="rgba(201,168,76,0.3)" stroke-width="1.8"/>
+              <text x="80" y="22" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.55)" font-family="Georgia,serif">B</text>
+              <!-- Barrel C -->
+              <rect x="118" y="12" width="28" height="32" rx="4" fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"/>
+              <line x1="118" y1="24" x2="146" y2="24" stroke="rgba(201,168,76,0.3)" stroke-width="1.8"/>
+              <line x1="118" y1="36" x2="146" y2="36" stroke="rgba(201,168,76,0.3)" stroke-width="1.8"/>
+              <text x="132" y="22" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.55)" font-family="Georgia,serif">C</text>
+              <!-- Flow lines converging -->
+              <path d="M28,44 Q28,62 80,72" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M80,44 L80,72" stroke="rgba(201,168,76,0.45)" stroke-width="1.8" fill="none"/>
+              <path d="M132,44 Q132,62 80,72" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- Blending vessel -->
+              <path d="M58,72 L54,105 Q54,112 80,112 Q106,112 106,105 L102,72 Z"
+                    fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.45)" stroke-width="1.3"/>
+              <!-- Amber liquid in vessel -->
+              <path d="M56,92 L54,105 Q54,112 80,112 Q106,112 106,105 L104,92 Z"
+                    fill="rgba(180,90,10,0.25)"/>
+              <path d="M56,92 Q80,87 104,92" stroke="rgba(201,168,76,0.35)" stroke-width="1" fill="none"/>
+              <!-- Nose/tasting icon -->
+              <ellipse cx="80" cy="82" rx="8" ry="3" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.45)" stroke-width="1"/>
+              <!-- Output line -->
+              <line x1="80" y1="112" x2="80" y2="130" stroke="rgba(201,168,76,0.4)" stroke-width="2"/>
+              <!-- Final bottle shape (small) -->
+              <rect x="72" y="130" width="16" height="22" rx="3" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+              <rect x="75" y="124" width="10" height="8" rx="2" fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <rect x="77" y="120" width="6" height="5" rx="1" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.45)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">07</div>
+              <h3 class="step-ttl">ブレンド — 職人の芸術</h3>
+            </div>
+            <p class="step-txt">
+              複数の樽から選んだ原酒をブレンドして、一定の品質と個性を保ちます。ブレンデッドウイスキーではモルト原酒とグレーン原酒を組み合わせ、より複雑な味わいを生み出します。熟練のブレンダーは数百種類の原酒を嗅ぎ分け、毎年同じ味わいを再現します。
+            </p>
+            <div class="step-fact">
+              ジョニーウォーカー ブルーラベルは<strong>数百万樽</strong>から厳選した希少原酒のみを使用。グレンフィディックのマスターブレンダーは<strong>1,000種類以上</strong>の原酒を管理する。
+            </div>
+          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">08</div>
-          <div class="step-icon">🥃</div>
-          <h3 class="step-title">瓶詰め　— 完成</h3>
-          <p class="step-text">
-            加水して度数を調整（通常40〜46度）し、冷却ろ過してボトルへ。一部のウイスキーはカスクストレングス（樽出しそのまま、加水なし）で瓶詰めされ、個性の強い味わいが楽しめます。冷却ろ過をしない「ノンチルフィルタード」は自然な風味が残るため、愛好家に人気です。
-          </p>
+        <!-- 08 瓶詰め -->
+        <div class="step-panel">
+          <div class="step-illus">
+            <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Whisky bottle (elegant) -->
+              <!-- Cork/cap -->
+              <rect x="68" y="8" width="24" height="12" rx="4" fill="rgba(201,168,76,0.4)" stroke="rgba(201,168,76,0.6)" stroke-width="1.3"/>
+              <!-- Neck -->
+              <rect x="70" y="20" width="20" height="28" rx="3" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.45)" stroke-width="1.3"/>
+              <!-- Shoulder -->
+              <path d="M70,48 Q55,58 53,68 L53,74 L107,74 L107,68 Q105,58 90,48 Z"
+                    fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.45)" stroke-width="1.3"/>
+              <!-- Body -->
+              <rect x="53" y="74" width="54" height="72" rx="4" fill="rgba(180,90,10,0.2)" stroke="rgba(201,168,76,0.45)" stroke-width="1.3"/>
+              <!-- Amber liquid level -->
+              <rect x="55" y="90" width="50" height="54" rx="2" fill="rgba(180,90,10,0.3)"/>
+              <!-- Liquid surface -->
+              <path d="M55,90 Q67,86 80,90 Q93,94 105,90" stroke="rgba(201,168,76,0.45)" stroke-width="1.2" fill="none"/>
+              <!-- Label -->
+              <rect x="58" y="98" width="44" height="34" rx="2" fill="rgba(13,10,7,0.4)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+              <!-- Label decorative lines -->
+              <line x1="63" y1="106" x2="97" y2="106" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+              <line x1="65" y1="112" x2="95" y2="112" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+              <line x1="65" y1="118" x2="95" y2="118" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+              <line x1="63" y1="126" x2="97" y2="126" stroke="rgba(201,168,76,0.4)" stroke-width="0.8"/>
+              <!-- Base -->
+              <rect x="51" y="146" width="58" height="8" rx="3" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+              <!-- Shimmer highlight -->
+              <rect x="56" y="76" width="7" height="68" rx="2" fill="rgba(255,255,255,0.04)"/>
+              <!-- ABV badge -->
+              <text x="80" y="158" text-anchor="middle" font-size="9" fill="rgba(201,168,76,0.5)" font-family="Georgia,serif">40〜63% ABV</text>
+            </svg>
+          </div>
+          <div class="step-body">
+            <div class="step-hd">
+              <div class="step-num">08</div>
+              <h3 class="step-ttl">瓶詰め — 完成</h3>
+            </div>
+            <p class="step-txt">
+              加水して度数を調整（通常40〜46度）し、冷却ろ過してボトルへ。一部のウイスキーはカスクストレングス（樽出しそのまま、加水なし）で瓶詰めされ、個性の強い味わいが楽しめます。冷却ろ過をしない「ノンチルフィルタード」は自然な風味が残るため、愛好家に人気です。
+            </p>
+            <div class="step-fact">
+              <strong>カスクストレングス</strong>は加水なし（50〜63%）で原酒の個性そのまま。<strong>ノンチルフィルタード</strong>は加水時に白濁するが自然な油分・風味が残る。
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
 
+  <!-- ===== ABV JOURNEY ===== -->
+  <div class="abv-section">
+    <div class="abv-inner">
+      <span class="abv-title">The ABV Journey</span>
+      <h2 class="abv-heading">アルコール度数の旅</h2>
+      <p class="abv-sub">穀物の0%から始まり、蒸留で65〜70%まで高まり、樽と加水を経て40〜63%に整えられる。</p>
+      <div class="abv-chart-wrap">
+        <svg class="abv-chart-svg" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="abvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:rgba(201,168,76,0.2)"/>
+              <stop offset="55%" style="stop-color:rgba(201,168,76,0.7)"/>
+              <stop offset="75%" style="stop-color:rgba(201,168,76,0.5)"/>
+              <stop offset="100%" style="stop-color:rgba(201,168,76,0.4)"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Y axis labels -->
+          <text x="28" y="24" text-anchor="end" font-size="10" fill="rgba(201,168,76,0.4)" font-family="Georgia,serif">70%</text>
+          <text x="28" y="74" text-anchor="end" font-size="10" fill="rgba(201,168,76,0.4)" font-family="Georgia,serif">50%</text>
+          <text x="28" y="124" text-anchor="end" font-size="10" fill="rgba(201,168,76,0.4)" font-family="Georgia,serif">30%</text>
+          <text x="28" y="174" text-anchor="end" font-size="10" fill="rgba(201,168,76,0.4)" font-family="Georgia,serif">10%</text>
+          <!-- Y grid lines -->
+          <line x1="32" y1="20" x2="670" y2="20" stroke="rgba(201,168,76,0.07)" stroke-width="1"/>
+          <line x1="32" y1="70" x2="670" y2="70" stroke="rgba(201,168,76,0.07)" stroke-width="1"/>
+          <line x1="32" y1="120" x2="670" y2="120" stroke="rgba(201,168,76,0.07)" stroke-width="1"/>
+          <line x1="32" y1="170" x2="670" y2="170" stroke="rgba(201,168,76,0.07)" stroke-width="1"/>
+
+          <!-- ABV line path (0% → 0% → 0% → 9% → 9% → 67% → 45% → 43%) -->
+          <!-- X positions: 80, 170, 265, 355, 450, 535, 610, 660 -->
+          <!-- Y: 0% = 185, 70% = 20 → scale: 185 - (abv/70)*165 -->
+          <!-- 0% = y185, 9% = y164, 67% = y27, 45% = y79, 43% = y85 -->
+
+          <!-- Fill area -->
+          <path d="M80,185 L170,185 L265,185 L355,164 L450,164 L535,27 L610,79 L660,85 L660,185 Z"
+                fill="url(#abvGrad)" opacity="0.4"/>
+          <!-- Main line -->
+          <polyline points="80,185 170,185 265,185 355,164 450,164 535,27 610,79 660,85"
+                    stroke="rgba(201,168,76,0.75)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+
+          <!-- Data point dots -->
+          <circle cx="80" cy="185" r="5" fill="var(--bg-dark)" stroke="rgba(201,168,76,0.6)" stroke-width="2"/>
+          <circle cx="170" cy="185" r="5" fill="var(--bg-dark)" stroke="rgba(201,168,76,0.6)" stroke-width="2"/>
+          <circle cx="265" cy="185" r="5" fill="var(--bg-dark)" stroke="rgba(201,168,76,0.6)" stroke-width="2"/>
+          <circle cx="355" cy="164" r="5" fill="var(--bg-dark)" stroke="rgba(201,168,76,0.6)" stroke-width="2"/>
+          <circle cx="450" cy="164" r="5" fill="var(--bg-dark)" stroke="rgba(201,168,76,0.6)" stroke-width="2"/>
+          <circle cx="535" cy="27" r="7" fill="rgba(201,168,76,0.3)" stroke="rgba(201,168,76,0.8)" stroke-width="2.5"/>
+          <circle cx="610" cy="79" r="5" fill="var(--bg-dark)" stroke="rgba(201,168,76,0.6)" stroke-width="2"/>
+          <circle cx="660" cy="85" r="6" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+
+          <!-- ABV value labels above dots -->
+          <text x="80" y="178" text-anchor="middle" font-size="10" fill="rgba(201,168,76,0.7)" font-family="Georgia,serif">0%</text>
+          <text x="170" y="178" text-anchor="middle" font-size="10" fill="rgba(201,168,76,0.7)" font-family="Georgia,serif">0%</text>
+          <text x="265" y="178" text-anchor="middle" font-size="10" fill="rgba(201,168,76,0.7)" font-family="Georgia,serif">0%</text>
+          <text x="355" y="157" text-anchor="middle" font-size="10" fill="rgba(201,168,76,0.7)" font-family="Georgia,serif">9%</text>
+          <text x="450" y="157" text-anchor="middle" font-size="10" fill="rgba(201,168,76,0.7)" font-family="Georgia,serif">9%</text>
+          <text x="535" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="rgba(201,168,76,0.9)" font-family="Georgia,serif">67%</text>
+          <text x="610" y="72" text-anchor="middle" font-size="10" fill="rgba(201,168,76,0.7)" font-family="Georgia,serif">〜45%</text>
+          <text x="660" y="78" text-anchor="middle" font-size="10" fill="rgba(201,168,76,0.8)" font-family="Georgia,serif">43%</text>
+
+          <!-- X axis step labels -->
+          <text x="80" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.55)" font-family="Noto Serif JP,serif">原料</text>
+          <text x="170" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.55)" font-family="Noto Serif JP,serif">製麦</text>
+          <text x="265" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.55)" font-family="Noto Serif JP,serif">糖化</text>
+          <text x="355" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.55)" font-family="Noto Serif JP,serif">発酵</text>
+          <text x="450" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.55)" font-family="Noto Serif JP,serif">蒸留前</text>
+          <text x="535" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.8)" font-family="Noto Serif JP,serif" font-weight="bold">蒸留後</text>
+          <text x="610" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.55)" font-family="Noto Serif JP,serif">熟成後</text>
+          <text x="660" y="198" text-anchor="middle" font-size="9.5" fill="rgba(201,168,76,0.7)" font-family="Noto Serif JP,serif">瓶詰め</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-logo">🥃 WHISKY WORLD</div>
     <p class="footer-desc">大人の教養を、深く。</p>
@@ -141,19 +796,26 @@
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+    // Scroll animations with stagger
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.step-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.step-panel').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 60}ms`;
+      el.classList.add('fade-up');
       observer.observe(el);
+    });
+
+    // Nav active
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.getAttribute('href') === currentPage) a.classList.add('nav-active');
     });
   </script>
 </body>

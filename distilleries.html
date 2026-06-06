@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>世界の蒸留所 — WHISKY WORLD</title>
+  <meta name="description" content="マッカラン・山崎・ラガヴーリン…世界を代表する名蒸留所を徹底紹介。蒸留所の個性を知れば選ぶ楽しさが10倍に。">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="世界の蒸留所 — WHISKY WORLD">
+  <meta property="og:description" content="マッカラン・山崎・ラガヴーリン…世界を代表する名蒸留所を徹底紹介。蒸留所の個性を知れば選ぶ楽しさが10倍に。">
+  <meta property="og:url" content="https://life-of-duck.github.io/whisky-world/distilleries.html">
+  <meta property="og:site_name" content="WHISKY WORLD">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://life-of-duck.github.io/whisky-world/distilleries.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -42,9 +50,26 @@
 
   <div class="detail-content">
     <div class="detail-content-inner">
-      <div class="distillery-grid">
 
-        <div class="distillery-card">
+      <div class="distillery-filter">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="speyside">スペイサイド</button>
+        <button class="filter-btn" data-filter="highland">ハイランド</button>
+        <button class="filter-btn" data-filter="islay">アイラ</button>
+        <button class="filter-btn" data-filter="islands">アイランズ</button>
+        <button class="filter-btn" data-filter="lowland">ローランド</button>
+        <button class="filter-btn" data-filter="japan">日本</button>
+        <button class="filter-btn" data-filter="america">アメリカ</button>
+        <button class="filter-btn" data-filter="ireland">アイルランド</button>
+        <button class="filter-btn" data-filter="newworld">ニューワールド</button>
+      </div>
+
+      <p class="distillery-count" id="distilleryCount"><span id="countNum">35</span> 件表示中</p>
+
+      <div class="distillery-grid" id="distilleryGrid">
+
+        <!-- ========== スペイサイド ========== -->
+        <div class="distillery-card" data-region="speyside">
           <div class="distillery-header">
             <div>
               <div class="distillery-name">グレンフィディック</div>
@@ -52,13 +77,11 @@
             </div>
             <span class="distillery-region-badge">スペイサイド</span>
           </div>
-          <p class="distillery-desc">
-            世界で最も売れているシングルモルト。1887年創業、家族経営を貫く老舗。洋ナシとクリームのような繊細な甘さが特徴で、ウイスキー入門の定番として世界中に愛されている。三角形のボトルも印象的で、ギフトにも最適。
-          </p>
+          <p class="distillery-desc">世界で最も売れているシングルモルト。1887年創業、家族経営を貫く老舗。洋ナシとクリームのような繊細な甘さが特徴で、ウイスキー入門の定番として世界中に愛されている。三角形のボトルも印象的。</p>
           <p class="distillery-known"><strong>代表銘柄：</strong>グレンフィディック 12年、18年、21年</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="speyside">
           <div class="distillery-header">
             <div>
               <div class="distillery-name">マッカラン</div>
@@ -66,69 +89,72 @@
             </div>
             <span class="distillery-region-badge">スペイサイド</span>
           </div>
-          <p class="distillery-desc">
-            「ウイスキーのロールスロイス」と称される最高峰。シェリー樽熟成にこだわり、ドライフルーツ・チョコ・スパイスが複雑に絡み合う圧倒的なリッチさ。オークションでも高値をつける超プレミアムブランド。希少な古酒は1本数百万円を超えることも。
-          </p>
-          <p class="distillery-known"><strong>代表銘柄：</strong>マッカラン 12年・18年・25年</p>
+          <p class="distillery-desc">「ウイスキーのロールスロイス」と称される最高峰。シェリー樽熟成にこだわり、ドライフルーツ・チョコ・スパイスが複雑に絡み合う圧倒的なリッチさ。オークションでも高値をつける超プレミアムブランド。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>マッカラン 12年、18年、25年</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="speyside">
           <div class="distillery-header">
             <div>
-              <div class="distillery-name">ラガヴーリン</div>
+              <div class="distillery-name">グレンリベット</div>
               <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
             </div>
-            <span class="distillery-region-badge">アイラ</span>
+            <span class="distillery-region-badge">スペイサイド</span>
           </div>
-          <p class="distillery-desc">
-            アイラ島の伝説的蒸留所。16年間の熟成が生む圧倒的なピートスモーク、その奥にある深いシェリーの甘みが魅力。世界中のウイスキーマニアが「一度は飲むべき一本」に挙げる聖地。米ドラマ「パークスアンドレック」でも有名になった。
-          </p>
-          <p class="distillery-known"><strong>代表銘柄：</strong>ラガヴーリン 16年、8年</p>
+          <p class="distillery-desc">1824年創業、スペイサイドスタイルの元祖。世界で2番目に売れているシングルモルト。フローラルでフルーティー、クリーンでエレガントな味わいは入門編として最適。ウイスキー初心者に最も勧めやすい一本。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>グレンリベット 12年、15年、18年</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="speyside">
           <div class="distillery-header">
             <div>
-              <div class="distillery-name">山崎蒸溜所</div>
-              <div class="distillery-country">🇯🇵 日本</div>
+              <div class="distillery-name">バルヴェニー</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
             </div>
-            <span class="distillery-region-badge">サントリー</span>
+            <span class="distillery-region-badge">スペイサイド</span>
           </div>
-          <p class="distillery-desc">
-            1923年創業、日本初のモルトウイスキー蒸留所。京都と大阪の境、天王山の麓に位置し、三川合流による霧深い気候が熟成に最適な環境を作ります。ミズナラ樽熟成が唯一無二の個性を生む。2015年に世界最高ウイスキーに選ばれた。
-          </p>
-          <p class="distillery-known"><strong>代表銘柄：</strong>山崎 12年・18年・25年</p>
+          <p class="distillery-desc">グレンフィディックと同じウィリアム・グラント社が所有する職人気質の蒸留所。蒸留所内でのフロアモルティングを今も実施。多彩なカスクフィニッシュシリーズが人気で、ハチミツと花のような甘やかな香りが特徴。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>バルヴェニー 12年 DoubleWood、14年 カリビアンカスク、21年 ポートウッド</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="speyside">
           <div class="distillery-header">
             <div>
-              <div class="distillery-name">余市蒸溜所</div>
-              <div class="distillery-country">🇯🇵 日本</div>
+              <div class="distillery-name">アベラワー</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
             </div>
-            <span class="distillery-region-badge">ニッカ</span>
+            <span class="distillery-region-badge">スペイサイド</span>
           </div>
-          <p class="distillery-desc">
-            北海道余市町。竹鶴政孝がスコットランドを手本に1934年に建設。石炭直火蒸留という世界でも希少な製法を今も守り続け、力強くフルーティーな個性が世界から高い評価を受けている。NHK朝ドラ「マッサン」のモデルとなった蒸留所。
-          </p>
-          <p class="distillery-known"><strong>代表銘柄：</strong>余市 シングルモルト</p>
+          <p class="distillery-desc">フランス資本（ペルノリカール）が所有し、フランスで特に人気が高い。シェリー樽熟成によるリッチでチョコレート的な甘み。カスクストレングス版「アブナー」はシェリーボムの代名詞として世界中のマニアに支持される。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>アベラワー 12年、アブナー（A'bunadh）</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="speyside">
           <div class="distillery-header">
             <div>
-              <div class="distillery-name">バーンハイム蒸留所</div>
-              <div class="distillery-country">🇺🇸 アメリカ</div>
+              <div class="distillery-name">グレンアーラヒー</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
             </div>
-            <span class="distillery-region-badge">ケンタッキー</span>
+            <span class="distillery-region-badge">スペイサイド</span>
           </div>
-          <p class="distillery-desc">
-            ケンタッキー州ルイビル。ヘブンヒル社の主力蒸留所で、エヴァン・ウィリアムスやエライジャ・クレイグなど数々のバーボンを生産。アメリカン・ウイスキーの多様性を体現する巨大施設。コストパフォーマンスに優れた銘柄を多数展開。
-          </p>
-          <p class="distillery-known"><strong>代表銘柄：</strong>エヴァン・ウィリアムス、エライジャ・クレイグ</p>
+          <p class="distillery-desc">2017年に著名蒸留家ビリー・ウォーカーが買収し急成長。シェリー樽を中心としたリッチで複雑な熟成が特徴で、コスパの高さでも評判。知る人ぞ知る存在から世界的注目銘柄へと急浮上した現代のサクセスストーリー。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>グレンアーラヒー 12年、15年</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="speyside">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">グレンファークラス</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">スペイサイド</span>
+          </div>
+          <p class="distillery-desc">1865年創業、6代にわたる家族経営の独立系蒸留所。オロロソシェリー樽のみ使用するという一貫したポリシーが生む、濃厚でリッチなスタイル。コストパフォーマンスの高さとシェリーボムとしての実力が根強い人気の秘密。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>グレンファークラス 12年、105（カスクストレングス）</p>
+        </div>
+
+        <!-- ========== ハイランド ========== -->
+        <div class="distillery-card" data-region="highland">
           <div class="distillery-header">
             <div>
               <div class="distillery-name">グレンモーレンジィ</div>
@@ -136,13 +162,48 @@
             </div>
             <span class="distillery-region-badge">ハイランド</span>
           </div>
-          <p class="distillery-desc">
-            スコットランド最長の蒸留器（約5.14m）を使うことで知られ、軽くエレガントな原酒が生まれる。異なる樽でのフィニッシュ（仕上げ熟成）を得意とし、カリビアンカスク・ラサンタ・クインタルバンなど多彩なシリーズが魅力的。
-          </p>
-          <p class="distillery-known"><strong>代表銘柄：</strong>グレンモーレンジィ 10年・カリビアンカスク・ラサンタ</p>
+          <p class="distillery-desc">スコットランド最長の蒸留器（約5.14m）を使うことで知られ、軽くエレガントな原酒が生まれる。異なる樽でのフィニッシュ（仕上げ熟成）を得意とし、カリビアンカスク・ラサンタ・クインタルバンなど多彩なシリーズが魅力的。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>グレンモーレンジィ 10年、カリビアンカスク、クインタルバン 14年</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="highland">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ダルモア</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">ハイランド</span>
+          </div>
+          <p class="distillery-desc">1839年創業。12本角の鹿の紋章がシンボルの高級蒸留所。バーボン樽とシェリー樽を組み合わせた独自の熟成で、チョコレート・オレンジ・シナモンが複雑に絡み合う。プレミアムラインは世界のオークションで高値を記録。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ダルモア 12年、15年、18年</p>
+        </div>
+
+        <div class="distillery-card" data-region="highland">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ロッホローモンド</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">ハイランド</span>
+          </div>
+          <p class="distillery-desc">ローモンド湖畔に位置する大型蒸留所。ポットスチルとコフィスチルの両方を備える珍しい設備で、モルトウイスキーからグレーンウイスキーまで多彩なスタイルを生産。アイルランドのロッホローモンドグループが所有。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ロッホローモンド 12年、シングルグレーン</p>
+        </div>
+
+        <!-- ========== アイラ ========== -->
+        <div class="distillery-card" data-region="islay">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ラガヴーリン</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイラ</span>
+          </div>
+          <p class="distillery-desc">アイラ島の伝説的蒸留所。16年間の熟成が生む圧倒的なピートスモーク、その奥に潜む深いシェリーの甘みが魅力。世界中のウイスキーマニアが「一度は飲むべき一本」に挙げる聖地。米ドラマ「パークスアンドレック」でも有名に。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ラガヴーリン 16年、8年</p>
+        </div>
+
+        <div class="distillery-card" data-region="islay">
           <div class="distillery-header">
             <div>
               <div class="distillery-name">アードベッグ</div>
@@ -150,23 +211,289 @@
             </div>
             <span class="distillery-region-badge">アイラ</span>
           </div>
-          <p class="distillery-desc">
-            アイラ島屈指のヘビーピート蒸留所。強烈なスモークとチョコレート・コーヒーの複雑さが同居するアードベッグは、一度飲んだら忘れられない衝撃を与える。世界中にコアなファンを持つカルト的存在。毎年リリースされる限定品はすぐに完売する。
-          </p>
+          <p class="distillery-desc">アイラ島屈指のヘビーピート蒸留所。強烈なスモークとチョコレート・コーヒーの複雑さが同居するアードベッグは、一度飲んだら忘れられない衝撃を与える。世界中にコアなファンを持つカルト的存在。毎年の限定品はすぐに完売。</p>
           <p class="distillery-known"><strong>代表銘柄：</strong>アードベッグ 10年、ウーガダール</p>
         </div>
 
-        <div class="distillery-card">
+        <div class="distillery-card" data-region="islay">
           <div class="distillery-header">
             <div>
-              <div class="distillery-name">カバラン蒸留所</div>
+              <div class="distillery-name">ラフロイグ</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイラ</span>
+          </div>
+          <p class="distillery-desc">1815年創業。「薬品のような」とも評される強烈なピート・ヨード香が最大の個性。好き嫌いが最も分かれるウイスキーの一つだが、一度ハマると抜け出せない中毒性がある。チャールズ国王も愛飲する王室御用達の蒸留所。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ラフロイグ 10年、クォーターカスク</p>
+        </div>
+
+        <div class="distillery-card" data-region="islay">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ボウモア</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイラ</span>
+          </div>
+          <p class="distillery-desc">1779年創業、アイラ最古の蒸留所。スモーキーでありながら華やかなフルーティーさも兼ね備えるバランスの良さが魅力。「アイラの女王」とも呼ばれ、ピート初心者から上級者まで幅広く楽しめる入門アイラモルト。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ボウモア 12年、15年</p>
+        </div>
+
+        <div class="distillery-card" data-region="islay">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ブルイックラディ</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイラ</span>
+          </div>
+          <p class="distillery-desc">革新的な独立系蒸留所。ノンピートのクラシックラディから世界最重ピートのオクトモアまで幅広いラインナップを誇る。スコットランド産100%の原料を使用するなど哲学的なこだわりが強く、ウイスキーファンから支持を集める。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>クラシックラディ、ポートシャーロット、オクトモア</p>
+        </div>
+
+        <div class="distillery-card" data-region="islay">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">カリラ</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイラ</span>
+          </div>
+          <p class="distillery-desc">1846年創業、ジュラ島を望む丘の上に佇む蒸留所。ディアジオ社所有でジョニーウォーカーのキーモルトとして長く使われてきた。スモーキーながら軽やかでフルーティーな側面も持ち、近年シングルモルトとして急速に人気上昇中。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>カリラ 12年、ディスティラーズエディション</p>
+        </div>
+
+        <!-- ========== アイランズ ========== -->
+        <div class="distillery-card" data-region="islands">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">タリスカー</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイランズ（スカイ島）</span>
+          </div>
+          <p class="distillery-desc">スカイ島唯一の蒸留所。海風とピートが組み合わさった「海のスモーク」が最大の特徴。黒胡椒のようなスパイシーさと潮のミネラル感が同居する独特の個性。作家スティーブンソンが愛し「真のスコットランドの味」と讃えた。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>タリスカー 10年、18年、ストーム</p>
+        </div>
+
+        <div class="distillery-card" data-region="islands">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ハイランドパーク</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイランズ（オークニー島）</span>
+          </div>
+          <p class="distillery-desc">スコットランド最北の蒸留所の一つ。ヘザー（ヒース）の植物から作るピートとシェリー樽熟成の絶妙なバランスが生む、ハニーとスモークの複雑な調和が魅力。バイキングの歴史と文化を色濃く反映したブランドイメージも印象的。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ハイランドパーク 12年 ヴァイキングオナー、18年</p>
+        </div>
+
+        <div class="distillery-card" data-region="islands">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">アラン</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">アイランズ（アラン島）</span>
+          </div>
+          <p class="distillery-desc">1995年創業の比較的新しい蒸留所。スコットランド西岸アラン島に位置し、ノンピートのクリーンで華やかなフルーティースタイルが特徴。近年品質が急上昇し、コスパ優秀な隠れた名蒸留所として世界のウイスキー愛好家から注目を集める。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>アラン 10年、バレルリザーブ</p>
+        </div>
+
+        <!-- ========== ローランド ========== -->
+        <div class="distillery-card" data-region="lowland">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">オーヘントッシャン</div>
+              <div class="distillery-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド</div>
+            </div>
+            <span class="distillery-region-badge">ローランド</span>
+          </div>
+          <p class="distillery-desc">スコットランドで珍しい3回蒸留を行うローランドの蒸留所。3回蒸留によって生まれる軽やかでクリーン、花のような香りが特徴。アルコール度数が高い状態で切り出すため、カスクの影響を受けやすく繊細な仕上がりに。食前酒にも最適。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>オーヘントッシャン アメリカンオーク、12年、3 Wood</p>
+        </div>
+
+        <!-- ========== 日本 ========== -->
+        <div class="distillery-card" data-region="japan">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">山崎</div>
+              <div class="distillery-country">🇯🇵 日本</div>
+            </div>
+            <span class="distillery-region-badge">日本（サントリー）</span>
+          </div>
+          <p class="distillery-desc">1923年創業、日本初のモルトウイスキー蒸留所。京都と大阪の境、天王山の麓に位置し、三川合流による霧深い気候が熟成に最適な環境を作る。ミズナラ樽熟成が生む唯一無二の個性。2015年に世界最高ウイスキーに選ばれた。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>山崎 12年、18年、25年</p>
+        </div>
+
+        <div class="distillery-card" data-region="japan">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">白州</div>
+              <div class="distillery-country">🇯🇵 日本</div>
+            </div>
+            <span class="distillery-region-badge">日本（サントリー）</span>
+          </div>
+          <p class="distillery-desc">1973年創業、南アルプス標高700mの森の中に佇む蒸留所。「森香るウイスキー」の異名通り、爽やかでクリーン、ミントや柑橘系のさわやかな味わいが特徴。山崎とは対照的なライトでフレッシュなスタイルがサントリーのもう一つの顔。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>白州 12年、ノンエイジ</p>
+        </div>
+
+        <div class="distillery-card" data-region="japan">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">知多</div>
+              <div class="distillery-country">🇯🇵 日本</div>
+            </div>
+            <span class="distillery-region-badge">日本（サントリー）</span>
+          </div>
+          <p class="distillery-desc">1972年創業、愛知県知多半島。サントリーが誇るグレーンウイスキー専用蒸留所。ライトからヘビーまで多彩なタイプのグレーン原酒を生産し、響など人気ブレンデッドウイスキーの土台を支える縁の下の力持ち的存在。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>知多</p>
+        </div>
+
+        <div class="distillery-card" data-region="japan">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">余市</div>
+              <div class="distillery-country">🇯🇵 日本</div>
+            </div>
+            <span class="distillery-region-badge">日本（ニッカ）</span>
+          </div>
+          <p class="distillery-desc">北海道余市町。竹鶴政孝がスコットランドを手本に1934年に建設。石炭直火蒸留という世界でも希少な製法を今も守り続け、力強くフルーティーな個性が世界から高い評価を受けている。NHK朝ドラ「マッサン」のモデルとなった聖地。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>余市 シングルモルト</p>
+        </div>
+
+        <div class="distillery-card" data-region="japan">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">宮城峡</div>
+              <div class="distillery-country">🇯🇵 日本</div>
+            </div>
+            <span class="distillery-region-badge">日本（ニッカ）</span>
+          </div>
+          <p class="distillery-desc">1969年創業、仙台市郊外の峡谷に位置するニッカ第二の蒸留所。余市とは対照的な柔らかくフルーティーなスタイルが特徴。カフェ式蒸留器も有しグレーン原酒も生産。竹鶴政孝が「東北の美しさに一目惚れした」と語る景観も魅力。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>宮城峡 シングルモルト</p>
+        </div>
+
+        <div class="distillery-card" data-region="japan">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">秩父</div>
+              <div class="distillery-country">🇯🇵 日本</div>
+            </div>
+            <span class="distillery-region-badge">日本（クラフト）</span>
+          </div>
+          <p class="distillery-desc">2008年創業、埼玉県秩父市。ベンチャーウイスキー社（イチローズモルト）の蒸留所。小規模ながらフロアモルティングを実施し、世界的な品評会で高評価を連発。入手が難しいながら世界中のコレクターと愛好家が注目する日本クラフトの旗手。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>イチローズモルト モルト&グレーン、秩父 ザ・ファースト</p>
+        </div>
+
+        <div class="distillery-card" data-region="japan">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">長濱</div>
+              <div class="distillery-country">🇯🇵 日本</div>
+            </div>
+            <span class="distillery-region-badge">日本（クラフト）</span>
+          </div>
+          <p class="distillery-desc">2016年創業、滋賀県長浜市。琵琶湖を望む酒蔵を改装した日本最小クラスの蒸留所の一つ。少量生産ながら多彩な原酒を世界各国のモルトとブレンドし、独自のフレーバーを追求。日本クラフトウイスキーブームの象徴的存在。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>AMAHAGAN ワールドモルト</p>
+        </div>
+
+        <!-- ========== アメリカ ========== -->
+        <div class="distillery-card" data-region="america">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">バッファロートレース</div>
+              <div class="distillery-country">🇺🇸 アメリカ</div>
+            </div>
+            <span class="distillery-region-badge">ケンタッキー</span>
+          </div>
+          <p class="distillery-desc">ケンタッキー州フランクフォート。1787年頃から続くアメリカ最古の継続稼働蒸留所の一つ。バッファロートレースのほか、幻のバーボン「パピーヴァンウィンクル」やイーグルレアも同蒸留所産。バーボン聖地巡礼の外せない一軒。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>バッファロートレース、イーグルレア 10年、ブランテン</p>
+        </div>
+
+        <div class="distillery-card" data-region="america">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ワイルドターキー</div>
+              <div class="distillery-country">🇺🇸 アメリカ</div>
+            </div>
+            <span class="distillery-region-badge">ケンタッキー</span>
+          </div>
+          <p class="distillery-desc">ケンタッキー州ローレンスバーグ。高いライ麦比率と熟成樽への高い入樽度数が生む力強くスパイシーなバーボンが特徴。50年以上のキャリアを持つマスターディスティラー、ジミー・ラッセルはバーボン界のレジェンド的存在。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ワイルドターキー 101、レアブリード</p>
+        </div>
+
+        <div class="distillery-card" data-region="america">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">バーンハイム</div>
+              <div class="distillery-country">🇺🇸 アメリカ</div>
+            </div>
+            <span class="distillery-region-badge">ケンタッキー</span>
+          </div>
+          <p class="distillery-desc">ケンタッキー州ルイビル。ヘブンヒル社の主力蒸留所でアメリカン・ウイスキーの多様性を体現する巨大施設。コストパフォーマンスに優れた銘柄から高級ライン、I.W.ハーパーまで幅広くカバーし、バーボン文化を世界に発信し続ける。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>エヴァン・ウィリアムス、エライジャ・クレイグ、I.W.ハーパー</p>
+        </div>
+
+        <div class="distillery-card" data-region="america">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ジャックダニエル</div>
+              <div class="distillery-country">🇺🇸 アメリカ</div>
+            </div>
+            <span class="distillery-region-badge">テネシー</span>
+          </div>
+          <p class="distillery-desc">テネシー州リンチバーグ、1866年創業。チャコールメローイング製法による「テネシーウイスキー」の象徴。バーボンと区別される独自カテゴリを確立し、世界中で愛される黒いラベルのボトルはウイスキーのアイコン的存在。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ジャックダニエル ブラック（No.7）、シングルバレル</p>
+        </div>
+
+        <!-- ========== アイルランド ========== -->
+        <div class="distillery-card" data-region="ireland">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ブッシュミルズ</div>
+              <div class="distillery-country">🇮🇪 アイルランド</div>
+            </div>
+            <span class="distillery-region-badge">アイルランド</span>
+          </div>
+          <p class="distillery-desc">北アイルランド、1608年にライセンスを取得した世界最古の蒸留所の一つ。アイリッシュ伝統のトリプルディスティレーション（3回蒸留）による極上の滑らかさが特徴。スモークを使わないピュアでクリーンな味わいがアイリッシュウイスキーの真髄。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ブッシュミルズ オリジナル、ブラックブッシュ</p>
+        </div>
+
+        <div class="distillery-card" data-region="ireland">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ミドルトン</div>
+              <div class="distillery-country">🇮🇪 アイルランド</div>
+            </div>
+            <span class="distillery-region-badge">アイルランド</span>
+          </div>
+          <p class="distillery-desc">コーク州に位置するアイリッシュウイスキーの巨人。ジェムソンをはじめ多数のブランドを一手に生産するペルノリカール社の巨大施設。単式・連続・ポットスチルをすべて備え、多彩なスタイルのウイスキーを世界に届ける。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>ジェムソン、ミドルトン ベリーレア、パワーズ</p>
+        </div>
+
+        <div class="distillery-card" data-region="ireland">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">ロイヤルオーク</div>
+              <div class="distillery-country">🇮🇪 アイルランド</div>
+            </div>
+            <span class="distillery-region-badge">アイルランド</span>
+          </div>
+          <p class="distillery-desc">カーロー州に位置するアイリッシュウイスキーの新星。シングルモルト・シングルグレーン・シングルポットスチルの三種の原酒をブレンドすることで複雑かつ滑らかな味わいを実現。バスカーブランドで世界的に注目を集める急成長蒸留所。</p>
+          <p class="distillery-known"><strong>代表銘柄：</strong>バスカー シングルモルト、バスカー アイリッシュウイスキー</p>
+        </div>
+
+        <!-- ========== ニューワールド ========== -->
+        <div class="distillery-card" data-region="newworld">
+          <div class="distillery-header">
+            <div>
+              <div class="distillery-name">カバラン</div>
               <div class="distillery-country">🇹🇼 台湾</div>
             </div>
             <span class="distillery-region-badge">ニューワールド</span>
           </div>
-          <p class="distillery-desc">
-            2006年創業ながら、わずか数年で世界最高峰の評価を獲得した台湾の奇跡。台湾の高温多湿な気候により、スコットランドの約4倍の速さで熟成が進む急速熟成が独特のフルーティーさと濃密さを生む。従来の「熟成年数=品質」という常識を覆した次世代ウイスキー。
-          </p>
+          <p class="distillery-desc">2006年創業ながら、わずか数年で世界最高峰の評価を獲得した台湾の奇跡。台湾の高温多湿な気候によりスコットランドの約4倍の速さで熟成が進む。従来の「熟成年数＝品質」という常識を覆し、次世代ウイスキーの可能性を世界に示した。</p>
           <p class="distillery-known"><strong>代表銘柄：</strong>カバラン ソリスト、カバラン クラシック</p>
         </div>
 
@@ -195,6 +522,181 @@
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      if (a.getAttribute('href') === currentPage) a.classList.add('nav-active');
+    });
+
+    // ── filter ──
+    const cards = Array.from(document.querySelectorAll('.distillery-card'));
+    const countEl = document.getElementById('countNum');
+    const updateCount = () => { countEl.textContent = cards.filter(c => c.style.display !== 'none').length; };
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c => { c.style.display = (f === 'all' || c.dataset.region === f) ? '' : 'none'; });
+        updateCount();
+      });
+    });
+
+    // ── badge SVG generators ──
+    const _s = 'rgba(201,168,76,0.5)';
+    const _t = '#c9a84c';
+    const _g = 'Georgia,serif';
+    const _j = 'Noto Serif JP,serif';
+
+    const _circle = (fill, text, fs, ff, extra) => {
+      const f = ff||_g, s = fs||26, y = s>=24?40:39, ex = extra||'';
+      return `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="${fill}"/><circle cx="32" cy="32" r="26" fill="none" stroke="${_s}" stroke-width="1"/>${ex}<text x="32" y="${y}" text-anchor="middle" font-family="${f}" font-size="${s}" font-weight="bold" fill="${_t}">${text}</text></svg>`;
+    };
+    const _hex = (fill, text, fs, ff) => {
+      const f = ff||_g, s = fs||19, y = s>=24?40:38;
+      return `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><polygon points="32,3 58,18 58,46 32,61 6,46 6,18" fill="${fill}"/><polygon points="32,3 58,18 58,46 32,61 6,46 6,18" fill="none" stroke="${_s}" stroke-width="1"/><text x="32" y="${y}" text-anchor="middle" font-family="${f}" font-size="${s}" font-weight="bold" fill="${_t}">${text}</text></svg>`;
+    };
+    const _shield = (fill, text, fs, ff) => {
+      const f = ff||_g, s = fs||17, y = s>=22?46:44;
+      return `<svg viewBox="0 0 56 64" width="48" height="48" aria-hidden="true"><path d="M28,2 L52,10 L52,36 Q52,56 28,62 Q4,56 4,36 L4,10 Z" fill="${fill}"/><path d="M28,2 L52,10 L52,36 Q52,56 28,62 Q4,56 4,36 L4,10 Z" fill="none" stroke="${_s}" stroke-width="1.2"/><text x="28" y="${y}" text-anchor="middle" font-family="${f}" font-size="${s}" font-weight="bold" fill="${_t}">${text}</text></svg>`;
+    };
+    const _rsq = (fill, text, fs, rx, ff) => {
+      const f = ff||_g, s = fs||20, r = rx||12, y = s>=24?41:39;
+      return `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="${r}" fill="${fill}"/><rect x="4" y="4" width="56" height="56" rx="${r}" fill="none" stroke="${_s}" stroke-width="1"/><text x="32" y="${y}" text-anchor="middle" font-family="${f}" font-size="${s}" font-weight="bold" fill="${_t}">${text}</text></svg>`;
+    };
+    const _oct = (fill, text, fs) => {
+      const s = fs||18, y = s>=24?40:38;
+      return `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><polygon points="58,43 43,58 21,58 6,43 6,21 21,6 43,6 58,21" fill="${fill}"/><polygon points="58,43 43,58 21,58 6,43 6,21 21,6 43,6 58,21" fill="none" stroke="${_s}" stroke-width="1"/><text x="32" y="${y}" text-anchor="middle" font-family="${_g}" font-size="${s}" font-weight="bold" fill="${_t}">${text}</text></svg>`;
+    };
+    const _pent = (fill, text, fs) =>
+      `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><polygon points="32,4 59,23 48,55 16,55 5,23" fill="${fill}"/><polygon points="32,4 59,23 48,55 16,55 5,23" fill="none" stroke="${_s}" stroke-width="1"/><text x="32" y="40" text-anchor="middle" font-family="${_g}" font-size="${fs||20}" font-weight="bold" fill="${_t}">${text}</text></svg>`;
+    const _diam = (fill, text, fs) =>
+      `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><polygon points="32,4 60,32 32,60 4,32" fill="${fill}"/><polygon points="32,4 60,32 32,60 4,32" fill="none" stroke="${_s}" stroke-width="1"/><text x="32" y="38" text-anchor="middle" font-family="${_g}" font-size="${fs||18}" font-weight="bold" fill="${_t}">${text}</text></svg>`;
+
+    // special badges
+    const _glenfiddich = () =>
+      `<svg viewBox="0 0 56 64" width="48" height="48" aria-hidden="true"><path d="M28,2 L52,10 L52,36 Q52,56 28,62 Q4,56 4,36 L4,10 Z" fill="#0D2A18"/><path d="M28,2 L52,10 L52,36 Q52,56 28,62 Q4,56 4,36 L4,10 Z" fill="none" stroke="${_s}" stroke-width="1.2"/><line x1="28" y1="20" x2="22" y2="12" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/><line x1="28" y1="20" x2="34" y2="12" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/><line x1="28" y1="20" x2="28" y2="24" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/><text x="28" y="48" text-anchor="middle" font-family="${_g}" font-size="17" font-weight="bold" fill="${_t}">GF</text></svg>`;
+    const _dalmore = () =>
+      `<svg viewBox="0 0 56 64" width="48" height="48" aria-hidden="true"><path d="M28,2 L52,10 L52,36 Q52,56 28,62 Q4,56 4,36 L4,10 Z" fill="#2A1208"/><path d="M28,2 L52,10 L52,36 Q52,56 28,62 Q4,56 4,36 L4,10 Z" fill="none" stroke="${_s}" stroke-width="1.2"/><line x1="22" y1="16" x2="18" y2="10" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/><line x1="22" y1="14" x2="25" y2="9" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/><line x1="34" y1="16" x2="38" y2="10" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/><line x1="34" y1="14" x2="31" y2="9" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/><text x="28" y="48" text-anchor="middle" font-family="${_g}" font-size="24" font-weight="bold" fill="${_t}">D</text></svg>`;
+    const _ardbeg = () =>
+      `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0A0A0A"/><circle cx="32" cy="32" r="30" fill="none" stroke="#2A6A2A" stroke-width="2.5"/><circle cx="32" cy="32" r="24" fill="none" stroke="rgba(42,106,42,0.3)" stroke-width="1"/><text x="32" y="40" text-anchor="middle" font-family="${_g}" font-size="28" font-weight="bold" fill="#3A9A3A">A</text></svg>`;
+    const _laphroaig = () =>
+      `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="8" fill="#0E0808"/><rect x="4" y="4" width="56" height="56" rx="8" fill="none" stroke="${_s}" stroke-width="1"/><text x="32" y="36" text-anchor="middle" font-family="${_g}" font-size="20" font-weight="bold" fill="${_t}">Lph</text><line x1="12" y1="44" x2="52" y2="44" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/><text x="32" y="53" text-anchor="middle" font-family="${_g}" font-size="7" fill="rgba(201,168,76,0.6)" letter-spacing="1">ISLAY</text></svg>`;
+    const _talisker = () =>
+      `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#080A1A"/><circle cx="32" cy="32" r="26" fill="none" stroke="${_s}" stroke-width="1"/><path d="M18,44 Q22,40 26,44 Q30,48 34,44 Q38,40 42,44 Q46,48 50,44" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="1.2"/><text x="32" y="37" text-anchor="middle" font-family="${_g}" font-size="26" font-weight="bold" fill="${_t}">T</text></svg>`;
+    const _auchentoshan = () =>
+      `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#281A0E"/><circle cx="32" cy="32" r="30" fill="none" stroke="${_s}" stroke-width="1.5"/><circle cx="32" cy="32" r="22" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/><circle cx="32" cy="32" r="14" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.8"/><text x="32" y="33" text-anchor="middle" font-family="${_g}" font-size="14" font-weight="bold" fill="${_t}">A</text><text x="32" y="44" text-anchor="middle" font-family="${_g}" font-size="7.5" fill="rgba(201,168,76,0.7)">3×DIST</text></svg>`;
+    const _jackdaniels = () =>
+      `<svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="2" fill="#080808"/><rect x="4" y="4" width="56" height="56" rx="2" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/><text x="32" y="37" text-anchor="middle" font-family="${_g}" font-size="22" font-weight="bold" fill="${_t}">JD</text><line x1="12" y1="44" x2="52" y2="44" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/><text x="32" y="53" text-anchor="middle" font-family="${_g}" font-size="6.5" fill="rgba(201,168,76,0.6)" letter-spacing="1.5">TENNESSEE</text></svg>`;
+
+    // ── badge map ──
+    const distilleryBadges = {
+      'グレンフィディック':          _glenfiddich(),
+      'マッカラン':                  _circle('#5A1020','M',28),
+      'グレンリベット':              _hex('#5A3A08','GL',19),
+      'バルヴェニー':                _pent('#4A3808','Bv',20),
+      'アベラワー':                  _circle('#3A0E18','Ab',20),
+      'グレンアーラヒー':            _diam('#182A12','GA',18),
+      'グレンファークラス':          _shield('#3A1808','GFC',14),
+      'グレンモーレンジィ':          _oct('#3A3008','GM',18),
+      'ダルモア':                    _dalmore(),
+      'ロッホローモンド':            _circle('#0E2030','LL',20),
+      'ラガヴーリン':                _hex('#100A05','L',26),
+      'アードベッグ':                _ardbeg(),
+      'ラフロイグ':                  _laphroaig(),
+      'ボウモア':                    _circle('#0A1E28','B',28),
+      'ブルイックラディ':            _rsq('#0A3A48','BC',20,14),
+      'カリラ':                      _oct('#0A1828','CI',20),
+      'タリスカー':                  _talisker(),
+      'ハイランドパーク':            _hex('#200A30','HP',19),
+      'アラン':                      _circle('#3A2210','Ar',20),
+      'オーヘントッシャン':          _auchentoshan(),
+      '山崎':                  _circle('#3A1E05','山',26,_j),
+      '白州':                  _circle('#0E2A0E','白',26,_j),
+      '知多':                  _rsq('#5A4010','知',26,12,_j),
+      '余市':                  _shield('#100C0A','余',24,_j),
+      '宮城峡':               _circle('#1A280E','宮',26,_j),
+      '秩父':                  _hex('#2A1808','秩',24,_j),
+      '長濱':                  _circle('#0E281A','長',26,_j),
+      'バッファロートレース':  _shield('#5A2A08','BT',17),
+      'ワイルドターキー':      _hex('#401808','WT',19),
+      'バーンハイム':          _rsq('#382010','BH',20,6),
+      'ジャックダニエル':      _jackdaniels(),
+      'ブッシュミルズ':        _circle('#0A2010','BM',20),
+      'ミドルトン':            _hex('#122010','MT',19),
+      'ロイヤルオーク':        _shield('#381A08','RO',17),
+      'カバラン':              _circle('#5A2A08','Kv',20),
+    };
+
+    // inject badges
+    document.querySelectorAll('.distillery-card').forEach(card => {
+      const nameEl = card.querySelector('.distillery-name');
+      const name = nameEl.textContent.trim();
+      const svg = distilleryBadges[name];
+      if (!svg) return;
+      const header = card.querySelector('.distillery-header');
+      const innerDiv = header.querySelector(':scope > div');
+      const regionBadge = header.querySelector('.distillery-region-badge');
+      innerDiv.classList.add('distillery-header-text');
+      // move region badge inside name column so it doesn't compete for width
+      if (regionBadge) innerDiv.appendChild(regionBadge);
+      const wrap = document.createElement('div');
+      wrap.className = 'distillery-badge';
+      wrap.innerHTML = svg;
+      header.insertBefore(wrap, innerDiv);
+    });
+
+    // flavor/character tags per distillery
+    const distilleryTags = {
+      'グレンフィディック':   ['🍐 洋ナシ', '🌿 軽やか', '🌍 世界No.1'],
+      'マッカラン':         ['🍫 チョコ', '🍇 ドライフルーツ', '👑 高級'],
+      'グレンリベット':      ['🌸 フローラル', '🍑 フルーティー', '✨ 入門定番'],
+      'バルヴェニー':        ['🍯 蜂蜜', '🌸 花', '🔨 職人気質'],
+      'アベラワー':         ['🍫 チョコ', '🍇 シェリー感', '💥 シェリーボム'],
+      'グレンアーラヒー':    ['🍇 シェリー感', '🔥 リッチ', '🚀 注目株'],
+      'グレンファークラス':   ['🍇 シェリー感', '🔥 リッチ', '🏠 独立家族経営'],
+      'グレンモーレンジィ':   ['🌸 エレガント', '🍊 柑橘', '🪄 多彩なフィニッシュ'],
+      'ダルモア':           ['🍫 チョコ', '🍊 オレンジ', '👑 高級'],
+      'ロッホローモンド':     ['🌿 軽やか', '🌊 クリーン', '🔧 多彩なスタイル'],
+      'ラガヴーリン':        ['🔥 スモーキー', '🍇 シェリー感', '👑 伝説的'],
+      'アードベッグ':        ['🔥 ヘビーピート', '☕ コーヒー', '🎸 カルト的人気'],
+      'ラフロイグ':         ['🔥 強烈スモーク', '💊 ヨード', '👑 王室御用達'],
+      'ボウモア':           ['🔥 スモーキー', '🌸 フローラル', '⚖️ バランス'],
+      'ブルイックラディ':     ['🌿 クリーン', '🔥 超ヘビーピート', '🧪 革新的'],
+      'カリラ':            ['🔥 スモーキー', '🌊 潮風', '🍑 フルーティー'],
+      'タリスカー':         ['🔥 スモーキー', '🌊 潮風', '🌶️ スパイシー'],
+      'ハイランドパーク':     ['🍯 蜂蜜', '🔥 スモーキー', '⚔️ バイキング魂'],
+      'アラン':            ['🍑 フルーティー', '🌸 華やか', '💎 コスパ優秀'],
+      'オーヘントッシャン':   ['🌸 フローラル', '🌿 軽やか', '🔄 3回蒸留'],
+      '山崎':              ['🌺 白檀', '🍯 甘み', '👑 日本No.1'],
+      '白州':              ['🌿 森の香り', '🍃 爽やか', '💨 清涼感'],
+      '知多':              ['🌾 グレーン', '🌿 軽やか', '🏗️ ブレンドの要'],
+      '余市':              ['💪 力強い', '🔥 ピート', '❄️ 北海道'],
+      '宮城峡':            ['🍑 フルーティー', '🌸 柔らか', '🏔️ 峡谷'],
+      '秩父':              ['🌾 フロアモルティング', '💎 希少', '🔥 個性的'],
+      '長濱':              ['🌊 クリーン', '🔧 小規模', '✨ クラフト'],
+      'バッファロートレース':  ['🍦 バニラ', '🍯 蜂蜜', '📜 歴史的'],
+      'ワイルドターキー':     ['💪 力強い', '🌶️ スパイシー', '🌾 高ライ麦'],
+      'バーンハイム':        ['🍦 バニラ', '🍬 スムース', '💰 コスパ優秀'],
+      'ジャックダニエル':     ['🍬 スムース', '🔥 チャコール濾過', '🌍 世界的知名度'],
+      'ブッシュミルズ':       ['🌿 スムース', '🌸 軽やか', '📜 世界最古級'],
+      'ミドルトン':          ['🍑 フルーティー', '🌿 スムース', '🏆 ジェムソン生産地'],
+      'ロイヤルオーク':       ['🍑 フルーティー', '🌿 スムース', '✨ 新星ブランド'],
+      'カバラン':           ['🍑 トロピカル', '🍯 濃密', '🏆 受賞多数'],
+    };
+
+    // inject flavor tags above distillery-desc
+    document.querySelectorAll('.distillery-card').forEach(card => {
+      const name = card.querySelector('.distillery-name').textContent.trim();
+      const tags = distilleryTags[name];
+      if (!tags) return;
+      const tagsEl = document.createElement('div');
+      tagsEl.className = 'distillery-tags';
+      tagsEl.innerHTML = tags.map(t => `<span class="distillery-tag">${t}</span>`).join('');
+      const desc = card.querySelector('.distillery-desc');
+      if (desc) card.insertBefore(tagsEl, desc);
+    });
+
+    // scroll animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -202,8 +704,8 @@
           entry.target.style.transform = 'translateY(0)';
         }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.distillery-card').forEach(el => {
+    }, { threshold: 0.08 });
+    cards.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
