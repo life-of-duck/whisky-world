@@ -1126,3 +1126,70 @@ footer {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+/* ===========================
+   HERO BOTTLE ILLUSTRATIONS
+   =========================== */
+
+.hero-bottles {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  display: flex;
+  align-items: center;       /* 縦方向に中央揃え */
+  gap: 12px;
+  pointer-events: none;
+  /* 上下フェード + 左右フェードを合成 */
+}
+
+.hero-bottles-left {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 16px;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%),
+    linear-gradient(to right,  transparent 0%, rgba(0,0,0,0.4) 15%, black 55%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%),
+    linear-gradient(to right,  transparent 0%, rgba(0,0,0,0.4) 15%, black 55%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.hero-bottles-right {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 16px;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%),
+    linear-gradient(to left,   transparent 0%, rgba(0,0,0,0.4) 15%, black 55%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%),
+    linear-gradient(to left,   transparent 0%, rgba(0,0,0,0.4) 15%, black 55%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.hero-bottle {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+/* 各ボトルの高さ・アニメーションタイミングをずらしてリズムを出す */
+.bottle-1 { height: 220px; animation: bottleFloat 6s   ease-in-out 0s   infinite; }
+.bottle-2 { height: 190px; animation: bottleFloat 7s   ease-in-out 1s   infinite; }
+.bottle-3 { height: 208px; animation: bottleFloat 5.5s ease-in-out 0.5s infinite; }
+.bottle-4 { height: 200px; animation: bottleFloat 6.5s ease-in-out 0.8s infinite; }
+.bottle-5 { height: 230px; animation: bottleFloat 7s   ease-in-out 0.3s infinite; }
+.bottle-6 { height: 195px; animation: bottleFloat 5.8s ease-in-out 1.2s infinite; }
+
+@keyframes bottleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* 画面が狭い場合は非表示 */
+@media (max-width: 1100px) {
+  .hero-bottles { display: none; }
+}
