@@ -230,17 +230,47 @@ function resetDiagnosis() {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
-document.querySelectorAll('.step-card, .region-card, .cask-card, .distillery-card, .brand-card').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+const animTargets = document.querySelectorAll(
+  '.step-card, .region-card, .cask-card, .distillery-card, .brand-card, .overview-card'
+);
+
+animTargets.forEach((el, i) => {
+  // Stagger delay based on position within its parent grid
+  const siblings = Array.from(el.parentElement.children);
+  const idx = siblings.indexOf(el);
+  el.style.transitionDelay = `${idx * 80}ms`;
+  el.classList.add('fade-up');
   observer.observe(el);
+});
+
+// Section headers fade in
+const headerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      headerObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.section-header').forEach(el => {
+  el.classList.add('fade-up');
+  headerObserver.observe(el);
+});
+
+// Highlight current nav link
+const currentPage = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(a => {
+  const href = a.getAttribute('href');
+  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    a.classList.add('nav-active');
+  }
 });
 
 // ===========================
