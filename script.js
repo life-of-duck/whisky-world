@@ -385,6 +385,7 @@ function showDiagResults(answers) {
           <div class="result-divider"></div>
           <p class="diag-reason">${r.reason}</p>
           <div class="result-tags">${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          <a class="diag-brand-link" href="brands.html?brand=${encodeURIComponent(r.name)}">銘柄詳細を見る →</a>
         </div>`).join('')}
     </div>
     <div class="result-retry">

@@ -1538,3 +1538,486 @@ footer {
   background: var(--gold);
   border-radius: 1px;
 }
+
+/* ===========================
+   BRANDS PAGE v2 — SEARCH BOX
+   =========================== */
+
+.filter-row--search {
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brands-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 480px;
+}
+
+.brands-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  font-size: 0.82rem;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.brands-search-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.38rem 2.4rem 0.38rem 2.4rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.82rem;
+  transition: border-color 0.18s, background 0.18s;
+  outline: none;
+  line-height: 1.5;
+}
+
+.brands-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.brands-search-input:focus {
+  border-color: rgba(201, 168, 76, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.brands-search-clear {
+  position: absolute;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  cursor: pointer;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+}
+
+.brands-search-clear:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+}
+
+/* ===========================
+   BRANDS PAGE v2 — FILTER PANEL
+   =========================== */
+
+.brands-filter-panel {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.filter-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.filter-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-top: 0.38rem;
+  min-width: 5.2rem;
+  font-weight: 700;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filter-pill {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.28rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.18s;
+  line-height: 1.5;
+}
+
+.filter-pill:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  color: var(--text-secondary);
+}
+
+.filter-pill.active {
+  background: rgba(201, 168, 76, 0.14);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.filter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.brands-count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.brands-count strong {
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.filter-reset-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.18s;
+}
+
+.filter-reset-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ===========================
+   BRANDS PAGE v2 — CARD GRID
+   =========================== */
+
+.brands-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.brand-card-v2 {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.brand-card-v2:hover {
+  border-color: rgba(201, 168, 76, 0.35);
+  transform: translateY(-2px);
+}
+
+.bcv2-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.55rem;
+}
+
+.bcv2-badge {
+  font-size: 0.64rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: transparent;
+  white-space: nowrap;
+}
+
+.bcv2-region {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: rgba(201, 168, 76, 0.25);
+  color: var(--gold);
+}
+
+.bcv2-type { background: rgba(255, 255, 255, 0.04); }
+
+.bcv2-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.bcv2-copy {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.65rem;
+  font-style: italic;
+}
+
+.bcv2-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.bcv2-flavor,
+.bcv2-price,
+.bcv2-cask { background: rgba(255, 255, 255, 0.04); }
+
+.lv-bg {
+  background: rgba(80, 200, 120, 0.1);
+  border-color: rgba(80, 200, 120, 0.3);
+  color: #6ec88a;
+}
+
+.lv-ca {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: rgba(201, 168, 76, 0.3);
+  color: var(--gold);
+}
+
+.lv-ex {
+  background: rgba(220, 100, 100, 0.1);
+  border-color: rgba(220, 100, 100, 0.3);
+  color: #e88080;
+}
+
+.brands-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1100px) {
+  .brands-grid-v2 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .brands-filter-panel { padding: 1.2rem; }
+  .filter-row { flex-direction: column; gap: 0.5rem; }
+  .filter-label { min-width: unset; padding-top: 0; }
+  .brands-grid-v2 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .filter-actions { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .brands-grid-v2 { grid-template-columns: 1fr; }
+}
+
+/* ===========================
+   DIAGNOSIS — BRAND LINK BUTTON
+   =========================== */
+
+.diag-brand-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.diag-brand-link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ===========================
+   BRANDS — CLICKABLE CARD HINT
+   =========================== */
+
+.brand-card-v2--clickable {
+  cursor: pointer;
+}
+
+.bcv2-detail-hint {
+  margin-top: 0.7rem;
+  font-size: 0.7rem;
+  color: var(--gold-dark);
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.brand-card-v2--clickable:hover .bcv2-detail-hint {
+  opacity: 1;
+  color: var(--gold);
+}
+
+/* ===========================
+   BRAND DETAIL MODAL
+   =========================== */
+
+.brand-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  backdrop-filter: blur(4px);
+}
+
+.brand-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.brand-modal {
+  background: var(--bg-dark);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 20px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.25s;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.brand-modal-overlay.open .brand-modal {
+  transform: translateY(0);
+}
+
+.brand-modal-close {
+  position: sticky;
+  top: 1rem;
+  float: right;
+  margin: 1rem 1rem 0 0;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  z-index: 10;
+}
+
+.brand-modal-close:hover {
+  background: rgba(255,255,255,0.14);
+  color: var(--text-primary);
+}
+
+.brand-modal-body {
+  padding: 0 2rem 2rem;
+}
+
+/* Modal Header */
+.bmd-header {
+  padding-top: 0.5rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.6rem;
+}
+
+.bmd-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.bmd-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.bmd-copy {
+  font-size: 0.82rem;
+  color: var(--gold-dark);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Modal Sections */
+.bmd-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.bmd-section {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+}
+
+.bmd-section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.bmd-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.bmd-list li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.bmd-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--gold-dark);
+  font-size: 0.7rem;
+  top: 0.12rem;
+}
+
+@media (max-width: 768px) {
+  .brand-modal-overlay { padding: 1rem; }
+  .brand-modal-body { padding: 0 1.2rem 1.5rem; }
+  .bmd-name { font-size: 1.2rem; }
+}

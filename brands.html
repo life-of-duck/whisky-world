@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>世界のウイスキー銘柄 — WHISKY WORLD</title>
-  <meta name="description" content="産地別に厳選した16銘柄を紹介。スコッチ・バーボン・ジャパニーズ…それぞれの個性と飲み方のヒントをわかりやすく解説。">
+  <title>知っておきたい世界の銘柄 — WHISKY WORLD</title>
+  <meta name="description" content="世界100銘柄を産地・フレーバー・価格帯・経験レベルで絞り込める銘柄ガイド。スコッチ・バーボン・ジャパニーズ・アイリッシュを網羅。">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="世界のウイスキー銘柄 — WHISKY WORLD">
-  <meta property="og:description" content="産地別に厳選した16銘柄を紹介。スコッチ・バーボン・ジャパニーズ…それぞれの個性と飲み方のヒントをわかりやすく解説。">
+  <meta property="og:title" content="知っておきたい世界の銘柄 — WHISKY WORLD">
+  <meta property="og:description" content="世界100銘柄を産地・フレーバー・価格帯・経験レベルで絞り込める銘柄ガイド。">
   <meta property="og:url" content="https://life-of-duck.github.io/whisky-world/brands.html">
   <meta property="og:site_name" content="WHISKY WORLD">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,7 @@
 
   <nav>
     <a href="index.html" class="nav-logo"><span>🥃</span> WHISKY WORLD</a>
-        <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks">
       <li><a href="making.html">作られ方</a></li>
       <li><a href="types.html">種類</a></li>
       <li><a href="world.html">世界の産地</a></li>
@@ -30,9 +30,7 @@
       <li><a href="brands.html">銘柄</a></li>
       <li><a href="index.html#diagnosis" class="nav-diagnosis">ウイスキー診断</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </nav>
 
   <div class="detail-hero">
@@ -42,8 +40,8 @@
       <h1 class="detail-title">知っておきたい<br>世界の銘柄</h1>
       <div class="divider"></div>
       <p class="detail-desc">
-        産地別に代表的な銘柄を厳選。<br>
-        気になるものから試してみよう。
+        世界100銘柄を産地・フレーバー・価格帯で絞り込み。<br>
+        今夜の一本を見つけよう。
       </p>
     </div>
   </div>
@@ -51,210 +49,90 @@
   <div class="detail-content">
     <div class="detail-content-inner">
 
-      <div class="brands-filter">
-        <button class="filter-btn active" data-filter="all">すべて</button>
-        <button class="filter-btn" data-filter="scotland">スコットランド</button>
-        <button class="filter-btn" data-filter="japan">日本</button>
-        <button class="filter-btn" data-filter="usa">アメリカ</button>
-        <button class="filter-btn" data-filter="ireland">アイルランド</button>
-        <button class="filter-btn" data-filter="other">その他</button>
+      <!-- FILTER PANEL -->
+      <div class="brands-filter-panel" id="filterPanel">
+
+        <!-- SEARCH BOX (inside panel) -->
+        <div class="filter-row filter-row--search">
+          <span class="filter-label">検索</span>
+          <div class="brands-search-wrap">
+            <span class="brands-search-icon">🔍</span>
+            <input type="text" id="brandsSearch" class="brands-search-input" placeholder="銘柄名で検索…　例：マッカラン、12年">
+            <button class="brands-search-clear" id="brandsSearchClear" aria-label="クリア">✕</button>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-label">産地</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-dim="region" data-val="all">すべて</button>
+            <button class="filter-pill" data-dim="region" data-val="scotch">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコッチ</button>
+            <button class="filter-pill" data-dim="region" data-val="japanese">🇯🇵 ジャパニーズ</button>
+            <button class="filter-pill" data-dim="region" data-val="american">🇺🇸 アメリカン</button>
+            <button class="filter-pill" data-dim="region" data-val="irish">🍀 アイリッシュ</button>
+            <button class="filter-pill" data-dim="region" data-val="other">🌏 その他</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">フレーバー</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-dim="flavor" data-val="all">すべて</button>
+            <button class="filter-pill" data-dim="flavor" data-val="sweet">🍯 甘い・バニラ系</button>
+            <button class="filter-pill" data-dim="flavor" data-val="smoky">🔥 スモーキー</button>
+            <button class="filter-pill" data-dim="flavor" data-val="fruity">🍑 フルーティー</button>
+            <button class="filter-pill" data-dim="flavor" data-val="complex">🌰 複雑・スパイス系</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">経験レベル</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-dim="level" data-val="all">すべて</button>
+            <button class="filter-pill" data-dim="level" data-val="beginner">🌱 初心者向け</button>
+            <button class="filter-pill" data-dim="level" data-val="casual">🥃 中級者向け</button>
+            <button class="filter-pill" data-dim="level" data-val="experienced">🎓 上級者向け</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">タイプ</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-dim="type" data-val="all">すべて</button>
+            <button class="filter-pill" data-dim="type" data-val="sm">シングルモルト</button>
+            <button class="filter-pill" data-dim="type" data-val="bl">ブレンデッド</button>
+            <button class="filter-pill" data-dim="type" data-val="bo">バーボン</button>
+            <button class="filter-pill" data-dim="type" data-val="gr">グレーン</button>
+            <button class="filter-pill" data-dim="type" data-val="ry">ライ</button>
+            <button class="filter-pill" data-dim="type" data-val="ps">ポットスチル</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">カスク</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-dim="cask" data-val="all">すべて</button>
+            <button class="filter-pill" data-dim="cask" data-val="sh">シェリー樽</button>
+            <button class="filter-pill" data-dim="cask" data-val="bu">バーボン樽</button>
+            <button class="filter-pill" data-dim="cask" data-val="wi">ワイン樽</button>
+            <button class="filter-pill" data-dim="cask" data-val="mi">ミズナラ樽</button>
+            <button class="filter-pill" data-dim="cask" data-val="vi">バージンオーク</button>
+            <button class="filter-pill" data-dim="cask" data-val="mx">複数樽</button>
+          </div>
+        </div>
+        <div class="filter-actions">
+          <p class="brands-count"><strong id="brandCount">100</strong> 銘柄を表示中</p>
+          <button class="filter-reset-btn" id="filterReset">✕ フィルターをリセット</button>
+        </div>
       </div>
 
-      <div class="brands-grid">
+      <!-- BRANDS GRID -->
+      <div class="brands-grid-v2" id="brandsGrid"></div>
 
-        <div class="brand-card" data-region="scotland">
-          <div class="brand-header">
-            <span class="brand-name">グレンリベット 12年</span>
-            <span class="brand-age">12年熟成</span>
-          </div>
-          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / スペイサイド</p>
-          <p class="brand-desc">世界で最も売れているシングルモルトの一つ。蜂蜜・洋ナシ・花の香りが軽やかに広がる。ウイスキー初心者への贈り物に最適な一本。</p>
-          <div class="brand-profile">
-            <span class="tag">🍯 蜂蜜</span><span class="tag">🌸 花</span><span class="tag">入門向け</span>
-          </div>
-        </div>
+    </div>
+  </div>
 
-        <div class="brand-card" data-region="scotland">
-          <div class="brand-header">
-            <span class="brand-name">マッカラン 12年 シェリーオーク</span>
-            <span class="brand-age">12年熟成</span>
-          </div>
-          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / スペイサイド</p>
-          <p class="brand-desc">シェリー樽100%の贅沢なリッチさ。ドライフルーツ・チョコ・スパイスの複雑な風味。「ウイスキーのロールスロイス」の入門版。</p>
-          <div class="brand-profile">
-            <span class="tag">🍫 チョコ</span><span class="tag">🍇 シェリー</span><span class="tag">リッチ</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="scotland">
-          <div class="brand-header">
-            <span class="brand-name">ラガヴーリン 16年</span>
-            <span class="brand-age">16年熟成</span>
-          </div>
-          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / アイラ</p>
-          <p class="brand-desc">アイラウイスキーの王様。重厚なピートスモーク、潮の香り、そしてシェリーの甘み。これを飲むためにウイスキーを始める人が世界中にいる。</p>
-          <div class="brand-profile">
-            <span class="tag">💨 ヘビーピート</span><span class="tag">🌊 潮</span><span class="tag">究極</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="scotland">
-          <div class="brand-header">
-            <span class="brand-name">タリスカー 10年</span>
-            <span class="brand-age">10年熟成</span>
-          </div>
-          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / アイランズ</p>
-          <p class="brand-desc">スカイ島の海風が育む個性派。コショウのようなスパイシーさと潮のしょっぱさ、フルーツの甘さが共存。飲むたびに「これだ」と思わせる独自の世界観。</p>
-          <div class="brand-profile">
-            <span class="tag">🌶️ ペッパー</span><span class="tag">🌊 潮</span><span class="tag">個性的</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="scotland">
-          <div class="brand-header">
-            <span class="brand-name">グレンモーレンジィ 10年</span>
-            <span class="brand-age">10年熟成</span>
-          </div>
-          <p class="brand-origin">🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコットランド / ハイランド</p>
-          <p class="brand-desc">バニラとオレンジピールが優しく広がる上品な一本。「女性が選ぶシングルモルトNo.1」としても人気。エレガントな香りを存分に楽しみたい夜に。</p>
-          <div class="brand-profile">
-            <span class="tag">🍊 オレンジ</span><span class="tag">🍦 バニラ</span><span class="tag">エレガント</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="japan">
-          <div class="brand-header">
-            <span class="brand-name">山崎 12年</span>
-            <span class="brand-age">12年熟成</span>
-          </div>
-          <p class="brand-origin">🇯🇵 日本 / サントリー</p>
-          <p class="brand-desc">日本ウイスキーを世界に知らしめた傑作。ミズナラ樽由来のオリエンタルな香りと、繊細なフルーツの甘み。入手困難になりつつある日本の宝。</p>
-          <div class="brand-profile">
-            <span class="tag">🌺 ミズナラ</span><span class="tag">🍑 桃</span><span class="tag">日本の誇り</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="japan">
-          <div class="brand-header">
-            <span class="brand-name">響 Japanese Harmony</span>
-            <span class="brand-age">NAS</span>
-          </div>
-          <p class="brand-origin">🇯🇵 日本 / サントリー</p>
-          <p class="brand-desc">山崎・白州・知多の3つの蒸留所の原酒を24種類以上ブレンド。「日本の四季の調和」をコンセプトに、複雑かつ繊細な世界観を表現した最高峰ブレンデッド。</p>
-          <div class="brand-profile">
-            <span class="tag">🌸 繊細</span><span class="tag">🎵 調和</span><span class="tag">プレミアム</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="japan">
-          <div class="brand-header">
-            <span class="brand-name">ニッカ フロム ザ バレル</span>
-            <span class="brand-age">NAS</span>
-          </div>
-          <p class="brand-origin">🇯🇵 日本 / ニッカ</p>
-          <p class="brand-desc">小さなボトルに詰まった圧倒的なコスパ。51.4度のカスクストレングスで、濃密なフルーツとバニラが爆発する。世界が選ぶ「最高コスパ」ウイスキー。</p>
-          <div class="brand-profile">
-            <span class="tag">💪 力強い</span><span class="tag">🏆 コスパ最高</span><span class="tag">濃密</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="japan">
-          <div class="brand-header">
-            <span class="brand-name">白州 12年</span>
-            <span class="brand-age">12年熟成</span>
-          </div>
-          <p class="brand-origin">🇯🇵 日本 / サントリー</p>
-          <p class="brand-desc">南アルプスの森の蒸留所で生まれた「森香るウイスキー」。清々しいグリーンのフレッシュさと軽いスモークが共存する、他に類を見ない個性的な一本。</p>
-          <div class="brand-profile">
-            <span class="tag">🌿 フレッシュ</span><span class="tag">🌲 森</span><span class="tag">軽やか</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="usa">
-          <div class="brand-header">
-            <span class="brand-name">メーカーズマーク</span>
-            <span class="brand-age">NAS</span>
-          </div>
-          <p class="brand-origin">🇺🇸 アメリカ / ケンタッキー</p>
-          <p class="brand-desc">赤いワックスシールでおなじみのバーボン。小麦を使ったマッシュビルで甘くまろやか。バーボン入門として世界中で愛される。ロックでもハイボールでも映える一本。</p>
-          <div class="brand-profile">
-            <span class="tag">🍮 キャラメル</span><span class="tag">🍦 バニラ</span><span class="tag">入門バーボン</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="usa">
-          <div class="brand-header">
-            <span class="brand-name">ブッカーズ</span>
-            <span class="brand-age">6〜8年熟成</span>
-          </div>
-          <p class="brand-origin">🇺🇸 アメリカ / ケンタッキー</p>
-          <p class="brand-desc">加水なし・無ろ過のカスクストレングスバーボン。60度以上の圧倒的な濃さと複雑さ。本物のバーボンの力強さを体感したい人向けの、マニア憧れの銘柄。</p>
-          <div class="brand-profile">
-            <span class="tag">🔥 強烈</span><span class="tag">🥃 カスクストレングス</span><span class="tag">マニア向け</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="usa">
-          <div class="brand-header">
-            <span class="brand-name">ジャックダニエル ブラック</span>
-            <span class="brand-age">NAS</span>
-          </div>
-          <p class="brand-origin">🇺🇸 アメリカ / テネシー</p>
-          <p class="brand-desc">アメリカで最も有名なウイスキーのひとつ。テネシー産のチャコールで濾過する「チャコールメローイング」製法が独特の甘くスムースな味わいを生む。コーラ割りは世界共通の楽しみ方。</p>
-          <div class="brand-profile">
-            <span class="tag">🍬 スムース</span><span class="tag">🌍 世界No.1</span><span class="tag">テネシー</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="ireland">
-          <div class="brand-header">
-            <span class="brand-name">ジェムソン</span>
-            <span class="brand-age">NAS</span>
-          </div>
-          <p class="brand-origin">🇮🇪 アイルランド</p>
-          <p class="brand-desc">世界で最も売れているアイリッシュウイスキー。3回蒸留のスムースさとほのかなスパイシーさが特徴。バーのど定番で、飲んだことがない人は一度は試してほしい一本。</p>
-          <div class="brand-profile">
-            <span class="tag">🍀 スムース</span><span class="tag">🌶️ 軽スパイシー</span><span class="tag">定番</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="ireland">
-          <div class="brand-header">
-            <span class="brand-name">レッドブレスト 12年</span>
-            <span class="brand-age">12年熟成</span>
-          </div>
-          <p class="brand-origin">🇮🇪 アイルランド</p>
-          <p class="brand-desc">アイリッシュウイスキーの最高峰の一つ。バーボン樽とシェリー樽の複雑さが絡み合い、フルーツ・スパイス・クリームの豊かな風味。アイリッシュの奥深さを知るための一本。</p>
-          <div class="brand-profile">
-            <span class="tag">🍒 フルーツ</span><span class="tag">🍷 シェリー</span><span class="tag">複雑</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="other">
-          <div class="brand-header">
-            <span class="brand-name">カバラン ソリスト バーボン</span>
-            <span class="brand-age">NAS</span>
-          </div>
-          <p class="brand-origin">🇹🇼 台湾</p>
-          <p class="brand-desc">台湾の奇跡。創業10年未満で世界のトップに躍り出た新星。熱帯気候による急速熟成が生む、驚くほど濃密なフルーツとバニラ。固定観念を壊す一本。</p>
-          <div class="brand-profile">
-            <span class="tag">🍍 トロピカル</span><span class="tag">⚡ 衝撃</span><span class="tag">台湾</span>
-          </div>
-        </div>
-
-        <div class="brand-card" data-region="other">
-          <div class="brand-header">
-            <span class="brand-name">アムルット フュージョン</span>
-            <span class="brand-age">NAS</span>
-          </div>
-          <p class="brand-origin">🇮🇳 インド</p>
-          <p class="brand-desc">インド産大麦とスコットランド産ピートモルトを掛け合わせた革新作。高地での急速熟成による濃縮感と、スモーキーさの融合が衝撃的。ウイスキー界の常識を変えた存在。</p>
-          <div class="brand-profile">
-            <span class="tag">🌶️ スパイシー</span><span class="tag">🔥 スモーク</span><span class="tag">インド</span>
-          </div>
-        </div>
-
-      </div>
+  <!-- BRAND DETAIL MODAL -->
+  <div class="brand-modal-overlay" id="brandModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="brand-modal">
+      <button class="brand-modal-close" id="brandModalClose" aria-label="閉じる">✕</button>
+      <div class="brand-modal-body" id="brandModalBody"></div>
     </div>
   </div>
 
@@ -274,37 +152,1005 @@
   </footer>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    // NAV
+    document.getElementById('hamburger').addEventListener('click', () =>
+      document.getElementById('navLinks').classList.toggle('open'));
 
-    // Filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.brand-card').forEach(card => {
-          card.setAttribute('data-hidden', filter !== 'all' && card.dataset.region !== filter ? 'true' : 'false');
-        });
-      });
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+    // ===========================
+    // BRAND DATA (100銘柄)
+    // region: scotch/japanese/american/irish/other
+    // type: sm=シングルモルト, bl=ブレンデッド, bo=バーボン, gr=グレーン, ry=ライ, ps=ポットスチル
+    // cask: sh=シェリー, bu=バーボン, wi=ワイン/ラム, mi=ミズナラ, vi=バージン, mx=複数
+    // flavor: sweet/smoky/fruity/complex
+    // level: beginner/casual/experienced
+    // price: budget(<3000)/mid(3000-8000)/premium(8000+)
+    // ===========================
+    const brands = [
+      // ── SCOTLAND / シングルモルト / スペイサイド ──
+      { name:'グレンリベット 12年',          region:'scotch',   type:'sm', cask:'bu', flavor:'fruity',  level:'beginner',    price:'mid',     copy:'スペイサイドの教科書。蜂蜜と花の香りが優しく迎えてくれる、初めての一本。',
+        detail: {
+          summary: ['1824年創業、スペイサイドを代表する歴史ある蒸留所。', 'バーボン樽で12年熟成。甘くフルーティーでクセがなく、万人に愛される。', 'スペイサイドスタイルの"教科書"として世界中で親しまれている。'],
+          appeal: ['蜂蜜・洋ナシ・バニラの香りが穏やかに広がる。', 'ピートなし・クセなしで、ウイスキー初心者でも飲みやすい。', '場所も料理も選ばないオールラウンダー。贈り物にも最適。'],
+          straight: ['シトラスと洋ナシの爽やかな香りが鼻を包む。', '口に含むと蜂蜜の甘みが広がり、バニラの余韻がしっかり続く。', 'アルコールの刺激が穏やかで、スコッチ入門に最適な飲み口。'],
+          rocks: ['氷で甘みが引き締まり、よりすっきりした飲み口に。', '洋ナシ・リンゴのフルーティーさが一層際立つ。', '氷が溶けるにつれ味が変化。ゆっくり楽しむのがおすすめ。'],
+          highball: ['炭酸で割るとフルーツ感が弾けて爽快感が増す。', '唐揚げ・天ぷら・魚料理など食事全般との相性が抜群。', 'ハイボール入門の一本として自信を持っておすすめできる。']
         }
+      },
+      { name:'グレンリベット 15年 フレンチオーク', region:'scotch', type:'sm', cask:'wi', flavor:'fruity',  level:'casual',      price:'mid',     copy:'フレンチオーク由来の柔らかな甘みとスパイスの余韻。グレンリベットの進化形。' },
+      { name:'マッカラン 12年 ダブルカスク',  region:'scotch',   type:'sm', cask:'mx', flavor:'sweet',   level:'casual',      price:'mid',     copy:'シェリーの甘みとバーボンの軽さが絶妙に融合した、マッカランの入り口。' },
+      { name:'マッカラン 12年 シェリーオーク', region:'scotch',  type:'sm', cask:'sh', flavor:'sweet',   level:'casual',      price:'mid',     copy:'ウイスキー界のロールスロイス。一口でわかる別格の贅沢。' },
+      { name:'マッカラン 18年 シェリーオーク', region:'scotch',  type:'sm', cask:'sh', flavor:'complex', level:'experienced', price:'premium', copy:'18年という時間が刻んだ、深淵なるドライフルーツとスパイスの世界。' },
+      { name:'グレンフィディック 12年',        region:'scotch',  type:'sm', cask:'bu', flavor:'fruity',  level:'beginner',    price:'mid',     copy:'世界で最も売れるシングルモルト。洋ナシの爽やかさが、ウイスキーの扉を開く。' },
+      { name:'グレンフィディック 15年 ソレラ', region:'scotch',  type:'sm', cask:'mx', flavor:'sweet',   level:'casual',      price:'mid',     copy:'3種の樽のソレラ熟成が生む、驚くほど滑らかな甘み。' },
+      { name:'グレンフィディック 18年',        region:'scotch',  type:'sm', cask:'mx', flavor:'complex', level:'experienced', price:'premium', copy:'オーク・シェリー・バーボン、3種の樽が18年かけて紡ぐ複雑な傑作。' },
+      { name:'バルヴェニー 12年 ダブルウッド', region:'scotch',  type:'sm', cask:'mx', flavor:'sweet',   level:'casual',      price:'mid',     copy:'バーボン樽からシェリー樽へ。二段熟成が生む蜂蜜と温かいスパイスの調和。' },
+      { name:'バルヴェニー 14年 カリビアンカスク', region:'scotch', type:'sm', cask:'wi', flavor:'sweet', level:'casual',     price:'mid',     copy:'ラム樽由来のトロピカルな甘みが広がる。甘党を虜にする危険な一本。' },
+      { name:'アベラワー 12年',               region:'scotch',  type:'sm', cask:'mx', flavor:'sweet',   level:'casual',      price:'mid',     copy:'シェリーとバーボン樽の黄金比。コスパ最高のスペイサイドの名脇役。' },
+      { name:'グレンアーラヒー 12年',         region:'scotch',  type:'sm', cask:'sh', flavor:'complex', level:'casual',      price:'mid',     copy:'世界が認めたシェリーの使い手。濃密でありながら品のある贅沢さ。' },
+      { name:'グレンファークラス 12年',        region:'scotch',  type:'sm', cask:'sh', flavor:'sweet',   level:'casual',      price:'mid',     copy:'6代続く家族の矜持。シェリー100%が生む、正統派の甘みと深み。' },
+      { name:'クラガンモア 12年',             region:'scotch',  type:'sm', cask:'mx', flavor:'complex', level:'casual',      price:'mid',     copy:'クラシックスモールバーに相応しい、繊細で複雑なスペイサイドの隠れた逸品。' },
+      { name:'ベンロマック 10年',             region:'scotch',  type:'sm', cask:'bu', flavor:'smoky',   level:'casual',      price:'mid',     copy:'スペイサイドには珍しい軽いピート香。果実と煙が踊る、唯一無二の個性。' },
+      // ── SCOTLAND / シングルモルト / ハイランド ──
+      { name:'グレンモーレンジィ 10年',       region:'scotch',  type:'sm', cask:'bu', flavor:'fruity',  level:'beginner',    price:'mid',     copy:'スコットランド最長のポットスチルが生む、バニラとオレンジのエレガントな一本。' },
+      { name:'グレンモーレンジィ ラサンタ',   region:'scotch',  type:'sm', cask:'sh', flavor:'sweet',   level:'casual',      price:'mid',     copy:'シェリー樽フィニッシュが加わった進化形。チョコとフルーツの夢のような甘み。' },
+      { name:'ダルモア 12年',                 region:'scotch',  type:'sm', cask:'sh', flavor:'sweet',   level:'casual',      price:'mid',     copy:'鹿のエンブレムが象徴する貫禄。オレンジとチョコが絡む、格調高い一本。' },
+      { name:'ロッホローモンド オリジナル',   region:'scotch',  type:'sm', cask:'bu', flavor:'fruity',  level:'beginner',    price:'budget',  copy:'飲みやすくコスパも優秀。スコッチ入門の懐の深いお手頃な一本。' },
+      { name:'クラインリシュ 14年',           region:'scotch',  type:'sm', cask:'bu', flavor:'fruity',  level:'experienced', price:'mid',     copy:'ジョニーウォーカーのキーモルト。蜜蝋と南国フルーツが織りなす秘蔵の個性。' },
+      { name:'アバフェルディ 12年',           region:'scotch',  type:'sm', cask:'bu', flavor:'sweet',   level:'casual',      price:'mid',     copy:'デュワーズのハートモルト。蜂蜜と白い花の穏やかな甘みが心を和ませる。' },
+      { name:'グレンドロナック 12年',         region:'scotch',  type:'sm', cask:'sh', flavor:'complex', level:'casual',      price:'mid',     copy:'シェリー樽熟成の王道。チョコ・ドライフルーツ・スパイスが三位一体の傑作。' },
+      { name:'ダルウィニー 15年',             region:'scotch',  type:'sm', cask:'bu', flavor:'sweet',   level:'casual',      price:'mid',     copy:'スコットランド最高峰の蒸留所が生む、蜂蜜とヘザーの高地の風。' },
+      // ── SCOTLAND / シングルモルト / アイラ ──
+      { name:'ラガヴーリン 16年',             region:'scotch',  type:'sm', cask:'sh', flavor:'smoky',   level:'experienced', price:'premium', copy:'アイラの聖地が生む伝説。強烈なピートとシェリーの深みは、一度飲んだら忘れられない。' },
+      { name:'アードベッグ 10年',             region:'scotch',  type:'sm', cask:'bu', flavor:'smoky',   level:'casual',      price:'mid',     copy:'スモークの奥に潜むチョコとコーヒー。世界中のファンを熱狂させる怪物的な個性。' },
+      { name:'アードベッグ ウーガダール',     region:'scotch',  type:'sm', cask:'mx', flavor:'smoky',   level:'experienced', price:'mid',     copy:'シェリーの甘みがヘビーピートを包む。アードベッグ中で最も複雑な傑作。' },
+      { name:'ラフロイグ 10年',               region:'scotch',  type:'sm', cask:'bu', flavor:'smoky',   level:'casual',      price:'mid',     copy:'王室御用達のアイラ王者。ヨードと潮の洗礼を受けてこそ、本物のウイスキー好き。' },
+      { name:'ラフロイグ クォーターカスク',   region:'scotch',  type:'sm', cask:'bu', flavor:'smoky',   level:'experienced', price:'mid',     copy:'小さな樽で加速した熟成。通常版より濃密で甘く、スモークがより力強い上位版。' },
+      { name:'ボウモア 12年',                 region:'scotch',  type:'sm', cask:'bu', flavor:'smoky',   level:'beginner',    price:'mid',     copy:'スモーキーとフルーティーの絶妙な橋渡し。アイラ入門の定番、海と花の一本。' },
+      { name:'ブルイックラディ クラシックラディ', region:'scotch', type:'sm', cask:'bu', flavor:'fruity', level:'beginner',  price:'mid',     copy:'アイラなのにノンピート。クリーンでテロワールを大切にした、革命的な一杯。' },
+      { name:'カリラ 12年',                   region:'scotch',  type:'sm', cask:'bu', flavor:'smoky',   level:'casual',      price:'mid',     copy:'ジュラ海峡を望む絶景の蒸留所から。スモークと果実が絡む、隠れた実力派。' },
+      { name:'ブナハーブン 12年',             region:'scotch',  type:'sm', cask:'sh', flavor:'sweet',   level:'casual',      price:'mid',     copy:'アイラにしてノンピートのアウトサイダー。ナッツとドライフルーツの穏やかな甘み。' },
+      // ── SCOTLAND / シングルモルト / アイランズ等 ──
+      { name:'タリスカー 10年',               region:'scotch',  type:'sm', cask:'bu', flavor:'smoky',   level:'casual',      price:'mid',     copy:'スカイ島の荒波と火山が宿る一本。コショウとスモークが炸裂する、忘れられない個性。' },
+      { name:'ハイランドパーク 12年',         region:'scotch',  type:'sm', cask:'sh', flavor:'complex', level:'casual',      price:'mid',     copy:'バイキングの末裔が生む、蜂蜜とスモークの奇跡のバランス。北の大地の傑作。' },
+      { name:'アラン 10年',                   region:'scotch',  type:'sm', cask:'bu', flavor:'fruity',  level:'beginner',    price:'mid',     copy:'アラン島の若き蒸留所が生む果実感あふれる逸品。コスパ◎、入門から上級者まで。' },
+      { name:'オーヘントッシャン アメリカンオーク', region:'scotch', type:'sm', cask:'bu', flavor:'fruity', level:'beginner', price:'mid',    copy:'3回蒸留の軽やかさが光る、スコッチ界で最も飲みやすい一本。ウイスキー苦手な方にも。' },
+      { name:'グレンキンチー 12年',           region:'scotch',  type:'sm', cask:'bu', flavor:'fruity',  level:'beginner',    price:'mid',     copy:'エジンバラのモルト。草のような爽やかさと、甘くクリーミーなローランドの個性。' },
+      { name:'スプリングバンク 10年',         region:'scotch',  type:'sm', cask:'mx', flavor:'complex', level:'experienced', price:'mid',     copy:'キャンベルタウンの生き残り。塩・フルーツ・スモークが三つ巴の唯一無二の個性。' },
+      { name:'グレングラント 12年',           region:'scotch',  type:'sm', cask:'bu', flavor:'fruity',  level:'beginner',    price:'mid',     copy:'イタリアで最も愛されるスコッチ。クリーンなフルーツと穀物感が心地よい、軽やかな一本。' },
+      { name:'ベン・ネヴィス 10年',           region:'scotch',  type:'sm', cask:'mx', flavor:'complex', level:'casual',      price:'mid',     copy:'英国最高峰の山麓から。ウッディでリッチ、力強いハイランドの個性。' },
+      // ── SCOTLAND / ブレンデッド ──
+      { name:'ジョニーウォーカー ブラックラベル 12年', region:'scotch', type:'bl', cask:'mx', flavor:'complex', level:'casual',    price:'budget',  copy:'世界で最も売れるスコッチ。どんな飲み方にも応える、万能選手の横綱。' },
+      { name:'ジョニーウォーカー ゴールドリザーブ',  region:'scotch',  type:'bl', cask:'mx', flavor:'sweet',   level:'experienced', price:'mid',     copy:'クラインリシュ主体の黄金のブレンド。スムースな甘みと洗練された余韻が美しい。' },
+      { name:'ジョニーウォーカー ブルーラベル',     region:'scotch',  type:'bl', cask:'mx', flavor:'complex', level:'experienced', price:'premium', copy:'ブレンデッドの頂点。稀少原酒のみで組まれた、特別な夜のための究極の一杯。' },
+      { name:'シーバスリーガル 12年',         region:'scotch',  type:'bl', cask:'mx', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'世界が認めたリッチなブレンデッド。フルーティーで甘く、贈り物にも最適な定番。' },
+      { name:'シーバスリーガル 18年',         region:'scotch',  type:'bl', cask:'sh', flavor:'complex', level:'experienced', price:'mid',     copy:'18年熟成が生む果実とスパイスの複雑さ。シーバスの真骨頂、格上の贈り物に。' },
+      { name:'バランタイン 17年',             region:'scotch',  type:'bl', cask:'mx', flavor:'complex', level:'experienced', price:'mid',     copy:'「あなたを愛す」と謳われるブレンドの極み。シルクのような滑らかさと奥深い余韻。' },
+      { name:'デュワーズ 15年',               region:'scotch',  type:'bl', cask:'mx', flavor:'sweet',   level:'casual',      price:'mid',     copy:'ダブルエイジドの先駆け。スムースなハイボールが世界中のバーで愛される理由がある。' },
+      { name:'グランツ トリプルウッド',       region:'scotch',  type:'bl', cask:'mx', flavor:'fruity',  level:'beginner',    price:'budget',  copy:'3種の樽で仕上げた、優しく飲みやすいブレンデッド。コスパ抜群の毎日の一杯。' },
+      { name:'ロイヤルサルート 21年',         region:'scotch',  type:'bl', cask:'mx', flavor:'complex', level:'experienced', price:'premium', copy:'エリザベス女王の戴冠式に捧げた21年熟成の至宝。品格あるブレンデッドの頂点。' },
+      { name:'グレンファークラス 105',        region:'scotch',  type:'sm', cask:'sh', flavor:'complex', level:'experienced', price:'mid',     copy:'60度超のカスクストレングスでシェリー樽の本質を剥き出しに。覚悟ある一杯。' },
+      // ── JAPAN ──
+      { name:'山崎 12年',                     region:'japanese', type:'sm', cask:'mx', flavor:'fruity',  level:'experienced', price:'premium', copy:'日本ウイスキーの最高傑作。ミズナラ樽のオリエンタルな香りが世界を魅了した一本。' },
+      { name:'山崎 18年',                     region:'japanese', type:'sm', cask:'mi', flavor:'complex', level:'experienced', price:'premium', copy:'世界最高峰の評価を受けた日本の至宝。入手困難を乗り越えて出会う価値がある。' },
+      { name:'白州 12年',                     region:'japanese', type:'sm', cask:'bu', flavor:'fruity',  level:'casual',      price:'premium', copy:'南アルプスの緑が宿った「森の蒸留所」の傑作。ハイボールにすれば清涼感が爆発する。' },
+      { name:'響 Japanese Harmony',            region:'japanese', type:'bl', cask:'mi', flavor:'fruity',  level:'casual',      price:'mid',     copy:'日本の四季と職人魂が凝縮したブレンデッドの傑作。和の美学をウイスキーで体感する。' },
+      { name:'響 17年',                       region:'japanese', type:'bl', cask:'mi', flavor:'complex', level:'experienced', price:'premium', copy:'17蒸留所の原酒が織りなす究極のハーモニー。日本ブレンデッドウイスキーの最高峰。' },
+      { name:'ニッカ フロム ザ バレル',       region:'japanese', type:'bl', cask:'mx', flavor:'complex', level:'casual',      price:'budget',  copy:'51度の力強さを小さなボトルに凝縮。世界が認める驚異のコスパ、これは国宝級。' },
+      { name:'余市 シングルモルト',           region:'japanese', type:'sm', cask:'bu', flavor:'smoky',   level:'experienced', price:'mid',     copy:'石炭直火蒸留の骨太な個性。北海道の潮風と竹鶴政孝の魂が宿る、力強い傑作。' },
+      { name:'宮城峡 シングルモルト',         region:'japanese', type:'sm', cask:'sh', flavor:'fruity',  level:'casual',      price:'mid',     copy:'余市とは対照的な、峡谷の恵みが育む繊細で華やかなフルーティーさ。' },
+      { name:'知多',                           region:'japanese', type:'gr', cask:'bu', flavor:'sweet',   level:'beginner',    price:'mid',     copy:'日本のグレーンウイスキーの傑作。バニラと蜂蜜の優しい甘みが食事を引き立てる。' },
+      { name:'竹鶴 ピュアモルト',             region:'japanese', type:'bl', cask:'mx', flavor:'complex', level:'casual',      price:'mid',     copy:'余市と宮城峡の二蒸留所が生む力強さと繊細さの融合。竹鶴政孝の遺産そのもの。' },
+      { name:'イチローズモルト ダブルディスティラリーズ', region:'japanese', type:'bl', cask:'mx', flavor:'fruity', level:'casual', price:'mid', copy:'秩父と羽生の夢の競演。日本クラフトウイスキーの最高峰、ウイスキーファン必須の一本。' },
+      { name:'秩父 ザ・フロアモルテッド',     region:'japanese', type:'sm', cask:'mx', flavor:'complex', level:'experienced', price:'premium', copy:'自家製フロアモルティングにこだわった希少な国産クラフト。出会えたら迷わず試すべし。' },
+      { name:'長濱 ニューボーン',             region:'japanese', type:'sm', cask:'bu', flavor:'fruity',  level:'casual',      price:'mid',     copy:'滋賀の小さな蒸留所から生まれたフレッシュな可能性。クラフトウイスキーの新星。' },
+      { name:'サントリー碧 Ao',               region:'japanese', type:'bl', cask:'mx', flavor:'fruity',  level:'beginner',    price:'mid',     copy:'世界5大産地の原酒を融合させた野心作。軽やかで万能、ウイスキーの世界旅行をどうぞ。' },
+      { name:'角瓶',                           region:'japanese', type:'bl', cask:'mx', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'ハイボールの代名詞。日本の食卓に根付いた、親しみやすさの極致。' },
+      // ── AMERICA ──
+      { name:'バッファロートレース',           region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'200年の歴史が生むバーボンの教科書。バニラと蜂蜜の王道の甘みがここに。' },
+      { name:'ブラントンズ オリジナル',        region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'casual',      price:'mid',     copy:'世界初のシングルバレルバーボン。馬が駆けるキャップが象徴する、特別な一本。' },
+      { name:'メーカーズマーク',               region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'赤いワックスが目印の定番バーボン。甘くまろやか、誰でも好きになれる懐の深さ。' },
+      { name:'メーカーズマーク 46',            region:'american', type:'bo', cask:'vi', flavor:'complex', level:'casual',      price:'mid',     copy:'フレンチオークの木片でさらに熟成。通常版を超えた深みとスパイシーな余韻が光る。' },
+      { name:'ノブクリーク 9年',               region:'american', type:'bo', cask:'vi', flavor:'complex', level:'casual',      price:'mid',     copy:'9年熟成の力強いバーボン。オーク、バニラ、フルーツが重層的に絡む本格派。' },
+      { name:'ワイルドターキー 8年',           region:'american', type:'bo', cask:'vi', flavor:'complex', level:'casual',      price:'budget',  copy:'高ライ麦比率が生む骨太なスパイシーさ。「これぞバーボン」という力強さを求めるあなたへ。' },
+      { name:'ワイルドターキー レアブリード',  region:'american', type:'bo', cask:'vi', flavor:'complex', level:'experienced', price:'mid',     copy:'6・8・12年原酒をブレンドしたカスクストレングス。ワイルドターキーの真の実力がここに。' },
+      { name:'ウッドフォードリザーブ',         region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'casual',      price:'mid',     copy:'ケンタッキーの宝石。三回蒸留のまろやかさとオーク樽のバニラが織りなす上品な一本。' },
+      { name:'フォアローゼズ スモールバッチ',  region:'american', type:'bo', cask:'vi', flavor:'fruity',  level:'casual',      price:'mid',     copy:'4つのレシピをブレンド。フルーティーで複雑、バーボン入門の優秀な一本。' },
+      { name:'フォアローゼズ シングルバレル',  region:'american', type:'bo', cask:'vi', flavor:'fruity',  level:'experienced', price:'mid',     copy:'単一の樽から生まれる一期一会の個性。毎回違う顔を見せるバーボンとの対話を楽しめ。' },
+      { name:'ジムビーム ブラック',            region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'世界一売れるバーボンの上位版。8年熟成の深みがプラス、コスパも申し分なし。' },
+      { name:'IW ハーパー 12年',              region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'beginner',    price:'mid',     copy:'日本で長年愛されてきたマイルドなバーボン。まろやかな甘みが食事にも合う万能派。' },
+      { name:'ブッカーズ',                     region:'american', type:'bo', cask:'vi', flavor:'complex', level:'experienced', price:'mid',     copy:'カスクストレングスの怪物。加水なし・冷却濾過なし。バーボンの本質を剥き出しにした一本。' },
+      { name:'エヴァン ウィリアムス ブラック', region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'ケンタッキー第2位の売上を誇る実力派。コスパ最高のバーボン入門にして真打ち。' },
+      { name:'エンジェルスエンヴィー',         region:'american', type:'bo', cask:'wi', flavor:'sweet',   level:'casual',      price:'mid',     copy:'ポートワイン樽でフィニッシュした革命的バーボン。エレガントな甘みは天使も羨む美酒。' },
+      { name:'ヘブンヒル 6年',                region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'知る人ぞ知るコスパの鬼。6年熟成でこの複雑さと甘みは、バーゲンハンターの必携品。' },
+      { name:'ジャックダニエル オールドNo.7',  region:'american', type:'bo', cask:'vi', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'世界で最も知られるウイスキー。チャコール濾過が生むクリーンな甘みは万国共通語。' },
+      { name:'ジャックダニエル シングルバレル', region:'american', type:'bo', cask:'vi', flavor:'complex', level:'experienced', price:'mid',    copy:'単一樽から生まれるJDの別格。通常版とは別次元の複雑さと深みに驚かされる。' },
+      { name:'ブルレット ライ',                region:'american', type:'ry', cask:'vi', flavor:'complex', level:'casual',      price:'mid',     copy:'95%ライ麦の極端なレシピが生む、スパイシーでドライな強烈な個性。カクテルにも絶品。' },
+      { name:'リッテンハウス ライ',            region:'american', type:'ry', cask:'vi', flavor:'complex', level:'casual',      price:'mid',     copy:'バーボンとは全く違うスパイシーなライウイスキーの世界。爽快な辛さが癖になる。' },
+      // ── IRELAND ──
+      { name:'ジェムソン スタンダード',        region:'irish',    type:'bl', cask:'mx', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'アイリッシュの世界王者。3回蒸留の驚くほどのスムースさが、ウイスキー嫌いを変える。' },
+      { name:'ジェムソン ブラックバレル',      region:'irish',    type:'bl', cask:'mx', flavor:'sweet',   level:'casual',      price:'mid',     copy:'バーボン樽でダブルエイジドした進化形。バニラとスパイスが加わりさらに深みが増した。' },
+      { name:'レッドブレスト 12年',            region:'irish',    type:'ps', cask:'mx', flavor:'fruity',  level:'casual',      price:'mid',     copy:'アイリッシュ・シングルポットスチルの最高峰。果実とスパイスが複雑に絡む、知る人ぞ知る傑作。' },
+      { name:'レッドブレスト 15年',            region:'irish',    type:'ps', cask:'sh', flavor:'complex', level:'experienced', price:'premium', copy:'15年の熟成が生む複雑さの頂点。シェリー樽の深みと果実の甘みが芸術的に調和する。' },
+      { name:'グリーンスポット',               region:'irish',    type:'ps', cask:'mx', flavor:'fruity',  level:'casual',      price:'mid',     copy:'ダブリンの老舗がパリに送り続けた伝説の一本。爽快な果実感が何世紀もファンを魅了してきた。' },
+      { name:'ブッシュミルズ オリジナル',      region:'irish',    type:'bl', cask:'bu', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'世界最古の蒸留所のひとつが誇るスムースな傑作。軽くて飲みやすいアイリッシュの入門書。' },
+      { name:'ブッシュミルズ ブラックブッシュ', region:'irish',   type:'bl', cask:'sh', flavor:'sweet',   level:'casual',      price:'budget',  copy:'シェリー樽原酒を多めにブレンドした上位版。甘くリッチ、コスパも抜群の一本。' },
+      { name:'コネマラ ピーテッド',            region:'irish',    type:'sm', cask:'bu', flavor:'smoky',   level:'casual',      price:'mid',     copy:'アイリッシュにして珍しいピートスモーク。スモーキーな個性を持つ、アイルランドの異端児。' },
+      { name:'タラモア デュー',                region:'irish',    type:'bl', cask:'mx', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'蜂蜜・バニラ・ミントの三重奏。軽くて甘いアイリッシュの万人受けする親しみやすさ。' },
+      { name:'バスカー アイリッシュ ウイスキー', region:'irish',  type:'bl', cask:'mx', flavor:'sweet',   level:'beginner',    price:'budget',  copy:'新星ロイヤルオーク蒸留所から。フルーティーで軽やか、コスパ抜群のアイリッシュ入門。' },
+      { name:'ミドルトン ベリーレア',          region:'irish',    type:'ps', cask:'mx', flavor:'complex', level:'experienced', price:'premium', copy:'毎年わずかしか生産されないアイリッシュの頂点。巡り会えた幸運に感謝したい、伝説の一本。' },
+      // ── OTHER ──
+      { name:'カバラン クラシック シングルモルト', region:'other', type:'sm', cask:'bu', flavor:'fruity',  level:'casual',     price:'mid',     copy:'台湾の亜熱帯気候が急速熟成を促す。トロピカルフルーツが溢れる、アジアの誇る傑作。' },
+      { name:'カバラン ソリスト バーボン',    region:'other',    type:'sm', cask:'bu', flavor:'sweet',   level:'experienced', price:'mid',     copy:'バーボン樽熟成の単一樽原酒。世界最高峰の評価を得たカバランの真骨頂、濃密な甘み。' },
+      { name:'アムルット フュージョン',        region:'other',    type:'sm', cask:'mx', flavor:'complex', level:'experienced', price:'mid',     copy:'インドのバンガロール産。スモーキーで複雑、インドウイスキーの概念を変えた世界三位の傑作。' },
+      { name:'ポールジョン ブリリアンス',      region:'other',    type:'sm', cask:'bu', flavor:'fruity',  level:'casual',      price:'mid',     copy:'ゴアの太陽が育てたインドの新星。クリーミーでフルーティー、インドウイスキーの可能性を示す。' },
+    ];
+
+    // ===========================
+    // BRAND DETAIL DATA
+    // ===========================
+    const brandDetails = {
+      'グレンリベット 15年 フレンチオーク': {
+        summary: ['スペイサイドのグレンリベットがフレンチオーク樽でフィニッシュした上位版。','バーボン樽熟成後にリムーザンオークで追熟し、柔らかい甘みとスパイスを獲得。','12年より深みがあり、初心者から上級者まで楽しめるバランス型。'],
+        appeal: ['洋ナシ・白桃の果実感にバニラとシナモンが加わる。','フレンチオークならではの上品な甘みと、ほのかなスパイスの余韻。','12年を飲んだ次のステップとして最適な一本。'],
+        straight: ['白桃とアプリコットの華やかな香りが広がる。','口に含むと蜂蜜の甘みとシナモンのスパイスが絡み合う。','余韻は長く、オークのウッディさがゆっくり消えていく。'],
+        rocks: ['冷えることで果実感がよりクリアに際立つ。','シナモンのスパイスが穏やかになり、より飲みやすく変化。','ゆっくり氷が溶けるにつれ、バニラの甘みが顔を出す。'],
+        highball: ['炭酸が果実の香りを一気に引き出し、爽やかに弾ける。','スパイスのアクセントがハイボールに適度な複雑さを加える。','食前酒として、または軽い食事と合わせたい一杯。']
+      },
+      'マッカラン 12年 ダブルカスク': {
+        summary: ['シェリー樽とバーボン樽の両方で熟成させた、マッカランの入門版。','シェリー由来の甘みとバーボン由来の軽やかさが絶妙に融合。','マッカランブランドの世界を最もリーズナブルに体感できる。'],
+        appeal: ['チョコ・レーズン・バニラが三位一体で香る。','重すぎず軽すぎない、絶妙なバランスが幅広い層に刺さる。','「マッカランって何が違うの？」に答えてくれる一本。'],
+        straight: ['ドライフルーツとバニラの甘い香りがまず鼻を引く。','口当たりはシルクのように滑らかで、チョコの甘みが広がる。','余韻にシェリーの果実感とほのかなスパイスが残る。'],
+        rocks: ['氷で甘みが適度に抑えられ、よりスッキリした飲み口に。','バニラとシトラスのフレッシュな面が前に出てくる。','飲みやすくなるのでウイスキー入門者にも◎。'],
+        highball: ['炭酸でチョコとフルーツの香りが弾けて華やかに。','食事中の一杯として万能。和洋どちらにも寄り添う。','「高級ハイボール」の体験ができるコスパの良い選択。']
+      },
+      'マッカラン 12年 シェリーオーク': {
+        summary: ['スペイン産シェリー樽100%で12年熟成したマッカランの看板商品。','ウイスキー界の「ロールスロイス」と呼ばれる圧倒的ブランド力。','濃厚なシェリーの甘みと深みが、まさに別格の存在感を放つ。'],
+        appeal: ['チョコレート・レーズン・オレンジピールが濃密に重なる。','口に入れた瞬間の「これが本物か」という感動がある。','贈り物・記念日・自分へのご褒美に迷ったらこれ一択。'],
+        straight: ['グラスに注いだだけで、シェリーの甘い香りが部屋に漂う。','ドライフルーツとダークチョコが口いっぱいに広がる。','長い余韻の中にスパイスと木の温かみが溶けていく。'],
+        rocks: ['冷やすとシェリーの甘みが引き締まり、より洗練された印象に。','オレンジピールのビターな面が浮かび上がる。','氷が溶けるごとに甘みが戻ってくる変化が楽しい。'],
+        highball: ['炭酸でシェリーの香りが華やかに立ち上る。','少し贅沢なハイボールとして、特別な夜の食中酒に。','チョコやナッツ系のおつまみとの相性は最高。']
+      },
+      'マッカラン 18年 シェリーオーク': {
+        summary: ['シェリー樽100%で18年熟成したマッカランの最高峰の一つ。','熟成年数が生む複雑さと深みは、12年とは別次元の体験。','世界中のコレクターとウイスキー愛好家が憧れる伝説的な一本。'],
+        appeal: ['深いドライフルーツ・ダークチョコ・スパイスの複雑な重なり。','18年という時間が生む、なめらかで長い余韻は圧巻。','「人生で一度は飲むべきウイスキー」リストの筆頭格。'],
+        straight: ['グラスに注いだ瞬間、芳醇なシェリーと果実の香りが広がる。','口に含むと濃密な甘みと複雑なスパイスが層をなして押し寄せる。','余韻は数分続く。これがウイスキーの醍醐味と実感できる。'],
+        rocks: ['加水で一層なめらかになり、フルーツの甘みが穏やかに前に出る。','ストレートとは違う表情が楽しめる。どちらが好みか比べてみて。','氷は1〜2個。溶けすぎると本来の複雑さが薄れてしまう。'],
+        highball: ['贅沢なハイボールとして飲むのも至福。炭酸がフルーツ感を解放する。','高価なので少量をじっくり楽しむのが正解。','特別な夜、特別な相手と飲みたい一杯。']
+      },
+      'グレンフィディック 12年': {
+        summary: ['世界で最も売れるシングルモルトスコッチ。スペイサイド産。','1887年創業、ウィリアム・グラント家が今も経営する独立蒸留所。','洋ナシの爽やかさとバニラの甘みが、ウイスキーの入り口を開く。'],
+        appeal: ['青リンゴ・洋ナシ・バニラの瑞々しい果実感が特徴。','クセがなく誰でも飲みやすい。初心者への最高の入門書。','世界No.1の実力は伊達じゃない。バランスの教科書。'],
+        straight: ['洋ナシと青リンゴの爽やかな香りがまず広がる。','口当たりはクリーミーで、バニラと蜂蜜の甘みが続く。','すっきりとした余韻が、また一口飲みたくさせる。'],
+        rocks: ['冷えることで果実感がよりシャープに際立つ。','ロックにしても甘みが保たれ、飲みやすさが増す。','暑い夜に最適。ウイスキーが苦手な方にも試してほしい。'],
+        highball: ['炭酸が洋ナシと青リンゴの香りを一気に弾かせる。','世界中のバーでの定番ハイボール。裏切らない安定感。','唐揚げ・焼き鳥など脂のある料理との相性は抜群。']
+      },
+      'グレンフィディック 15年 ソレラ': {
+        summary: ['バーボン・シェリー・新樽の3種をソレラ方式でブレンドした逸品。','ソレラとはシェリー業界由来の手法で、常に一定の比率で混合熟成する。','12年より甘みが深く、複雑さが増した上位版。'],
+        appeal: ['蜂蜜・バニラ・シナモンが融合した豊かな甘みが魅力。','3種の樽が生む複雑さが、信じられないなめらかさで飲める。','「甘いウイスキーが好き」という方への最強の答え。'],
+        straight: ['シェリーとバニラの甘い香りが穏やかに立ち上る。','口の中でクリーミーな甘みとシナモンのスパイスが踊る。','余韻は長く、蜂蜜がゆっくりと消えていく。'],
+        rocks: ['冷えても甘みが損なわれず、むしろ飲みやすくなる。','スパイスが穏やかになり、より甘みに集中した印象。','デザート感覚でゆっくり楽しめる。'],
+        highball: ['炭酸で蜂蜜とバニラの甘みが弾けて爽快感が生まれる。','甘みがあるのに食事の邪魔をしない絶妙なバランス。','チーズや生ハムとのペアリングが特におすすめ。']
+      },
+      'グレンフィディック 18年': {
+        summary: ['バーボン・シェリー・新樽で18年熟成したグレンフィディックの傑作。','3種の樽が長期熟成の中で複雑な個性を育て上げた、上級者向けの一本。','深み・なめらかさ・複雑さの三拍子が揃ったシリーズの頂点。'],
+        appeal: ['オーク・バニラ・ドライフルーツが複雑に絡む贅沢な香り。','18年の時間が磨いた、驚くほどなめらかな飲み口。','グレンフィディックのファンが辿り着く、最終到達点。'],
+        straight: ['オークとバニラのリッチな香りがグラスから漂う。','口に含むと深い甘みとスパイス、ドライフルーツが次々と現れる。','長い余韻の中でダークチョコとオークが溶けていく。'],
+        rocks: ['ロックで少し緩むことで、果実の甘みがよりクリアに。','複雑さが穏やかになり、初めての方でも楽しみやすい表情になる。','加水しながら変化を観察するのも楽しみ方の一つ。'],
+        highball: ['炭酸でドライフルーツと樽の香りが解放される。','複雑な風味がハイボールの中でも主張し、飽きない一杯に。','肉料理やチーズとの相性が特に良い。']
+      },
+      'バルヴェニー 12年 ダブルウッド': {
+        summary: ['バーボン樽の後にシェリー樽で追熟、二段熟成が特徴の銘品。','グレンフィディックと同じウィリアム・グラント社が誇る名蒸留所。','手造りへのこだわりが生む、温かみのある甘みとスパイス。'],
+        appeal: ['蜂蜜・シナモン・バニラが温かく重なる豊かな甘み。','二段熟成が生む、複雑なのに飲みやすいという奇跡のバランス。','シングルモルト中級者への最良の一歩。'],
+        straight: ['蜂蜜とシナモンの温かい香りがグラスから立ち上る。','口の中で甘みとスパイスが交互に現れる、心地よい複雑さ。','余韻はドライフルーツとオークの長い尾を引く。'],
+        rocks: ['冷えることで甘みが引き締まり、スパイスが際立つ。','シェリー由来のフルーツ感がよりクリアに感じられる。','ゆっくりと飲み進めるのに最適な一杯。'],
+        highball: ['炭酸でシナモンと蜂蜜の香りが爽やかに弾ける。','複雑な風味がハイボールでも十分に楽しめる。','和食・洋食どちらにも合わせやすい万能な飲み方。']
+      },
+      'バルヴェニー 14年 カリビアンカスク': {
+        summary: ['バーボン樽熟成後、カリブ海のラム樽でフィニッシュした個性派。','ラム樽由来のトロピカルな甘みが加わり、バルヴェニーに新世界が開く。','甘いもの好きのウイスキーファンを虜にする危険な一本。'],
+        appeal: ['バナナ・マンゴー・パイナップルのトロピカルな香りが個性的。','ラム樽の甘みとバルヴェニー本来の蜂蜜感の融合が唯一無二。','「ウイスキーってこんなに甘くなれるの？」という驚きがある。'],
+        straight: ['グラスに注ぐと熱帯フルーツの甘い香りが広がる。','口に含むとバナナ・バニラ・蜂蜜の甘みが溢れ出す。','余韻はラム樽の甘さと軽いスパイスがゆっくり続く。'],
+        rocks: ['冷えると果実感がよりシャープになり、爽快感が増す。','トロピカルな甘みが穏やかになり、飲みやすさが向上。','夏の夜に最適な、デザート感覚のロック。'],
+        highball: ['炭酸でトロピカルフルーツの香りが一気に爆発する。','まるで大人のトロピカルジュースのような爽快さ。','ハイボールで飲むと驚くほど軽やかで飲みやすい。']
+      },
+      'アベラワー 12年': {
+        summary: ['スペイサイドのアベラワー川沿いに建つ、知る人ぞ知る名蒸留所。','シェリー樽とバーボン樽を組み合わせた黄金比の熟成が特徴。','コスパ最強のスペイサイド。価格を超えた満足感がある。'],
+        appeal: ['チョコ・ドライフルーツ・バニラが調和した豊かな甘み。','価格帯を考えると信じられないほどのクオリティ。','「シェリー系が好き」という方へ最初に勧めたい一本。'],
+        straight: ['シェリーの甘い香りとオレンジの爽やかさが重なる。','口に含むとチョコとドライフルーツの甘みが広がる。','余韻はスパイスとウッディな温かみが長く続く。'],
+        rocks: ['冷えてもシェリー由来の甘みがしっかり残る。','ビターな面が引き出され、よりバランスが取れた表情に。','氷を1〜2個加えて、ゆったりと楽しみたい。'],
+        highball: ['炭酸でシェリーとチョコの香りが爽やかに広がる。','フルボディながらハイボールにしても風味が飛ばない。','チョコ系のおつまみとの相性が抜群。']
+      },
+      'グレンアーラヒー 12年': {
+        summary: ['スペイサイドの隠れた実力者。ビリー・ウォーカー氏が復活させた蒸留所。','シェリー樽使いの天才として世界的に注目を集める急成長ブランド。','濃密なシェリーの甘みの中に、品格ある複雑さを兼ね備える。'],
+        appeal: ['チョコレート・ダークフルーツ・スパイスの重厚な香り。','品質に対して価格が手頃で、世界中のウイスキーファンが絶賛。','「シェリー樽の本気」を体験したいならこれ一択。'],
+        straight: ['濃密なシェリーの香りがグラスいっぱいに広がる。','ダークチョコとドライフルーツの甘みが力強く押し寄せる。','余韻は長く、スパイスとオークが複雑に絡む。'],
+        rocks: ['ロックで重厚な甘みが適度に緩み、飲みやすくなる。','フルーツの甘みがよりクリアになり、新たな魅力が現れる。','濃いめのウイスキーが好みの方にも、ロックから入るのがおすすめ。'],
+        highball: ['炭酸でシェリーのフルーツ感が一気に弾ける。','重厚な風味がハイボールでも存在感を失わない。','肉料理や濃いめの料理との相性が特に良い。']
+      },
+      'グレンファークラス 12年': {
+        summary: ['スペイサイド、6代続く家族経営の蒸留所。1836年創業の老舗。','シェリー樽100%熟成にこだわる、正統派スコッチの守り人。','家族の誇りが生む、一貫した品質とシェリーの純粋な甘み。'],
+        appeal: ['シェリー樽100%ならではの、純粋でリッチな甘みが魅力。','ブレのない一貫した品質が、長年のファンを生み続ける。','「本物のシェリー樽ウイスキー」を安価に体験できる。'],
+        straight: ['シェリーとドライフルーツの豊かな香りが広がる。','口に含むと甘みとスパイスがバランスよく広がる。','余韻は長く、ウッディなオークとフルーツが続く。'],
+        rocks: ['ロックで甘みが引き締まり、よりドライな表情に。','スパイスが際立ち、複雑さが増したような印象になる。','冷えた状態で飲み始め、温まるにつれた変化が楽しい。'],
+        highball: ['炭酸でシェリーのフルーツ感が爽やかに広がる。','重厚な風味がハイボールでも存在感を保つ。','ナッツやチーズなど塩気のあるおつまみとよく合う。']
+      },
+      'クラガンモア 12年': {
+        summary: ['スペイサイドを代表する蒸留所の一つ。1869年創業。','ジョニーウォーカーなど有名ブレンデッドのキーモルトとして名高い。','繊細で複雑な風味が、通好みの「隠れた逸品」として評価される。'],
+        appeal: ['草・花・ハーブが複雑に絡む、繊細なアロマが魅力。','主張しすぎない複雑さが、飲み飽きしない長い付き合いを生む。','「スコッチ通」と呼ばれたいなら知っておきたい一本。'],
+        straight: ['新鮮な草とハーブの香りが涼しげに広がる。','口に含むと穀物の甘みと複雑なフルーツが絡む。','余韻はドライで、スパイスとオークが穏やかに続く。'],
+        rocks: ['ロックでハーブ感が引き締まり、よりクリーンな印象に。','甘みよりドライさが際立ち、辛口好きに刺さる。','食事と合わせるならロックが最もバランスが良い。'],
+        highball: ['炭酸でハーブと草の爽やかな香りが弾ける。','すっきりとした辛口ハイボールで、食中酒として最高。','さっぱりした料理との相性が特に良い。']
+      },
+      'ベンロマック 10年': {
+        summary: ['スペイサイドに位置しながら、軽いピートが個性の異色の蒸留所。','1898年創業。老舗の技術と現代の感性が融合した伝統派。','果実の甘みと煙のスモークが踊る、スペイサイドの変わり種。'],
+        appeal: ['フルーティーな甘みとほのかなスモークが共存する珍しさ。','「スモーキーに挑戦したいけど重いのは苦手」な方への架け橋。','スペイサイドとアイラの中間を攻める個性的な一本。'],
+        straight: ['リンゴとバニラの甘みにピートのスモークが絡む。','口に含むと甘みが先行し、後からスモークが追いかけてくる。','余韻はほのかなスモークと蜂蜜がゆっくり続く。'],
+        rocks: ['冷えることでスモークが穏やかになり、果実感が前面に。','ピートが苦手な方でも、ロックなら親しみやすい。','甘みとスモークのバランス変化を楽しむ飲み方。'],
+        highball: ['炭酸でフルーティーさが弾け、スモークが風味のアクセントに。','爽快感の中にスモークが香り、飲み飽きない奥行きがある。','焼き鳥や燻製系おつまみとの相性が抜群。']
+      },
+      'グレンモーレンジィ 10年': {
+        summary: ['スコットランド最長（5.14m）のポットスチルを誇るハイランドの名蒸留所。','軽やかでエレガントなスタイルが世界中で親しまれる。','バニラとオレンジの優しい香りが、ウイスキーの概念を変える一本。'],
+        appeal: ['バニラ・オレンジ・花の香りがエレガントに広がる。','軽やかな口当たりで、ウイスキー初心者に最もおすすめしやすい。','「スコッチって飲みにくい」を覆す、魔法のような一杯。'],
+        straight: ['バニラとオレンジの爽やかな香りが穏やかに漂う。','口に含むと甘みとフルーティーさがなめらかに広がる。','余韻は穏やかでクリーン、後口がとても良い。'],
+        rocks: ['ロックでより爽やかに。オレンジの果実感が際立つ。','飲みやすさがさらに増し、夏の夜にぴったり。','女性やウイスキーが苦手な方へ自信を持っておすすめできる。'],
+        highball: ['炭酸でバニラとオレンジが溢れ出す、極上の爽快感。','誰でも飲みやすい、幅広いシーンに合う万能ハイボール。','食前酒としても食中酒としても完璧な一杯。']
+      },
+      'グレンモーレンジィ ラサンタ': {
+        summary: ['グレンモーレンジィ 10年をシェリー樽でフィニッシュした上位版。','「ラサンタ」はゲール語で「暖かい場所」の意。','シェリーの甘みが加わり、10年とは異なるリッチな表情を持つ。'],
+        appeal: ['チョコ・オレンジ・ドライフルーツが重なるリッチな甘み。','10年のエレガントさを残しつつ、より深みと甘みが加わる。','シェリー樽好きとグレンモーレンジィ好きの両方が喜ぶ一本。'],
+        straight: ['シェリーの甘い香りとオレンジが融合した複雑な香り。','口に含むとチョコとドライフルーツの甘みが広がる。','余韻は長く、温かみのある甘さが続く。'],
+        rocks: ['冷えることで甘みが引き締まり、ビターな側面が顔を出す。','チョコのビターさとオレンジがよりクリアに感じられる。','デザートのような甘みを食事の後に楽しみたい一杯。'],
+        highball: ['炭酸でシェリーとオレンジの香りが弾けて華やかに。','甘みがあるのに後味はすっきり、食事の邪魔をしない。','チョコ系デザートと合わせるのが最高の楽しみ方。']
+      },
+      'ダルモア 12年': {
+        summary: ['鹿のエンブレムで有名なハイランドの名門蒸留所。1839年創業。','シェリー樽フィニッシュが生む、オレンジとチョコの格調高い一本。','プレミアム感があり、贈り物として非常に喜ばれる一本。'],
+        appeal: ['オレンジ・チョコ・スパイスが調和した、格調ある風味。','見た目の高級感と味のリッチさで、贈り物として最強クラス。','「特別な一本を探している」すべての人に答えてくれる。'],
+        straight: ['オレンジとチョコレートの甘い香りが優雅に広がる。','口に含むとドライフルーツとスパイスの複雑な甘みが広がる。','余韻は長く、シェリーの甘みとシナモンが溶けていく。'],
+        rocks: ['冷えることでオレンジの爽やかさが際立つ。','チョコの甘みが穏やかになり、よりエレガントな表情に。','グラスを傾けるたびに新しい表情を見せる楽しさがある。'],
+        highball: ['炭酸でオレンジとチョコの香りが弾けて華やかに。','贅沢なハイボールとして特別なシーンを演出できる。','肉料理や脂の乗った料理との相性が特に良い。']
+      },
+      'ロッホローモンド オリジナル': {
+        summary: ['スコッチウイスキーの中で珍しいポットスチルとグレーン両対応の蒸留所。','ハイランド南部ロッホローモンド湖畔に位置する自然豊かな蒸留所。','飲みやすくコスパ抜群で、スコッチ入門に最適な一本。'],
+        appeal: ['バニラと穀物の穏やかな甘みが気軽に楽しめる。','価格が手頃で、毎日飲めるスコッチとして優秀。','「スコッチを試したいけど高いのは…」への完璧な答え。'],
+        straight: ['バニラと軽い麦の香りが優しく広がる。','口当たりは軽くスムース、甘みとほんのりフルーティーさが続く。','余韻は短くすっきり。気軽に飲めるのが最大の魅力。'],
+        rocks: ['ロックで甘みが引き締まり、よりすっきりした飲み口に。','非常に飲みやすく、ウイスキーが苦手な方にも試してほしい。','暑い日のリフレッシュにもぴったりな一杯。'],
+        highball: ['炭酸でバニラの香りが爽やかに弾ける。','軽やかで飲みやすく、日常使いのハイボールに最適。','どんな食事にも寄り添う万能なハイボール。']
+      },
+      'クラインリシュ 14年': {
+        summary: ['ハイランド北部、ゴールドラッシュの地から生まれる希少なシングルモルト。','ジョニーウォーカーゴールドのキーモルトとして知られる秘蔵の実力者。','蜜蝋と南国フルーツの個性的な香りが、他にはない世界を作る。'],
+        appeal: ['蜜蝋・トロピカルフルーツ・スパイスの個性的な組み合わせ。','ジョニーウォーカーに使われてきた底力を直接体験できる。','ウイスキー通の間で「知る人ぞ知る名酒」として名高い。'],
+        straight: ['蜜蝋とトロピカルフルーツの個性的な香りが鼻を引く。','口に含むとスパイスと甘みが複雑に絡み、驚きを与える。','余韻は長く、蜜蝋とオークが印象的に続く。'],
+        rocks: ['冷えることで蜜蝋の甘みが引き締まり、スパイスが際立つ。','フルーツの香りがよりシャープに感じられる。','個性的な味わいをじっくり堪能できる飲み方。'],
+        highball: ['炭酸でトロピカルフルーツの香りが開放的に弾ける。','蜜蝋の個性がハイボールでも存在感を失わない。','個性的なハイボールを楽しみたい上級者向けの一杯。']
+      },
+      'アバフェルディ 12年': {
+        summary: ['ハイランド、ブラックウォーター川沿いに建つ「デュワーズの心臓」。','デュワーズのハートモルトとして、200年の歴史を支えてきた名蒸留所。','蜂蜜と白い花の穏やかな甘みが心を和ませる、優しい一本。'],
+        appeal: ['蜂蜜・白い花・バニラの穏やかで優しい甘みが特徴。','デュワーズファンがたどり着く、その源泉を楽しめる。','どんな気分の日も受け入れてくれる、懐の広い一本。'],
+        straight: ['蜂蜜と白い花の甘い香りがやわらかく広がる。','口当たりはスムースで、バニラと果実の甘みが続く。','余韻は穏やかで温かみのある甘さが長く続く。'],
+        rocks: ['ロックで甘みが引き締まり、すっきりと飲みやすくなる。','花の香りがより際立ち、爽やかな印象に変わる。','女性やウイスキー初心者にも自信を持っておすすめできる。'],
+        highball: ['炭酸で蜂蜜と花の香りが爽やかに弾ける。','甘みが心地よく広がる、とても飲みやすいハイボール。','和食・洋食問わず食事全般に合わせやすい万能派。']
+      },
+      'グレンドロナック 12年': {
+        summary: ['ハイランド東部、シェリー樽熟成の王道を行く名門蒸留所。','オロロソ・PXシェリー樽のみを使用するこだわりが、深みを生む。','チョコ・ドライフルーツ・スパイスが三位一体の傑作。'],
+        appeal: ['チョコレート・レーズン・ウォールナッツの濃密な甘みと複雑さ。','シェリー樽王道系の中でも特にリッチで深みがある。','「シェリー系ウイスキーの実力を知りたい」方への最強の答え。'],
+        straight: ['濃いシェリーとチョコの香りがグラスから溢れる。','口に含むとドライフルーツとスパイスが層をなして押し寄せる。','長い余韻の中でチョコとオークがゆっくりと溶けていく。'],
+        rocks: ['冷えることで重厚な甘みが穏やかになり、飲みやすくなる。','フルーツのビターな面が前に出て、複雑さが増す印象。','シェリー系が苦手な方でも、ロックなら楽しめることがある。'],
+        highball: ['炭酸でシェリーとチョコの香りが解放されて広がる。','重厚な風味がハイボールでも個性を失わない。','チョコやナッツ系のおつまみとの相性が特に良い。']
+      },
+      'ダルウィニー 15年': {
+        summary: ['標高327mに立つ、スコットランドで最も高い場所にある蒸留所の一つ。','厳しい高地の気候が育む、蜂蜜とヘザーの高地の風が宿る一本。','穏やかで優しいが、しっかりとした個性を持つハイランドの逸品。'],
+        appeal: ['蜂蜜・ヘザー・バニラの穏やかで優雅な甘みが魅力。','スコットランドの高地の風景が目に浮かぶような、詩的な味わい。','「ハイランドらしさ」を最もエレガントに体現した一本。'],
+        straight: ['蜂蜜とヘザーの甘い香りが優雅に立ち上る。','口に含むとバニラとフルーツの甘みがなめらかに広がる。','余韻は長く、高地の清涼感がゆっくりと消えていく。'],
+        rocks: ['ロックで甘みが引き締まり、ミネラル感が加わる。','すっきりした飲み口になり、飲みやすさが増す。','高地の清涼感を氷とともに楽しむ爽やかな一杯。'],
+        highball: ['炭酸で蜂蜜とヘザーの香りが爽やかに弾ける。','軽やかで上品なハイボールとして、食前酒に最適。','スコットランドの高地を想像しながら飲む贅沢な一杯。']
+      },
+      'ラガヴーリン 16年': {
+        summary: ['アイラ島、アードベッグ・ラフロイグと並ぶ「アイラ三聖地」の一つ。','16年熟成のシェリー樽仕上げが、スモークに複雑な甘みを加える。','一度飲んだら忘れられない。アイラウイスキーの最高峰。'],
+        appeal: ['強烈なピートスモークの奥に、シェリーの深い甘みが宿る。','「本物のアイラウイスキー」を体験したいなら、これしかない。','スモーキー好きが最終的に辿り着く、伝説の一本。'],
+        straight: ['強烈なスモークと潮の香りが最初に鼻を突く。','口に含むとピートの背後にシェリーのリッチな甘みが現れる。','余韻は永遠に続くかのように長く、スモークが心に刻まれる。'],
+        rocks: ['ロックでスモークが若干穏やかになり、甘みが前に出る。','初めてのアイラウイスキーならロックから入るのが正解。','氷が溶けるにつれ、複雑な表情の変化が楽しめる。'],
+        highball: ['炭酸でスモークが全開。まさに「スモーキーハイボール」の王様。','BBQや燻製料理と合わせると相乗効果で絶品。','スモーキーハイボールの世界に入るなら、この一杯から。']
+      },
+      'アードベッグ 10年': {
+        summary: ['アイラ島最強のピートモンスターとして世界中のファンを熱狂させる。','スモークの奥に隠れるチョコ・コーヒー・バニラが複雑さを生む。','毎年行われるアードベッグデーは世界的なイベントになるほどの人気。'],
+        appeal: ['スモーク・チョコ・コーヒー・タールの怪物的な複雑さ。','「ピートの洗礼」を受けたウイスキーファンが最終的に愛する一本。','他に類を見ない個性が、一度ハマると抜け出せない魅力を生む。'],
+        straight: ['強烈なピートスモークとタールの香りが最初に来る。','スモークの奥からチョコとコーヒーのビターな甘みが現れる。','余韻はピートとスモークが長く長く続く、圧倒的な一杯。'],
+        rocks: ['ロックでスモークが少し穏やかになり、チョコが前に出る。','アードベッグ入門はロックから。個性に慣れるための一歩。','氷が溶けるにつれ、甘みとスモークのバランスが変化する。'],
+        highball: ['炭酸でスモークが解放され、豪快なハイボールになる。','BBQや炭火焼き料理と一緒に飲むと相乗効果で最高。','スモーキーハイボール好きに最強のおすすめ。']
+      },
+      'アードベッグ ウーガダール': {
+        summary: ['アードベッグのレギュラーラインで最も複雑とされる上位版。','バーボン樽とシェリー樽の原酒をブレンドした、甘みとスモークの融合。','世界各地のウイスキーコンペティションで数々の高評価を獲得。'],
+        appeal: ['シェリーの甘みがヘビーピートを包み込む、奇跡のバランス。','「スモーキーだけど甘い」という矛盾した魅力が唯一無二。','アードベッグファンが「これが最高峰」と口を揃えて言う一本。'],
+        straight: ['スモークとシェリーの甘みが同時に主張する驚きの香り。','チョコ・レーズン・ピートが複雑に絡む、深みのある味わい。','余韻は甘みとスモークが交互に現れ、長く楽しめる。'],
+        rocks: ['ロックで甘みがより際立ち、スモークが穏やかになる。','シェリーとピートのバランスが変化し、また違う表情が楽しめる。','10年よりも甘みが前面に出るため、飲みやすさが増す。'],
+        highball: ['炭酸でシェリーとスモークが複雑に絡んだ豪快なハイボール。','フルーティーさとスモークが同時に楽しめる唯一無二の一杯。','炭火料理と合わせると最高のペアリングが生まれる。']
+      },
+      'ラフロイグ 10年': {
+        summary: ['チャールズ国王も愛飲する、英国王室御用達のアイラウイスキー。','ヨード・正露丸・潮のような独特の香りで「好き嫌いが最も分かれる」ウイスキー。','でも一度ハマったら一生ファン。アイラの洗礼がここにある。'],
+        appeal: ['ヨード・海藻・スモーク・塩の強烈で個性的な香り。','「好きか嫌いか」が即座に分かる、正直すぎるウイスキー。','ラフロイグを好きになれたら、あなたは本物のウイスキーファン。'],
+        straight: ['ヨードと潮の強烈な香りがまず鼻を直撃する。','口に含むとスモークと塩味、そして奥にバニラの甘みが隠れている。','余韻はピートと海の記憶が長く脳裏に焼き付く。'],
+        rocks: ['ロックでヨードが少し穏やかになり、スモークが前面に。','入門としてロックから試すのが正解。慣れると虜になる。','氷の溶け具合で個性の強さを調整できるのが便利。'],
+        highball: ['炭酸でヨードとスモークが爽快に弾ける、強烈ハイボール。','「スモーキーハイボール」として専門バーで定番のオーダー。','牡蠣や魚介類との相性は最高。海の幸と海の香りを楽しむ。']
+      },
+      'ラフロイグ クォーターカスク': {
+        summary: ['通常より小さい「クォーターカスク（四分の一の樽）」で熟成させた特別版。','小さい樽は木との接触面積が大きく、熟成が加速して濃密な風味になる。','10年よりも甘く、よりスモーキーで力強い上位版。'],
+        appeal: ['10年より甘みが増し、スモークも濃密でより力強い個性。','バニラとスモークのコントラストが際立ち、複雑さが増した。','ラフロイグ10年が好きなら、次に飲むべき進化版。'],
+        straight: ['ヨードとスモークに加え、バニラとバタースコッチの甘みが増す。','口に含むと力強いスモークと甘みが同時にぶつかる豪快さ。','余韻はよりリッチで長く、スモークと甘みが交互に続く。'],
+        rocks: ['ロックで強烈な個性が穏やかになり、甘みが前面に出る。','10年よりバランスが良く、ロックで入門するのに最適。','氷が溶けるにつれ、甘みとスモークの変化が楽しめる。'],
+        highball: ['炭酸でスモークと甘みが爽快に混ざり合う豪快な一杯。','10年より甘みがあるため、スモーキーハイボールとして飲みやすい。','BBQや燻製料理と合わせると最高のシナジーが生まれる。']
+      },
+      'ボウモア 12年': {
+        summary: ['1779年創業、アイラ島最古の蒸留所。「アイラの女王」の異名を持つ。','スモーキーとフルーティーが絶妙にバランスした、アイラ入門の定番。','海と花の香りが共存する、アイラで最も万人向けの一本。'],
+        appeal: ['スモーク・塩・チョコ・花の香りが見事に共存する稀有なバランス。','「アイラは怖い」と思っている人への最高の入り口。','スモーキー系入門の定番として世界中のバーで勧められている。'],
+        straight: ['海と花の香りが同時に広がる、アイラらしさの縮図。','口に含むとスモークと甘みが絶妙にバランスして展開する。','余韻は塩とスモーク、そしてチョコがゆっくり続く。'],
+        rocks: ['ロックでスモークが引き締まり、花とチョコが際立つ。','アイラウイスキーの入門として、ロックから試してほしい一本。','氷が溶けるにつれて甘みが出てきて、変化が楽しめる。'],
+        highball: ['炭酸でスモークと花の香りが爽やかに広がる。','スモーキーハイボールとして、最もバランスの良い一杯。','チーズや生ハムとのペアリングが特におすすめ。']
+      },
+      'ブルイックラディ クラシックラディ': {
+        summary: ['アイラ島でありながらノンピートという革命的なスタイルの蒸留所。','テロワール（産地の個性）を大切にする、哲学を持った蒸留所。','「アイラ=スモーキー」の概念を覆す、クリーンで個性的な一本。'],
+        appeal: ['アイラなのにスモークなし。フルーティーでクリーンな驚き。','産地の土壌・水・大麦にこだわる、職人の矜持が伝わる。','「アイラが苦手でも飲める」という入門者への素晴らしい選択肢。'],
+        straight: ['麦の甘みとシトラス、白い花の爽やかな香りが広がる。','口に含むとクリーンなフルーティーさと穀物感が展開する。','余韻はすっきりとしており、繰り返し飲みたくなる軽快さ。'],
+        rocks: ['ロックでよりクリーンに。果実の甘みがシャープに際立つ。','スモークがないため、氷で薄まってもしっかり風味が残る。','アイラウイスキーを試したい初心者への最高の入門。'],
+        highball: ['炭酸でフルーティーさが弾けて、非常に爽快な一杯に。','アイラのウイスキーとは思えない軽やかなハイボール。','どんな料理にも合う、驚くほど万能な一杯。']
+      },
+      'カリラ 12年': {
+        summary: ['ジュラ海峡を一望する絶景の地に立つアイラの隠れた実力者。','ジョニーウォーカーなどのブレンドに欠かせないキーモルト。','スモークと果実が絡む独特のスタイルが、ウイスキー通を唸らせる。'],
+        appeal: ['スモーク・フルーツ・麦の個性が独特のバランスで共存する。','「アイラの隠れた宝」として、通好みの評価が高い。','有名すぎないからこそ「知っている人だけが飲む」特別感がある。'],
+        straight: ['スモークとフルーツが混じり合う個性的な香りが広がる。','口に含むと麦の甘みとスモーク、スパイスが交互に現れる。','余韻はドライでスモーキー、後味がクリーンなのが特徴。'],
+        rocks: ['ロックでスモークが穏やかになり、果実感が前に出る。','すっきりした飲み口になり、アイラ入門にも使えるバランスに。','冷えることでフルーツとスモークの対比がより鮮明に。'],
+        highball: ['炭酸でスモークと果実が絡んだ個性的なハイボールになる。','スモーキーだが重くなく、食事中でも飲めるバランス。','焼き魚や燻製系のおつまみと合わせると相乗効果抜群。']
+      },
+      'ブナハーブン 12年': {
+        summary: ['アイラ島北部に位置しながら、ノンピートが主体の異色の存在。','「アイラのアウトサイダー」として、スモーキーを求めない人に最適。','ナッツとドライフルーツの穏やかな甘みが、アイラの常識を覆す。'],
+        appeal: ['ナッツ・ドライフルーツ・チョコの穏やかで上品な甘みが特徴。','スモーキーなしで、アイラウイスキーの別の魅力を体験できる。','「アイラは苦手でも飲める」という人への意外な一本。'],
+        straight: ['ナッツとドライフルーツの甘い香りが優しく広がる。','口に含むとシェリーとナッツの甘みが穏やかに展開する。','余韻はウッディな温かみと甘さがゆっくり続く。'],
+        rocks: ['ロックで甘みが引き締まり、ナッツのビターな面が際立つ。','飲みやすさが増し、デザート感覚でゆっくり楽しめる。','アイラとは思えない穏やかさで、万人に勧められる一杯。'],
+        highball: ['炭酸でナッツとフルーツの香りが爽やかに広がる。','スモークがないため、とても飲みやすいアイラハイボール。','チーズやナッツ系のおつまみとの相性が抜群。']
+      },
+      'タリスカー 10年': {
+        summary: ['スカイ島唯一の蒸留所。荒波と火山の地が生む強烈な個性。','コショウとスモークの炸裂するような個性は他に類を見ない。','「スコッチで一番個性的な一本を」と言われたら迷わずこれ。'],
+        appeal: ['コショウ・スモーク・塩・スパイスが爆発する唯一無二の個性。','スカイ島の荒々しい自然がそのまま液体になったような迫力。','「スコッチは物足りない」と思っていた方への衝撃の一杯。'],
+        straight: ['コショウとスモーク、塩の強烈な香りが一気に鼻を突く。','口に含むとスパイスの炸裂感と海の塩味、甘みが次々と現れる。','余韻は長く、コショウとスモークが脳に刻み込まれる。'],
+        rocks: ['ロックでスパイスが穏やかになり、塩とスモークが際立つ。','コショウの炸裂感が落ち着き、複雑な風味が楽しみやすくなる。','個性的すぎると感じた場合はロックで調整を。'],
+        highball: ['炭酸でコショウとスモークが爽快に弾ける豪快な一杯。','スパイシーハイボールとして、バーでも人気の飲み方。','BBQや辛い料理と合わせると相乗効果で最強。']
+      },
+      'ハイランドパーク 12年': {
+        summary: ['スコットランド最北端、オークニー諸島に立つ蒸留所。バイキングの末裔。','自家製フロアモルティングと独自のヘザーピートが個性を生む。','蜂蜜とスモークの奇跡のバランスは「北の大地の傑作」と称される。'],
+        appeal: ['蜂蜜・ヘザー・スモーク・スパイスの奇跡のバランスが魅力。','甘みもあってスモーキーでもある、いいとこ取りの一本。','「バランスの良い個性的なウイスキーを」という要望に完璧に答える。'],
+        straight: ['蜂蜜とヘザーの甘い香りにスモークが絡む独特のアロマ。','口に含むと甘みとスパイス、スモークが複雑に展開する。','余韻は長く、蜂蜜とスモークが交互に訪れる楽しさがある。'],
+        rocks: ['ロックでスモークが穏やかになり、蜂蜜の甘みが前面に。','バランスが良くなり、最も飲みやすい表情になる。','スモーキー入門にロックから試すのに最適な一本。'],
+        highball: ['炭酸で蜂蜜とスモークが爽やかに弾けて広がる。','スモーキーながら飲みやすい、バランスの良いハイボール。','和食・洋食どちらにも合う万能なスモーキーハイボール。']
+      },
+      'アラン 10年': {
+        summary: ['1995年創業の比較的新しいスコットランド・アラン島の蒸留所。','若い蒸留所ながら瞬く間に世界の評価を獲得した実力派。','フルーティーで軽やかな風味がコスパも含めて高評価。'],
+        appeal: ['バニラ・洋ナシ・シトラスの爽やかなフルーティーさが魅力。','若い蒸留所とは思えない完成度の高さに驚く。','「コスパ最強のシングルモルト」として世界中で絶賛される。'],
+        straight: ['洋ナシとバニラの爽やかな香りが清々しく広がる。','口に含むとフルーティーな甘みとほんのりスパイスが続く。','余韻はすっきりとクリーンで、何度でも飲みたくなる。'],
+        rocks: ['ロックでフルーティーさがよりシャープに際立つ。','甘みが引き締まり、より爽快感のある飲み口に変わる。','暑い夏の日に最適な、爽やかなロック。'],
+        highball: ['炭酸で洋ナシとバニラの香りが一気に弾けて爽快。','非常に飲みやすく、ウイスキーのハイボール入門に最適。','どんな食事にも合う、万能なハイボール。']
+      },
+      'オーヘントッシャン アメリカンオーク': {
+        summary: ['スコッチでは珍しい3回蒸留を行うローランドの蒸留所。','3回蒸留により不純物が取り除かれ、驚くほど軽やかな口当たりを実現。','「スコッチで一番飲みやすい」と言われる、万人向けの一本。'],
+        appeal: ['バニラ・シトラス・椰子の実の軽やかな甘みが特徴。','3回蒸留の奇跡。ウイスキーとは思えないスムースさ。','「ウイスキーが苦手」という方への最強のリハビリ一本。'],
+        straight: ['バニラとシトラスの爽やかな香りが軽やかに漂う。','口当たりは驚くほどスムース。アルコール感がほぼない。','余韻はクリーンで短く、すっきりとした後味が心地よい。'],
+        rocks: ['ロックでさらに飲みやすくなる。もはや何でも飲める印象。','シトラスの爽やかさが際立ち、フルーツジュースのような感覚も。','ウイスキーへの入り口として、この一杯を超えるものはない。'],
+        highball: ['炭酸でバニラとシトラスが弾け、極めて爽快なハイボールに。','これがウイスキーハイボールかと思えないほどの飲みやすさ。','食事を選ばない万能ハイボール。毎日飲んでも飽きない。']
+      },
+      'グレンキンチー 12年': {
+        summary: ['エジンバラから最も近い、スコットランドのローランドの蒸留所。','草・穀物・クリームの爽やかなローランドスタイルが特徴。','軽くクリーミーな風味が、都市的なエレガンスを感じさせる。'],
+        appeal: ['新鮮な草とクリーム、バニラの穏やかで爽やかな甘みが魅力。','重たさがなく、食事の前後にさっと楽しめる軽快な一本。','エジンバラ観光のお土産として最も有名なスコッチ。'],
+        straight: ['草と白い花、バニラの爽やかな香りが広がる。','口当たりはクリーミーで軽やか、穀物の甘みが続く。','余韻は短くすっきり。飲みやすさが最大の魅力。'],
+        rocks: ['ロックでよりクリーンになり、草の爽やかさが際立つ。','非常に飲みやすく、ウイスキー初心者に安心して勧められる。','食前の一杯として、胃を整えるのにぴったり。'],
+        highball: ['炭酸で草とバニラの爽やかな香りが弾けて広がる。','軽やかで飲みやすい、食事全般に合う万能ハイボール。','「スコッチのハイボールって何を頼めばいい？」への答え。']
+      },
+      'スプリングバンク 10年': {
+        summary: ['かつて30以上の蒸留所があったキャンベルタウンで今も稼働する生き残り。','塩・フルーツ・スモークが三つ巴の、唯一無二のスタイルが世界的評価。','仕込みから瓶詰めまで全工程を自社で行う、完全手作りのウイスキー。'],
+        appeal: ['塩・フルーツ・スモークが交互に現れる複雑な個性が唯一無二。','完全手作りの哲学と、失われゆくキャンベルタウンスタイルの守り人。','「世界で最も個性的なスコッチ」と称されることも多い傑作。'],
+        straight: ['塩とスモーク、フルーツの複雑な香りが一気に広がる。','口に含むと果実・塩・スモークが交互に現れる複雑な体験。','余韻は長く、塩とスモークが交互に脳裏をよぎる。'],
+        rocks: ['ロックで複雑さが穏やかになり、果実感が前に出る。','塩とスモークが緩むことで、入門者にも楽しみやすくなる。','個性的な一本を少しずつ堪能するのに最適な飲み方。'],
+        highball: ['炭酸で塩とフルーツとスモークが複雑に弾けて広がる。','唯一無二のスモーキーハイボールとして、特別感がある。','シーフード料理との相性が抜群。塩と塩でシナジー効果。']
+      },
+      'グレングラント 12年': {
+        summary: ['イタリアで最も愛されるスコッチとして知られるスペイサイドの名蒸留所。','クリーンでフルーティーなスタイルが、イタリア人の食文化にフィット。','穀物感とフルーツの軽やかさが心地よい、飲みやすい一本。'],
+        appeal: ['麦の甘みとリンゴ・洋ナシのフルーティーさが軽やかに広がる。','イタリア人が愛する理由が分かる、食事に合わせやすいスタイル。','日常飲みとして最高のコスパと飲みやすさを兼ね備えた一本。'],
+        straight: ['青リンゴと麦の爽やかな香りが清々しく広がる。','口当たりは軽くフルーティー、穀物の甘みが続く。','余韻はすっきりとクリーン。ついもう一杯飲みたくなる。'],
+        rocks: ['ロックでフルーティーさがよりシャープに際立つ。','食事の邪魔をしない、さっぱりとした飲み口になる。','イタリアの食卓で食前酒として飲まれる楽しみ方を再現できる。'],
+        highball: ['炭酸でリンゴとバニラの香りが爽やかに弾ける。','非常に飲みやすく、毎日でも飲めるコスパ最高のハイボール。','和洋中どんな料理にも寄り添う万能ハイボール。']
+      },
+      'ベン・ネヴィス 10年': {
+        summary: ['英国最高峰ベン・ネヴィス山麓のフォート・ウィリアムに立つ名蒸留所。','リッチでウッディな風味が、ハイランドの力強さを体現する。','バーボン樽とシェリー樽の複数樽熟成が複雑な個性を生む。'],
+        appeal: ['ウッディなオーク・ドライフルーツ・スパイスのリッチな複雑さ。','英国最高峰の山麓という立地が生む、力強いハイランドの個性。','知る人ぞ知る実力派として、ウイスキー通に評価が高い。'],
+        straight: ['オークとバニラのリッチな香りに、スパイスが絡む。','口に含むとドライフルーツとウッディな複雑さが展開する。','余韻は長く、オークとスパイスが力強く続く。'],
+        rocks: ['ロックでウッディな重さが穏やかになり、飲みやすくなる。','フルーツの甘みが前に出て、バランスが良くなる。','力強い個性を少し抑えて楽しみたい場合に最適。'],
+        highball: ['炭酸でオークとフルーツが爽やかに解放される。','ハイボールにしても個性が残る、存在感のある一杯。','肉料理やチーズとの相性が特に良い。']
+      },
+
+      'ジョニーウォーカー ブラックラベル 12年': {
+        summary: ['世界で最も売れるスコッチウイスキー。1820年創業の老舗ブランド。','12年以上熟成の29種の原酒をブレンドした、万能選手の横綱。','どんな飲み方にも応える懐の深さが、世界中で愛される理由。'],
+        appeal: ['スモーキー・フルーティー・甘み・スパイスが絶妙なバランスで共存。','ハイボールから水割り、ストレートまで何でも来いの万能性。','「スコッチといえばこれ」という圧倒的な知名度と信頼感。'],
+        straight: ['軽いスモークと果実、スパイスの複雑な香りが広がる。','口に含むとバニラ・フルーツ・スモークが層をなして展開する。','余韻は長めで、スパイスとスモークがバランスよく続く。'],
+        rocks: ['ロックでスモークが引き締まり、フルーツが前面に出る。','バランスが取れた飲み口で、どんな場面でも楽しめる。','スコッチ入門のロック一杯目として最適な選択。'],
+        highball: ['炭酸でスモークとフルーツが爽やかに弾けて広がる。','スコッチハイボールの定番中の定番。バーでの鉄板オーダー。','から揚げから刺身まで、どんな食事にも合う万能ハイボール。']
+      },
+      'ジョニーウォーカー ゴールドリザーブ': {
+        summary: ['クラインリシュをメインにブレンドした、黄金のプレミアム版。','蜂蜜のような甘みと洗練されたスムースさが際立つ上位版。','ブラックより一段上の特別感を演出したい場面に最適。'],
+        appeal: ['蜂蜜・バニラ・トロピカルフルーツのリッチで滑らかな甘み。','ブラックの骨格を維持しつつ、甘みと滑らかさが増した進化形。','ギフトやご褒美に最適なプレミアム感が魅力。'],
+        straight: ['蜂蜜とバニラの豊かな香りが最初に広がる。','口に含むとシルクのようにスムースで、甘みが長く続く。','余韻は洗練されており、長くエレガントに続く。'],
+        rocks: ['ロックで甘みが引き締まり、よりバランスが整う。','トロピカルな果実感が前面に出て、爽やかな印象に変わる。','ゆったりとした夜に、じっくり楽しみたい一杯。'],
+        highball: ['炭酸で蜂蜜とフルーツの香りが爽やかに弾ける。','ブラックより甘みのあるリッチなハイボールが楽しめる。','少し特別な夜のハイボールとして最高の選択。']
+      },
+      'ジョニーウォーカー ブルーラベル': {
+        summary: ['稀少な原酒のみを厳選してブレンドした、ジョニーウォーカーの頂点。','1万樽以上から選ばれた原酒が生む、比類なき複雑さと滑らかさ。','贈り物・記念日・特別な夜のための究極の一杯。'],
+        appeal: ['蜂蜜・バニラ・スモーク・スパイスが完璧な調和を成す。','「ブレンデッドの芸術品」と称される、稀少原酒の結晶。','一口飲めば「これが本物のブレンデッドか」と理解できる。'],
+        straight: ['芳醇なバニラとドライフルーツ、軽いスモークが複雑に広がる。','口に含むと驚くほどなめらかで、複雑な風味が層をなして続く。','余韻は果てしなく続く。これがブルーラベルの真価。'],
+        rocks: ['ロックで稀少な原酒の甘みがより際立ち、バランスが整う。','複雑さが穏やかになり、一層飲みやすい表情になる。','高価な一本だからこそ、ゆっくりロックで楽しみたい。'],
+        highball: ['炭酸で複雑な原酒の香りが優雅に解放される。','贅沢なハイボールとして、特別なシーンを演出できる。','これでハイボールを飲むのは贅沢の極み。試す価値あり。']
+      },
+      'シーバスリーガル 12年': {
+        summary: ['スコットランド・スペイサイドを代表するブレンデッドの名品。','リッチでフルーティーな甘みが、世界中で最も売れるスコッチの一つ。','日本でも定番の贈り物として長年愛されてきた信頼のブランド。'],
+        appeal: ['ハチミツ・バニラ・リンゴの豊かでフルーティーな甘みが特徴。','誰でも飲みやすくクセがなく、贈り物として喜ばれる万能さ。','「スコッチを贈るならシーバス」という信頼感が圧倒的。'],
+        straight: ['蜂蜜とリンゴ、バニラの甘い香りが穏やかに広がる。','口に含むとフルーティーでリッチな甘みが展開する。','余韻は穏やかで、甘みと軽いスパイスが心地よく続く。'],
+        rocks: ['ロックで甘みが引き締まり、より爽やかに変化する。','リンゴのフルーティーさが際立ち、非常に飲みやすくなる。','ウイスキー初心者にロックで勧めたい定番の一本。'],
+        highball: ['炭酸でフルーツと蜂蜜の香りが爽快に弾けて広がる。','非常に飲みやすく、日常のハイボールとして最適。','和食・洋食どちらにも合う万能ハイボール。']
+      },
+      'シーバスリーガル 18年': {
+        summary: ['18年以上熟成した原酒のみをブレンドした、シーバスの真骨頂。','果実・スパイス・チョコが複雑に絡む、上位版の傑作。','12年とは別次元の複雑さと深みを持つ、格上の贈り物に最適。'],
+        appeal: ['チョコ・ドライフルーツ・スパイスが複雑に調和した深みある風味。','18年の熟成が生む、12年には出せない別格の余韻の長さ。','「本物の贈り物」として最も相応しいスコッチの一つ。'],
+        straight: ['チョコとドライフルーツの甘い香りにスパイスが絡む。','口に含むと複雑な甘みとスパイスが層をなして広がる。','余韻は非常に長く、スパイスとチョコがゆっくり消えていく。'],
+        rocks: ['ロックで複雑な甘みが適度に緩み、飲みやすくなる。','フルーツの甘みが前面に出て、バランスが整う。','12年のロックとは別次元のリッチな体験ができる。'],
+        highball: ['炭酸でチョコとフルーツの複雑な香りが解放される。','12年より深みのある、リッチなハイボールが楽しめる。','特別な夜の食中酒として相応しい一杯。']
+      },
+      'バランタイン 17年': {
+        summary: ['「あなたを愛す」と謳われるブレンデッドの傑作。スコッチの王様。','50種以上の原酒をブレンドした、シルクのような滑らかさが際立つ。','17年という絶妙な熟成年数が、深みと飲みやすさのバランスを生む。'],
+        appeal: ['バニラ・花・果実・スパイスがシルクのように滑らかに融合する。','「ブレンデッドとはこういうものだ」と教えてくれる名品。','飲んだ瞬間に「高品質」と分かる、圧倒的な完成度。'],
+        straight: ['花とバニラ、果実の優雅な香りがなめらかに広がる。','口に含むとシルクのような甘みと複雑さが次々と現れる。','余韻は長く洗練されており、何度も飲み返したくなる。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスが際立つ。','より複雑な表情が現れ、ウイスキー上級者が喜ぶ味わい。','氷が溶けるにつれ変化する表情を楽しむのが正解。'],
+        highball: ['炭酸でシルクのような甘みが爽やかに弾ける。','上品なハイボールとして、食事の場を格上げしてくれる。','特別な食事会での乾杯酒として最適。']
+      },
+      'デュワーズ 15年': {
+        summary: ['ダブルエイジド（二段熟成）を世界に広めたパイオニア的ブランド。','15年熟成後さらに別の樽で追熟する手法が、スムースさの秘密。','ハイボール文化の普及に最も貢献したスコッチの功労者。'],
+        appeal: ['バニラ・蜂蜜・フルーツが滑らかに融合したスムースな甘み。','ハイボールで飲むと甘みと爽やかさが最高のバランスで弾ける。','「スコッチハイボールを始めたい」という方への最高の一本。'],
+        straight: ['バニラと蜂蜜、フルーツの甘い香りが穏やかに広がる。','口当たりはスムースで、甘みとほのかなスパイスが続く。','余韻は穏やかで、甘さとウッディさが心地よく消えていく。'],
+        rocks: ['ロックでより爽快になり、フルーツが際立つ。','スムースさが増し、どんな場面でも飲みやすい一杯に。','スコッチのロック入門として最適な一本。'],
+        highball: ['炭酸でバニラとフルーツが完全に解放されて爽快に弾ける。','世界中のバーで定番のハイボール。間違いない選択。','どんな食事にも合う。これを飲んでスコッチが好きになる人も多い。']
+      },
+      'グランツ トリプルウッド': {
+        summary: ['バーボン・シェリー・ポートワイン樽の3種でトリプルマリッジした銘品。','リーズナブルな価格で3種の樽の恩恵を受けられるコスパの鬼。','優しく飲みやすいスタイルが、毎日の一杯に最適。'],
+        appeal: ['バニラ・フルーツ・シナモンが優しく広がる飲みやすい甘み。','3種の樽の複雑さがリーズナブルな価格で体験できる驚き。','毎日飲める日常酒として、コスパ最高の一本。'],
+        straight: ['バニラと果実の優しい甘みが穏やかに広がる。','口当たりはスムースで、シナモンのほんのりしたスパイスが続く。','余韻は短くすっきり。気軽に飲めるのが最大の魅力。'],
+        rocks: ['ロックで甘みが引き締まり、すっきりとした飲み口になる。','フルーツの爽やかさが前面に出て、非常に飲みやすくなる。','暑い日の一杯として、毎日飲みたくなる爽快さ。'],
+        highball: ['炭酸でバニラとフルーツが爽やかに弾けて広がる。','コスパ最強のハイボール用スコッチとして超優秀。','唐揚げや焼き鳥との相性が抜群。']
+      },
+      'ロイヤルサルート 21年': {
+        summary: ['1953年、エリザベス二世の戴冠式を祝して生まれた21年熟成の至宝。','21発の祝砲（ロイヤルサルート）にちなんだ名前が品格を物語る。','品格あるブレンデッドの頂点として、最高の贈り物に相応しい。'],
+        appeal: ['ドライフルーツ・チョコ・スパイス・花が贅沢に調和した至高の一杯。','21年の熟成が生む、圧倒的な深みと滑らかさは他の追随を許さない。','「人生最高の贈り物」として間違いない、伝説的なブレンデッド。'],
+        straight: ['芳醇なドライフルーツとチョコ、花の香りが贅沢に広がる。','口に含むと複雑な甘みとスパイスが絡み合い、圧倒的な存在感。','余韻は永遠と思えるほど長く、品格ある甘みが続く。'],
+        rocks: ['ロックで複雑な甘みが一層なめらかになり、飲みやすくなる。','贅沢な時間を過ごしながら、ゆっくりと楽しみたい。','氷が溶けても品質が落ちない、本物の実力を感じられる。'],
+        highball: ['炭酸で贅沢な原酒の香りが解放されて優雅に広がる。','最高級のハイボールとして特別な席を格上げできる。','これでハイボールを飲む贅沢さは他では得られない体験。']
+      },
+      'グレンファークラス 105': {
+        summary: ['アルコール度数60度超のカスクストレングスのグレンファークラス。','シェリー樽の本質を加水なしで剥き出しにした、覚悟の一本。','「105」は英国の旧度数表記で約60度を意味する伝統的な名称。'],
+        appeal: ['シェリー樽の濃密な甘みとスパイスが原液で迫ってくる圧倒感。','少量の加水で自分好みの濃度に調整できる楽しみがある。','ウイスキー上級者への挑戦状。これを楽しめたら本物のファン。'],
+        straight: ['強烈なシェリーとスパイスの香りが容赦なく広がる。','口に含むと度数の力強さの中に、濃密な甘みとフルーツが続く。','少量の加水で表情が大きく変わる。実験的な楽しさがある。'],
+        rocks: ['ロックで度数が穏やかになり、シェリーの甘みが際立つ。','60度が氷で和らぎ、通常のシングルモルト感覚で楽しめる。','度数が怖い場合は、まずロックから試してほしい。'],
+        highball: ['炭酸で割るとシェリーの香りが爽やかに弾けて飲みやすくなる。','高度数ゆえ少量でもしっかりとした風味のハイボールになる。','シェリー系ハイボールとして唯一無二の体験ができる。']
+      },
+      '山崎 12年': {
+        summary: ['1923年創業、日本初のモルトウイスキー蒸留所。大阪・山崎に立つ聖地。','ミズナラ樽のオリエンタルな香りが世界を驚かせた、日本の誇り。','WWAで世界最高のウイスキーに選ばれ、日本を世界地図に刻んだ。'],
+        appeal: ['ミズナラのお香・バニラ・フルーツが日本らしい繊細さで調和する。','「日本人が作ったウイスキーが世界一」という誇りを体現した一本。','入手困難だからこそ、飲めた時の感動が何倍にもなる。'],
+        straight: ['ミズナラのお香と熟したフルーツの複雑な香りが優雅に広がる。','口に含むとバニラ・フルーツ・スパイスが繊細に展開する。','余韻は長く、日本らしいエレガントさが心に残る。'],
+        rocks: ['ロックでフルーツの甘みがよりクリアに際立つ。','ミズナラの香りが穏やかになり、より親しみやすい表情に変わる。','入手できた喜びをゆっくり噛みしめながら楽しみたい。'],
+        highball: ['炭酸でミズナラと果実の香りが解放されて清々しく広がる。','日本のウイスキーハイボールの頂点として、食事を格上げする。','和食との相性は最高。日本の食文化と完璧に調和する。']
+      },
+      '山崎 18年': {
+        summary: ['18年の熟成が生む、山崎の最高傑作の一つ。世界が認めた日本の至宝。','複数の樽で熟成した原酒のブレンドが、比類なき複雑さを実現する。','WWA・ISC等で世界最高評価を獲得した、日本ウイスキー史の頂点。'],
+        appeal: ['ミズナラ・シェリー・バーボン樽の複雑さが至高の一杯を作る。','18年という時間が生む深みとなめらかさは、12年の数段上。','これを飲むために生きてきたと思わせる、一期一会の感動。'],
+        straight: ['深いミズナラとシェリーの複雑な香りが贅沢に広がる。','口に含むと層をなした複雑な甘みとスパイスが押し寄せる。','余韻は果てしなく続く。日本ウイスキーの最高峰の証明。'],
+        rocks: ['ロックでも複雑さが損なわれない、本物の実力が分かる。','甘みが穏やかになり、フルーツと花の香りが際立つ。','18年を惜しみながらゆっくり楽しむ、贅沢な時間の使い方。'],
+        highball: ['炭酸でも世界最高の香りが生きている。贅沢の極み。','これでハイボールを飲む機会があれば、迷わず試してほしい。','日本の頂点の味を食中酒として体験できる、幸せな一杯。']
+      },
+      '白州 12年': {
+        summary: ['南アルプス山麓の森の中に立つ、「森の蒸留所」として有名な聖地。','清廉な水と自然環境が生む、フレッシュで爽やかな個性が特徴。','「緑の白州」とも呼ばれる、清涼感抜群のジャパニーズシングルモルト。'],
+        appeal: ['青リンゴ・グレープフルーツ・ミントの爽やかで清涼感ある個性。','「森の蒸留所」の環境が生む、唯一無二のフレッシュな風味。','ハイボールにした瞬間の爽快感は、夏の最高の飲み物になる。'],
+        straight: ['ミントと青リンゴの爽やかな香りが清々しく広がる。','口に含むとフルーティーで軽やかな甘みが展開する。','余韻はすっきりとクリーン。後味が良く、飲み飽きない。'],
+        rocks: ['ロックでミントの清涼感がよりシャープに際立つ。','爽やかさが増し、暑い夏の日に最高の一杯になる。','「夏のウイスキー」として最もおすすめしたい一本。'],
+        highball: ['炭酸でミントとグレープフルーツが爆発的に広がる爽快感。','夏のハイボールとして日本一の爽快感を誇る一杯。','和食全般との相性が抜群。清涼感が料理を引き立てる。']
+      },
+      '響 Japanese Harmony': {
+        summary: ['サントリーが誇る日本のブレンデッドウイスキーを代表する銘品。','山崎・白州・知多の三蒸留所の原酒が日本の四季を表現する。','和の美学と職人魂が結実した、世界が認めるジャパニーズブレンデッド。'],
+        appeal: ['日本の四季をイメージした繊細なフルーツとハーブの調和が魅力。','山崎・白州・知多の個性が一体となった、日本の集大成の一本。','ミズナラ樽の和の香りが日本らしさを最も体現した一杯。'],
+        straight: ['和の香り・ミズナラとフルーツが繊細に重なる優雅なアロマ。','口に含むとなめらかで甘みとハーブが穏やかに展開する。','余韻は長く、日本らしいエレガントさが後味に残る。'],
+        rocks: ['ロックでフルーツの甘みがよりクリアに際立つ。','繊細な香りが保たれ、氷が溶けるにつれ表情が変化する。','ゆっくりとした夜に、日本の美学を感じながら飲む一杯。'],
+        highball: ['炭酸でミズナラとフルーツの香りが清々しく広がる。','日本の食事との相性は最高。和食全般に寄り添う万能さ。','贅沢な食中酒として、食事の場を格上げしてくれる。']
+      },
+      '響 17年': {
+        summary: ['サントリーの17蒸留所の原酒が集結する、究極のハーモニー。','17年以上熟成した原酒のみをブレンドした、日本ブレンデッドの最高峰。','その複雑さと深みは世界のウイスキーコンペで最高評価を獲得。'],
+        appeal: ['17年熟成原酒が生む、圧倒的な深みと複雑さの調和。','「日本ブレンデッドウイスキーの頂点」として世界に認められた実力。','入手困難だからこそ、出会えた幸運に感謝して飲む特別な一本。'],
+        straight: ['深いミズナラと果実、スパイスの複雑な香りが壮大に広がる。','口に含むと複雑な甘みとスパイス、花が波のように続く。','余韻は際限なく続く。これが世界最高峰の一本の証明。'],
+        rocks: ['ロックでも複雑さが損なわれず、むしろフルーツが際立つ。','甘みが穏やかになり、より飲みやすく変化する。','17年熟成を惜しみながらゆっくり楽しむ贅沢な時間。'],
+        highball: ['炭酸でも日本ウイスキーの最高峰の香りが生きている。','これでハイボールを飲む機会があれば、絶対に試すべし。','最高の和食と合わせる、人生最高の食中酒体験ができる。']
+      },
+      'ニッカ フロム ザ バレル': {
+        summary: ['余市・宮城峡・グレーンウイスキーをブレンドしてバレルで追熟した傑作。','アルコール度数51.4度の力強さを手のひらサイズのボトルに凝縮。','世界のウイスキーコンペで金賞を連発する、驚異のコスパの国宝級。'],
+        appeal: ['力強い度数の中にドライフルーツ・スパイス・スモークが複雑に絡む。','小さいボトルに詰め込まれた情報量が多すぎて驚く。','「世界が認めるコスパ最強」として日本が誇る代表作。'],
+        straight: ['力強いスパイスとフルーツの香りが一気に広がる。','口に含むと51度の力強さの中に甘みとスパイスが複雑に展開する。','余韻は長くリッチ。少量の加水で表情が大きく変わる楽しさ。'],
+        rocks: ['ロックで51度が穏やかになり、甘みとフルーツが前面に出る。','複雑さが飲みやすい形で楽しめる、最もバランスの良い飲み方。','コスパを最大限に楽しみたいならロックが正解。'],
+        highball: ['炭酸で力強い風味が解放されて、豪快なハイボールになる。','51度ゆえ少量でもしっかりとした風味のハイボールが楽しめる。','肉料理との相性が抜群。力強いハイボールが料理に負けない。']
+      },
+      '余市 シングルモルト': {
+        summary: ['竹鶴政孝が北海道に建てた、スコットランドの技術を日本に持ち込んだ蒸留所。','石炭直火蒸留という伝統的手法が、骨太でスモーキーな個性を生む。','北海道の潮風と竹鶴の魂が宿る、日本のヘビーウイスキーの旗手。'],
+        appeal: ['スモーク・塩・フルーツ・力強さが骨太に調和したヘビーな個性。','石炭直火という伝統手法が生む、機械では出せない荒削りな美しさ。','「日本版アイラウイスキー」として海外のマニアにも熱狂的支持がある。'],
+        straight: ['スモークと潮の香りに、フルーツと麦の甘みが絡む力強い一杯。','口に含むと骨太なスモークと甘みが力強く展開する。','余韻は長く、スモークと塩が北海道の風景を想起させる。'],
+        rocks: ['ロックでスモークが穏やかになり、果実の甘みが前に出る。','骨太な個性が少し和らぎ、飲みやすさが増す。','スモーキー入門として余市ロックから試す方も多い。'],
+        highball: ['炭酸でスモークと果実が爽快に弾けて豪快なハイボールに。','北海道の潮風を感じるようなスモーキーハイボール。','肉料理・魚料理どちらにも合う、力強い万能ハイボール。']
+      },
+      '宮城峡 シングルモルト': {
+        summary: ['仙台郊外の二つの清流が合流する地に立つ、ニッカの第二蒸留所。','余市とは対照的に、蒸気間接加熱の優しい手法で繊細さを追求する。','峡谷の恵みが育む、フルーティーで華やかな個性が魅力。'],
+        appeal: ['リンゴ・バニラ・花の繊細でフルーティーな香りが華やか。','余市の力強さとは対照的な、女性的なエレガントさが魅力。','「日本ウイスキーの繊細な美しさ」を体験したいならこれ。'],
+        straight: ['リンゴと花の爽やかな香りが繊細に広がる。','口に含むとフルーティーで甘く、バニラの余韻が続く。','余韻はすっきりエレガントで、飲み飽きない美しさがある。'],
+        rocks: ['ロックでフルーティーさがよりシャープに際立つ。','繊細な花の香りが氷の冷たさで引き締まり、爽快に。','女性や初心者に最もおすすめしたい日本のシングルモルト。'],
+        highball: ['炭酸でリンゴと花の香りが爽やかに弾けて清々しい一杯に。','軽やかで非常に飲みやすい、食事全般に合うハイボール。','仙台の食文化と合わせて楽しみたい一杯。']
+      },
+      '知多': {
+        summary: ['愛知県知多半島の蒸留所で生まれるサントリーのグレーンウイスキー。','トウモロコシを主原料にした連続式蒸留の軽やかな甘みが特徴。','「ハイボールのベースとして理想的」として食事中に最適。'],
+        appeal: ['バニラ・蜂蜜・穀物の優しくクリーミーな甘みが誰でも飲みやすい。','グレーンウイスキーの良さを最も体現した、軽やかな食中酒。','「ウイスキーが苦手な方への入り口」として最高の一本。'],
+        straight: ['バニラと蜂蜜の穏やかで優しい甘みがクリーミーに広がる。','口当たりは非常に軽く、アルコール感が少なくて驚く。','余韻はすっきりとクリーン。食事の邪魔を一切しない。'],
+        rocks: ['ロックで甘みが引き締まり、よりすっきりした飲み口になる。','非常に飲みやすく、ウイスキーが苦手な方でも楽しめる。','夏の暑い日に最適な、爽快な一杯。'],
+        highball: ['炭酸でバニラと蜂蜜の甘みが爽やかに弾けて絶品のハイボール。','日本食全般との相性が抜群。食事を引き立てるベストパートナー。','これを飲んでウイスキーハイボールが好きになる人が続出。']
+      },
+      '竹鶴 ピュアモルト': {
+        summary: ['余市・宮城峡の二蒸留所のモルト原酒のみを使ったピュアモルト。','竹鶴政孝の名を冠する、ニッカの誇りと遺産を体現した一本。','力強さと繊細さが融合した、日本のブレンデッドモルトの傑作。'],
+        appeal: ['余市の骨太さと宮城峡の繊細さが一体となった唯一無二の調和。','竹鶴政孝の哲学「おいしいウイスキーを日本に」の答えがここに。','「日本のウイスキーの父」の遺産を一杯で体験できる感動。'],
+        straight: ['スモーキーで力強い余市とフルーティーな宮城峡が絡む複雑な香り。','口に含むと力強さと繊細さが交互に現れる、対比の妙を楽しめる。','余韻はスモークとフルーツが長く調和して続く。'],
+        rocks: ['ロックでスモークが穏やかになり、フルーツが前面に出る。','余市と宮城峡のバランスがより分かりやすくなる飲み方。','じっくりと二つの個性の融合を楽しむ、通好みの一杯。'],
+        highball: ['炭酸でスモークとフルーツが複雑に絡んだ個性的なハイボール。','和食との相性が抜群。日本の食卓に最も合う一本。','竹鶴の遺産を日常のハイボールとして楽しむ贅沢。']
+      },
+      'イチローズモルト ダブルディスティラリーズ': {
+        summary: ['秩父蒸留所と羽生蒸留所の二蒸留所の原酒をブレンドした傑作。','肥土伊知郎氏が立ち上げたベンチャーウイスキーの代表作。','日本クラフトウイスキーの最高峰として世界的高評価を誇る。'],
+        appeal: ['秩父のフルーティーさと羽生の複雑さが夢のように融合する。','クラフトウイスキーの可能性を最大限に示した、革命的な一本。','「日本の小さな蒸留所が世界を変えた」という興奮が詰まっている。'],
+        straight: ['熟したフルーツとバニラの豊かな香りが複雑に広がる。','口に含むと果実の甘みとスパイスが層をなして展開する。','余韻は長く、フルーツとオークが調和して続く。'],
+        rocks: ['ロックでフルーツの甘みがよりクリアに際立つ。','複雑さが穏やかになり、より飲みやすい表情に変わる。','希少な一本をゆっくり楽しむための飲み方として最適。'],
+        highball: ['炭酸でフルーツと花の香りが爽やかに解放される。','クラフトウイスキーのハイボールとして最高の体験ができる。','和食との相性が特に良い、上品な食中酒。']
+      },
+      '秩父 ザ・フロアモルテッド': {
+        summary: ['自家農場で栽培した大麦を自ら床でモルティングする、究極の手作り蒸留所。','埼玉・秩父の小さな蒸留所が世界市場に挑んだ、クラフトの最高峰。','希少性と品質の高さから、国内外のオークションで高値が続く注目銘柄。'],
+        appeal: ['自家製モルティングが生む、他にはない土地の個性と複雑さ。','「ここまで手作りにこだわるウイスキーは世界でも稀」という感動。','出会えたら迷わず試す。二度と手に入らないかもしれない一本。'],
+        straight: ['自家製モルトの穀物感とフルーツが複雑に広がる。','口に含むと土地の個性が感じられる、テロワール豊かな味わい。','余韻はスパイスとフルーツが長く続く、クラフトの真髄。'],
+        rocks: ['ロックで複雑さが穏やかになり、飲みやすくなる。','土地の個性が氷でより鮮明になるという不思議な体験。','希少な一本を惜しみながらゆっくり楽しむ贅沢な飲み方。'],
+        highball: ['炭酸で自家製モルトのフルーティーさが爽やかに広がる。','クラフトウイスキーの個性が炭酸でも失われない実力がある。','入手できた幸運を噛みしめながら飲む、特別なハイボール。']
+      },
+      '長濱 ニューボーン': {
+        summary: ['琵琶湖の畔、滋賀県長濱市に立つ小さなクラフト蒸留所の新星。','ニューボーン（新生児）とはまだ若い熟成前の原酒を意味する。','フレッシュで果実感あふれる若い原酒の可能性を示した一本。'],
+        appeal: ['フレッシュな麦・バニラ・フルーツの若々しい活き活きした香り。','新しい蒸留所のポテンシャルを感じる、未来への期待感が詰まっている。','「クラフトウイスキーの新星を応援する」という楽しさがある。'],
+        straight: ['麦とバニラのフレッシュな香りが元気よく広がる。','口に含むと若い果実の甘みが軽やかに展開する。','余韻はすっきりとクリーン。若さゆえの爽快感がある。'],
+        rocks: ['ロックでフレッシュさがよりシャープに際立つ。','若い原酒の活き活きした個性が氷で引き締まる。','フレッシュなウイスキーの面白さを発見できる飲み方。'],
+        highball: ['炭酸でフレッシュなフルーツと麦の香りが爽快に弾ける。','若々しい活き活きした風味がハイボールで最大限に輝く。','琵琶湖の幸と合わせて楽しみたい、爽快なハイボール。']
+      },
+      'サントリー碧 Ao': {
+        summary: ['スコットランド・アイルランド・アメリカ・カナダ・日本の5大産地原酒を融合。','「碧=青」は青い地球・5つの海をつなぐというコンセプトを表現。','世界を一本のボトルに詰めた、グローバルなブレンデッドウイスキー。'],
+        appeal: ['5大産地の個性がハーモニーを奏でる、世界旅行のような体験。','軽やかで飲みやすく、ウイスキーの多様性を気軽に体験できる。','「世界のウイスキーを一本で」という斬新なコンセプトが楽しい。'],
+        straight: ['フルーティーで軽やかな香りに、各産地の個性が見え隠れする。','口に含むと甘みとフルーツが軽やかに展開する。','余韻はすっきりとクリーン。世界の調和が後味に残る。'],
+        rocks: ['ロックでフルーツの甘みがよりクリアに際立つ。','各産地の個性が氷でよりはっきりと感じられる。','世界旅行のような複雑さをゆっくり楽しむ飲み方。'],
+        highball: ['炭酸でフルーティーさが爽やかに弾けて非常に飲みやすい。','5大産地の個性がハイボールで一気に調和する爽快感。','和洋中どんな料理にも合う万能ハイボール。']
+      },
+      '角瓶': {
+        summary: ['1937年発売、サントリーが日本の食卓に根付かせた国民的ウイスキー。','「角ハイボール」のブームを牽引し、ハイボール文化を復活させた立役者。','親しみやすい四角いボトルが象徴する、日本のソウルドリンク。'],
+        appeal: ['バニラ・麦・ほんのりスモークの親しみやすい日本的な甘み。','「角ハイボール」は日本の居酒屋文化に欠かせない存在。','どんな世代・どんなシーンにも溶け込む、最強の万能ウイスキー。'],
+        straight: ['バニラと麦の穏やかな甘みが親しみやすく広がる。','口当たりは軽く、ほんのりスモークが隠れている。','余韻はすっきりとクリーン。毎日飲んでも飽きない。'],
+        rocks: ['ロックでさっぱりとした飲み口になり、食事との相性が増す。','甘みが引き締まり、和食のおつまみにぴったりの一杯に。','居酒屋文化の「角ロック」として日本のバー文化に根付く。'],
+        highball: ['炭酸でバニラと麦の香りが爽快に弾けて飲みやすい一杯に。','「角ハイボール」は日本の居酒屋で最も頼まれるウイスキー。','唐揚げ・焼き鳥・枝豆。どんな定番おつまみとも最高の相性。']
+      },
+      'バッファロートレース': {
+        summary: ['200年以上の歴史を持つ、ケンタッキー最古クラスの蒸留所。','バーボンの教科書として世界中で初心者入門に使われる定番銘柄。','バニラと蜂蜜の王道の甘みが、バーボンの本質を体現している。'],
+        appeal: ['バニラ・蜂蜜・キャラメルの王道のバーボン甘みが魅力。','価格が手頃なのに品質が高く、コスパ最強のバーボン入門。','「バーボンって何から始めればいい？」への正解の一本。'],
+        straight: ['バニラとキャラメルの豊かな甘みが最初に鼻を引く。','口に含むとバニラ・蜂蜜・オークが心地よく展開する。','余韻は温かく、キャラメルとスパイスがゆっくり続く。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスが際立つ。','よりすっきりとした飲み口になり、バーボン入門に最適。','アメリカ映画のバーシーンを想像しながら飲む一杯。'],
+        highball: ['炭酸でバニラとキャラメルが爽快に弾けて豪快なハイボールに。','バーボンハイボールの入門として世界中で愛される飲み方。','チーズバーガーやフライドチキンとの相性が最高。']
+      },
+      'ブラントンズ オリジナル': {
+        summary: ['1984年発売、世界初のシングルバレル（単一樽）バーボンの先駆者。','競馬場をモチーフにした馬型のキャップがコレクターを魅了する。','単一の樽から生まれる、一期一会の個性が最大の魅力。'],
+        appeal: ['バニラ・スパイス・オレンジの豊かで複雑な甘みが個性的。','単一樽の一期一会の個性を楽しむ、バーボン上級者の定番。','馬型キャップのコレクション性が、プレゼントとして最高の話題を生む。'],
+        straight: ['バニラとオレンジ、スパイスの豊かな香りが広がる。','口に含むとリッチな甘みとスパイスが複雑に展開する。','余韻は長く、バニラとオークが温かみを持って続く。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスがより際立つ。','単一樽の複雑な個性が氷で整理されて楽しみやすくなる。','美しいボトルと馬キャップを眺めながら飲む贅沢な一杯。'],
+        highball: ['炭酸でオレンジとバニラが爽やかに弾けて豪快なハイボール。','シングルバレルの個性がハイボールでも存在感を失わない。','BBQや肉料理と合わせると最高の相性を発揮する。']
+      },
+      'メーカーズマーク': {
+        summary: ['赤いワックスシールで世界中に知られる、ケンタッキーの定番バーボン。','ライ麦の代わりに小麦を使うことで、甘くまろやかな風味を実現。','「誰でも好きになれる」バーボンとして世界中で愛されている。'],
+        appeal: ['バニラ・蜂蜜・キャラメルの甘くまろやかな飲みやすさが魅力。','ライ麦なしの小麦バーボンが生む、スパイシーでない優しい甘み。','バーボン初心者への最初の一本として世界中で推薦されている。'],
+        straight: ['バニラと蜂蜜の甘い香りが優しく広がる。','口に含むとまろやかな甘みがスムースに展開し、スパイスは穏やか。','余韻は温かく、キャラメルとオークがゆっくり消えていく。'],
+        rocks: ['ロックでまろやかな甘みが引き締まり、爽やかに変化する。','非常に飲みやすく、ウイスキー初心者に最もおすすめできる一杯。','赤いワックスを眺めながら、ゆっくり楽しみたい。'],
+        highball: ['炭酸でバニラと蜂蜜が爽やかに弾けて極めて飲みやすいハイボール。','バーボンハイボール入門として最強の選択。これで好きになれる。','ハンバーガーやBBQとの相性は最高。アメリカンフードと最強コンビ。']
+      },
+      'メーカーズマーク 46': {
+        summary: ['通常版にフレンチオークの木片（スティック）を加えて追熟した上位版。','「46」は開発時のスティック配合レシピ番号から名付けられた。','通常版の甘みに深みとスパイシーな余韻が加わった完成形。'],
+        appeal: ['バニラ・キャラメル・フレンチオークのスパイシーさが複雑に絡む。','通常版のまろやかさを保ちつつ、より複雑で深みのある表情になる。','メーカーズマーク好きが次に試すべき、必然の一本。'],
+        straight: ['バニラとキャラメルの甘みにフレンチオークのスパイスが加わる。','口に含むと通常版より複雑な甘みとスパイスが重層的に展開する。','余韻はスパイシーでありながらまろやかで、長く続く。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスが際立って複雑になる。','通常版との違いがよく分かる、飲み比べるのがおすすめの一本。','大人の一杯として、ゆっくりと楽しみたい上位版。'],
+        highball: ['炭酸でフレンチオークのスパイスが爽やかに弾けて個性的なハイボール。','通常版より複雑な風味が炭酸で解放されて豪快に広がる。','肉料理やスモーキーな料理との相性が特に良い。']
+      },
+      'ノブクリーク 9年': {
+        summary: ['プレミアムバーボンのパイオニア「スモールバッチコレクション」の一つ。','9年熟成という長熟が生む、力強くて複雑なフルバーボン体験。','オーク・バニラ・フルーツが重層的に絡む本格派バーボン。'],
+        appeal: ['オーク・チェリー・バニラ・スパイスが力強く複雑に絡む。','9年熟成がバーボンに生む深みと複雑さは別格の存在感。','「本格的なバーボン」を体験したい方への最高の答え。'],
+        straight: ['オークとバニラ、チェリーの力強い香りが豪快に広がる。','口に含むと複雑な甘みとスパイスが重層的に押し寄せる。','余韻はオークとスパイスが力強く長く続く、本格派の証。'],
+        rocks: ['ロックで力強さが穏やかになり、フルーツが前面に出る。','複雑な風味が整理されて楽しみやすくなる飲み方。','バーボンの深みを理解するための教科書的な一杯。'],
+        highball: ['炭酸でオークとフルーツが爽快に解放された豪快なハイボール。','力強い風味がハイボールでも存在感を失わない実力。','BBQや肉料理との相性は最高。力強い料理に負けない。']
+      },
+      'ワイルドターキー 8年': {
+        summary: ['高いライ麦比率と低いアルコール度での入樽が生む骨太な個性。','「ターキー」の名は七面鳥狩りのハンターが愛飲したことに由来。','スパイシーで力強い「これぞバーボン」という個性が魅力。'],
+        appeal: ['ライ麦由来のスパイス・バニラ・オレンジの骨太な個性が圧倒的。','「バーボンはスパイシーであるべき」という信念を体現した一本。','フロンティア精神あふれる、力強いアメリカの魂が宿る一杯。'],
+        straight: ['ライ麦のスパイスとバニラ、オレンジの豪快な香りが広がる。','口に含むとスパイシーで力強い甘みと果実が展開する。','余韻はスパイスとオークが長く力強く続く、骨太な一本。'],
+        rocks: ['ロックでスパイスが穏やかになり、甘みが前面に出る。','力強すぎると感じた方はロックから慣れていくのが正解。','氷が溶けるにつれ、スパイスと甘みのバランスが変化する。'],
+        highball: ['炭酸でスパイスとフルーツが豪快に弾けるワイルドなハイボール。','スパイシーなハイボールとして、料理に負けない存在感がある。','スパイシーなメキシカンや辛い料理との相性が抜群。']
+      },
+      'ワイルドターキー レアブリード': {
+        summary: ['6年・8年・12年熟成の原酒をブレンドしたカスクストレングス版。','加水なし・冷却濾過なしで、ワイルドターキーの真の実力を解放。','ターキーファンが「これが本当の実力」と絶賛する最上位版。'],
+        appeal: ['力強いスパイス・バニラ・チェリーがカスクストレングスで迫る。','加水なしの本来の力強さは、通常版の数倍の存在感を持つ。','「ワイルドターキーの真価を知りたい」方への究極の答え。'],
+        straight: ['力強いスパイスとバニラ、チェリーの香りが豪快に広がる。','カスクストレングスの迫力の中に、複雑な甘みとスパイスが爆発する。','少量の加水で表情が大きく変わる。実験的な楽しさがある。'],
+        rocks: ['ロックでカスクの力強さが穏やかになり、甘みが前面に出る。','通常版よりリッチで複雑な表情になる、最高の飲み方の一つ。','ターキーファンにとって、最も楽しめる飲み方はロック。'],
+        highball: ['炭酸で力強いスパイスとフルーツが豪快に解放される。','カスクストレングスゆえ少量でもしっかりとしたハイボールになる。','力強い料理に唯一対等に立てる、最強のバーボンハイボール。']
+      },
+      'ウッドフォードリザーブ': {
+        summary: ['ケンタッキー州、国家歴史登録財に登録された美しい石造りの蒸留所。','三回蒸留という珍しい手法がバーボンに類稀なまろやかさを与える。','バーボンの美学と洗練さを極めた、上品な一本。'],
+        appeal: ['バニラ・チョコ・スパイスが三回蒸留のなめらかさで融合する。','蒸留所の美しさと味の上品さが一致した、芸術的なバーボン。','「洗練されたバーボン」を探しているすべての人への答え。'],
+        straight: ['チョコとバニラ、スパイスの上品な香りが広がる。','口に含むとなめらかで複雑な甘みとスパイスが展開する。','余韻は長く、チョコとオークが上品に続く。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスがより際立つ。','バーボンの上品さをゆっくり楽しむ、最もおすすめの飲み方。','美しいグラスで飲むと、蒸留所の雰囲気を想像できる。'],
+        highball: ['炭酸でバニラとチョコが爽やかに弾けて上品なハイボールに。','洗練されたバーボンハイボールとして特別なシーンを演出できる。','ステーキや高級料理との相性が特に良い。']
+      },
+      'フォアローゼズ スモールバッチ': {
+        summary: ['4つのレシピ（酵母×マッシュビル）の原酒をブレンドした複雑な一本。','フォアローゼズの4本のバラのロゴが象徴する、複雑な組み合わせ。','フルーティーで複雑、バーボン入門の最高の選択肢の一つ。'],
+        appeal: ['リンゴ・洋ナシ・スパイスが複雑に調和したフルーティーな甘み。','4レシピのブレンドが生む複雑さが、単一レシピにはない豊かさを与える。','「バーボンはフルーティーでもある」という新しい発見ができる。'],
+        straight: ['リンゴと洋ナシのフルーティーな香りにスパイスが絡む。','口に含むとフルーティーな甘みと複雑なスパイスが展開する。','余韻はフルーツとオークが心地よく長く続く。'],
+        rocks: ['ロックでフルーティーさがよりシャープに際立つ。','複雑さが整理されて飲みやすくなり、バーボン入門に最適。','果実感が強くなるため、フルーティー好きに特におすすめ。'],
+        highball: ['炭酸でフルーツの香りが爽快に弾けて軽やかなハイボールに。','フルーティーなバーボンハイボールとして、飲みやすさが抜群。','魚料理やサラダなど、軽めの食事とよく合う万能ハイボール。']
+      },
+      'フォアローゼズ シングルバレル': {
+        summary: ['一つの樽から瓶詰めした、一期一会の個性を楽しむシングルバレル。','毎回異なる表情を持つため、ファンは「今回のバレルは何番か」を楽しむ。','フルーティーさの中に複雑な深みを持つ、上級者向けの傑作。'],
+        appeal: ['一期一会の個性。同じ銘柄でも毎回違う味わいがある唯一無二の楽しさ。','フルーツ・スパイス・オークの複雑さがシングルバレルで最大化される。','「バーボンとの対話」を楽しめる、通好みの上位版。'],
+        straight: ['フルーティーで複雑な香りが個性的に広がる。','口に含むとフルーツとスパイスが力強く展開する複雑な体験。','余韻はオークとフルーツが長く独自の個性で続く。'],
+        rocks: ['ロックで単一樽の個性がより際立って楽しめる。','バレルごとの個性の違いを比べながら飲む上級者の楽しみ方。','希少な単一樽をじっくり堪能するのに最適。'],
+        highball: ['炭酸で単一樽の個性的なフルーツが豪快に広がる。','毎回違う体験ができる唯一無二のハイボール。','バーボン好きを唸らせる個性的なハイボール体験ができる。']
+      },
+      'ジムビーム ブラック': {
+        summary: ['世界最多販売バーボン「ジムビーム」の上位版。8年熟成で深みをプラス。','通常版より長い熟成で、オークの複雑さと甘みが増した完成形。','コスパが良く、毎日飲める日常バーボンとして世界中で愛されている。'],
+        appeal: ['バニラ・キャラメル・オークの深みある甘みが手頃な価格で楽しめる。','通常版より熟成が長い分、複雑さと深みが大幅にアップ。','「毎日飲む日常バーボン」として世界一コスパが良い一本。'],
+        straight: ['バニラとキャラメルの温かい甘みに、オークの深みが加わる。','口に含むと通常版より複雑な甘みとスパイスが展開する。','余韻はオークと甘みが長めに続く。8年熟成の実力を感じる。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスが際立つ。','コスパ最高のロックバーボンとして、毎晩楽しめる一杯。','アメリカのバーで定番のロックオーダー。'],
+        highball: ['炭酸でバニラとキャラメルが豪快に弾けるハイボール。','世界中の居酒屋で定番のハイボール用バーボン。','唐揚げ・ハンバーガー・ピザとの相性は最強クラス。']
+      },
+      'IW ハーパー 12年': {
+        summary: ['日本で長年愛されてきた、マイルドなケンタッキーバーボン。','12年熟成のまろやかな甘みが、日本の食文化にフィットした。','バーボンの「優しい顔」を日本に紹介した功績ある一本。'],
+        appeal: ['バニラ・蜂蜜・キャラメルのマイルドで飲みやすい甘みが魅力。','スパイシーすぎないまろやかさが、和食との相性を生んでいる。','「バーボンの入り口」として日本で長年愛された安心感がある。'],
+        straight: ['バニラと蜂蜜のまろやかな甘みがスムースに広がる。','口に含むと優しいキャラメルとスパイスが穏やかに続く。','余韻は穏やかで、温かみのある甘さがゆっくり消えていく。'],
+        rocks: ['ロックでさっぱりとした飲み口になり、食事との相性が増す。','まろやかな甘みがより飲みやすくなり、万人に勧められる一杯。','和食との食中酒として長年愛されてきた飲み方。'],
+        highball: ['炭酸でバニラと蜂蜜が爽やかに弾けて飲みやすいハイボールに。','和食・洋食どちらにも合う万能ハイボールとして抜群の汎用性。','日本の家庭で最も親しまれてきたバーボンハイボール。']
+      },
+      'ブッカーズ': {
+        summary: ['加水なし・冷却濾過なし・カスクストレングスを体現したジムビームの頂点。','ブッカー・ノー氏の名を冠した、バーボンの本質を剥き出しにした一本。','度数は62〜63度超。これがバーボンの「素の実力」だという宣言。'],
+        appeal: ['オーク・バニラ・スパイスがカスクストレングスで圧倒的に迫る。','加水なしゆえ少量の水を加えるだけで表情が大きく変わる楽しさ。','「本当のバーボンを飲んだ」と言えるのはこの一本から。'],
+        straight: ['力強いオークとバニラ、スパイスの香りが容赦なく広がる。','カスクストレングスの迫力の中に複雑な甘みとスパイスが爆発する。','少量の加水で劇的に変化する表情を楽しむのが上級者の流儀。'],
+        rocks: ['ロックで度数が穏やかになり、甘みが一気に前面に出る。','通常のバーボン感覚で楽しめるようになり、入門としても良い。','力強さを保ちながら、複雑さが整理されて楽しみやすくなる。'],
+        highball: ['炭酸でカスクの力強い香りが豪快に解放される。','高度数ゆえ少量でも非常にしっかりとしたハイボールになる。','最強のバーボンハイボールとして、料理に絶対に負けない。']
+      },
+      'エヴァン ウィリアムス ブラック': {
+        summary: ['ケンタッキー第2位の売上を誇るバーボンの実力者。1783年創業の老舗。','コスパ最高のバーボン入門として、世界中のウイスキーファンに推奨。','品質と価格のバランスが「信じられないほど優秀」と言われる。'],
+        appeal: ['バニラ・キャラメル・スパイスの王道バーボン風味が手頃な価格で楽しめる。','「この価格でこの品質は信じられない」がファーストインプレッション。','バーボン入門の正解として、世界中のウイスキー専門家が推薦する。'],
+        straight: ['バニラとキャラメルの温かい甘みが豊かに広がる。','口に含むとスパイスと甘みが心地よく展開する。','余韻はオークとキャラメルが温かく続く。価格以上の満足感。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスが際立つ。','非常に飲みやすく、バーボン入門のロックとして最高。','コスパ最強の毎晩のロックとして、長年続けられる一杯。'],
+        highball: ['炭酸でバニラとキャラメルが豪快に弾けて飲みやすいハイボール。','コスパ最強のハイボール用バーボンとして世界中で使われている。','どんな料理にも合う万能ハイボールとして最強クラス。']
+      },
+      'エンジェルスエンヴィー': {
+        summary: ['バーボン樽熟成後にポートワイン樽でフィニッシュした革命的なバーボン。','「天使の分け前（エンジェルズシェア）」より更に美味しいという意味の名前。','バーボンとワインの文化を融合させた、最も革新的な一本の一つ。'],
+        appeal: ['バニラ・ポートワイン・チョコ・スパイスのエレガントで複雑な甘み。','バーボンにワインの優雅さを加えた、唯一無二の個性が魅力。','「バーボンは苦手だけどワインは好き」という方への最高の橋渡し。'],
+        straight: ['ポートワインの甘い香りとバニラが優雅に絡む複雑なアロマ。','口に含むとバーボンの力強さとワインのエレガントさが融合する。','余韻は長く、チョコとポートワインの甘みが優雅に続く。'],
+        rocks: ['ロックで甘みが引き締まり、ポートワインの個性が際立つ。','よりエレガントな表情になり、女性にも非常に喜ばれる。','バーボンの新しい扉を開く、革命的なロック体験ができる。'],
+        highball: ['炭酸でポートワインとバニラが爽やかに弾けて優雅なハイボール。','バーボンとは思えないエレガントなハイボールとして驚かれる。','デザートやチーズとの相性が特に良い、上品な食中酒。']
+      },
+      'ヘブンヒル 6年': {
+        summary: ['ケンタッキー最大の家族経営蒸留所が生む、コスパの鬼。','6年熟成でこの複雑さと甘みは「信じられない」と評されるほどの実力。','バーゲンハンターとバーテンダーが密かに愛用する隠れた名品。'],
+        appeal: ['バニラ・キャラメル・スパイスの王道バーボン風味が驚きの価格で楽しめる。','6年熟成にもかかわらず複雑さと深みがあり、価格を大幅に超えた実力。','「コスパ最強のバーボン」として世界中のウイスキー通が推薦する。'],
+        straight: ['バニラとキャラメルの温かい甘みがしっかり広がる。','口に含むとスパイスと甘みが6年とは思えない複雑さで展開する。','余韻はオークとスパイスが心地よく続く。価格の10倍の満足感。'],
+        rocks: ['ロックで甘みが引き締まり、スパイスがより際立つ。','コスパ最強のロックバーボンとして毎晩楽しめる定番。','「安くてうまい」の最高峰を体験できる一杯。'],
+        highball: ['炭酸でバニラとキャラメルが爽快に弾けるコスパ最強のハイボール。','価格を考えると信じられないほど高品質なハイボールが楽しめる。','毎日飲んでも財布が痛くない最強の日常ハイボール。']
+      },
+      'ジャックダニエル オールドNo.7': {
+        summary: ['世界で最も知られるアメリカンウイスキー。テネシー州リンチバーグ産。','炭（チャコール）でろ過する「テネシー製法」がクリーンな甘みの秘密。','バーボンではなくテネシーウイスキーという独自カテゴリーを守る。'],
+        appeal: ['バニラ・キャラメル・バナナのクリーンで飲みやすい甘みが特徴。','「世界で最も有名なウイスキー」の看板に偽りなし。誰でも美味しく飲める。','コーラ割り「JDコーク」も含め、世界中で飲まれる国民的ウイスキー。'],
+        straight: ['バニラとキャラメルのクリーンな甘みが穏やかに広がる。','口当たりはスムースで、バナナとバニラの甘みが続く。','余韻は短くすっきり。万人が飲みやすいとうなずく後味。'],
+        rocks: ['ロックでより爽やかになり、クリーンな甘みが際立つ。','非常に飲みやすく、ウイスキー入門の最初の一杯として最適。','世界中のバーで一番頼まれるウイスキーロック。'],
+        highball: ['炭酸でバニラとバナナが爽快に弾けて世界一飲みやすいハイボールに。','「JDハイボール」は世界のクラブシーンを制覇した定番ドリンク。','ハンバーガー・ピザ・BBQとの相性は歴史が証明した最強コンビ。']
+      },
+      'ジャックダニエル シングルバレル': {
+        summary: ['単一の樽から瓶詰めした、JDの別格ライン。通常版とは別次元の存在。','テネシー製法を維持しながら、単一樽の個性を最大限に引き出した傑作。','通常版ファンが驚く、JDの底力を見せつける上位版。'],
+        appeal: ['バニラ・オーク・スパイスの複雑さが通常版とは全く異なる存在感。','「JDってこんなに複雑なんだ」という驚きを体験できる上位版。','単一樽の一期一会の個性を楽しむ、JDファンの次の一本。'],
+        straight: ['通常版より濃厚なバニラとオーク、スパイスの香りが広がる。','口に含むと複雑な甘みとスパイスが重層的に展開する。','余韻は通常版より長く、複雑で印象深い後味が続く。'],
+        rocks: ['ロックで複雑さが整理されて楽しみやすくなる。','単一樽の個性が氷でより明確に感じられる面白さ。','JDの底力をゆっくり堪能するための飲み方として最適。'],
+        highball: ['炭酸で単一樽の複雑な香りが解放されて個性的なハイボール。','通常版とは別次元の奥行きのあるハイボールが楽しめる。','JDファンへの最高のギフト、またはプレミアム体験として。']
+      },
+      'ブルレット ライ': {
+        summary: ['95%以上という極端に高いライ麦比率が生む、スパイシーな個性派。','バーボンとは対極のドライでスパイシーなライウイスキーの世界。','カクテルのベースとしても最高で、バーテンダーが愛用する一本。'],
+        appeal: ['スパイシー・ドライ・ハーブの個性的な香りがライウイスキーの真髄。','バーボンとは全く違うスパイシーでドライな世界への扉を開く。','マンハッタン・サワーなどカクテルに最も相応しいウイスキー。'],
+        straight: ['ライ麦由来のスパイスとハーブが強烈に広がる独特のアロマ。','口に含むとドライでスパイシー、胡椒のような刺激が続く。','余韻はスパイシーでドライ。バーボンとは別物の体験。'],
+        rocks: ['ロックでスパイスが穏やかになり、ライウイスキー入門に最適。','冷えることでスパイシーさが整理されて楽しみやすくなる。','バーボンとの違いを実感するための、教育的な一杯。'],
+        highball: ['炭酸でスパイスが爽快に弾けて、ドライなハイボールになる。','カクテル感覚で楽しめる、大人の辛口ハイボール。','スパイシーな料理・メキシカン・インド料理との相性が最高。']
+      },
+      'リッテンハウス ライ': {
+        summary: ['バーボンとは全く異なるスパイシーなライウイスキーの世界へ誘う一本。','プロのバーテンダーが最も信頼するカクテルベースとして有名。','コスパが良く、ライウイスキー入門として最適な選択肢。'],
+        appeal: ['スパイシー・ドライ・ミントのライウイスキー特有の個性が魅力。','バーテンダーが愛用するプロ仕様の信頼性と実力がある。','バーボンを飲み慣れたら次に挑戦すべき、新しい世界の扉。'],
+        straight: ['ライ麦のスパイスとミント、ハーブの個性的な香りが広がる。','口に含むとドライでスパイシーな刺激が特徴的に展開する。','余韻はスパイシーで長く、バーボンとは別物の世界を教えてくれる。'],
+        rocks: ['ロックでスパイスが穏やかになり、飲みやすさが増す。','ライウイスキーの特徴を味わいながら入門するための一杯。','バーテンダーがオフタイムに飲む、プロのための定番ロック。'],
+        highball: ['炭酸でスパイスが爽快に弾けて辛口のハイボールになる。','カクテル感覚で楽しめる個性的なハイボール体験ができる。','辛い料理や脂っこい料理をさっぱりさせる最強のハイボール。']
+      },
+      'ジェムソン スタンダード': {
+        summary: ['世界で最も売れるアイリッシュウイスキー。アイルランドを代表する銘品。','3回蒸留という伝統的な技法が生む、驚くほどのスムースさが最大の魅力。','「ウイスキーが苦手」という人を最も多く変えてきたウイスキー。'],
+        appeal: ['バニラ・グリーンアップル・蜂蜜の三回蒸留が生む驚異のスムースさ。','クセが全くなく、ウイスキー嫌いだった人が最初に好きになる一本。','どんな飲み方でも美味しく、シーンを選ばない万能さが魅力。'],
+        straight: ['グリーンアップルとバニラの爽やかな香りが穏やかに広がる。','口当たりは驚くほどスムース。三回蒸留の奇跡を実感できる。','余韻はすっきりとクリーン。また飲みたくなる心地よさ。'],
+        rocks: ['ロックでより爽やかに。クリーンな甘みが一層際立つ。','ウイスキー入門のロックとして最もおすすめできる一杯。','暑い夜に最適。飲みやすさの限界に挑んだような一杯。'],
+        highball: ['炭酸でグリーンアップルとバニラが爽快に弾けて最高の爽快感。','「アイリッシュコーヒー」の基本にもなる万能アイリッシュ。','どんな食事にも合う。世界のバーで最も頼まれるアイリッシュ。']
+      },
+      'ジェムソン ブラックバレル': {
+        summary: ['バーボン樽でダブルエイジドしたジェムソンの上位版。','通常版のスムースさにバーボン由来の甘みとスパイスが加わった進化形。','ジェムソンの世界に深みが欲しくなったら次に飲むべき一本。'],
+        appeal: ['バニラ・トフィー・スパイスがバーボン樽でより豊かになった甘み。','スムースさを保ちながら深みが増した、ジェムソンの完成形。','通常版ファンが必ず次に試したくなる、自然な上位版。'],
+        straight: ['バニラとトフィーの温かい甘みにスパイスが加わった香りが広がる。','口に含むとスムースな中に複雑な甘みとスパイスが展開する。','余韻はバーボン樽由来の温かみある甘さが長く続く。'],
+        rocks: ['ロックで甘みが引き締まり、バーボン由来のスパイスが際立つ。','通常版より深みのある表情になり、じっくり楽しみたくなる。','特別な夜の一杯として通常版より贅沢な体験ができる。'],
+        highball: ['炭酸でバニラとトフィーが爽やかに弾けて深みあるハイボールに。','通常版より複雑な風味があり、食事との相性がより増す。','和食・洋食どちらにも合う万能ハイボールの上位版。']
+      },
+      'レッドブレスト 12年': {
+        summary: ['アイリッシュ・シングルポットスチルウイスキーの最高峰の一つ。','ポットスチル製法で生まれる独特のオイリーな口当たりが魅力。','アイリッシュウイスキーの別の顔を体験できる、知る人ぞ知る傑作。'],
+        appeal: ['果実・スパイス・クリーミーさが複雑に絡む唯一無二の個性。','ポットスチルの独特な口当たりが、他のウイスキーにはない体験を生む。','「アイリッシュってジェムソンだけじゃないんだ」という新発見がある。'],
+        straight: ['フルーツとスパイス、クリーミーなオイルが複雑に絡む香り。','口に含むとオイリーでフルーティーな甘みとスパイスが展開する。','余韻は長く、スパイスとフルーツがゆっくり消えていく。'],
+        rocks: ['ロックでクリーミーな口当たりが際立ち、フルーツが前面に出る。','オイリーな特性が冷えることで整理されて楽しみやすくなる。','アイリッシュの奥深さを探求する一杯として最適。'],
+        highball: ['炭酸でフルーツとスパイスが爽やかに弾けて個性的なハイボールに。','ポットスチルのオイリーさがハイボールでも存在感を発揮する。','軽めの食事や食前酒として、エレガントな一杯が楽しめる。']
+      },
+      'レッドブレスト 15年': {
+        summary: ['15年熟成のシェリー樽フィニッシュを加えたレッドブレストの最高峰。','12年との違いは深みと複雑さ。15年の時間が別次元の体験を生む。','アイリッシュウイスキー中で最も複雑で深みのある傑作。'],
+        appeal: ['シェリー・フルーツ・スパイスが15年かけて調和した複雑で深みある風味。','「アイリッシュウイスキーの本気」を体験したいならこれ一択。','特別なシーンに相応しい、アイリッシュ最高峰の一本。'],
+        straight: ['シェリーとフルーツ、スパイスの複雑な香りが壮大に広がる。','口に含むと深みある甘みとスパイスが層をなして展開する。','余韻は際限なく長く続く。15年の熟成の証明がここにある。'],
+        rocks: ['ロックで複雑さが穏やかになり、シェリーの甘みが際立つ。','15年の深みがロックでより楽しみやすい表情になる。','最高峰のアイリッシュをゆっくり堪能する至福の一杯。'],
+        highball: ['炭酸でシェリーとフルーツが優雅に解放されて豪華なハイボール。','最高峰のアイリッシュをハイボールで飲む贅沢な体験ができる。','特別な夜の食中酒として、食事を格上げしてくれる。']
+      },
+      'グリーンスポット': {
+        summary: ['ダブリンの老舗ワイン商がパリのバーに送り続けた伝説のアイリッシュ。','シングルポットスチルの爽快な果実感が何世紀もファンを魅了してきた。','歴史ある名前と爽快な果実感が共存する、アイリッシュの宝石。'],
+        appeal: ['リンゴ・麦芽・スパイスの爽快でフルーティーな個性が魅力。','数世紀の歴史が証明する、変わらない美味しさへの信頼感。','「アイリッシュの宝石」として世界のマニアに高く評価されている。'],
+        straight: ['グリーンアップルとフルーツ、スパイスの爽快な香りが広がる。','口に含むとフルーティーな甘みとスパイスが爽快に展開する。','余韻は短くすっきり。またすぐ飲みたくなる爽快感がある。'],
+        rocks: ['ロックでフルーティーさがよりシャープに際立つ。','爽快な個性が冷えることで整理されて楽しみやすくなる。','暑い夜に最適な、爽快で軽やかなロック。'],
+        highball: ['炭酸でリンゴとフルーツが最大限に弾けて爽快なハイボールに。','非常に飲みやすく、アイリッシュハイボール入門に最適。','軽い食事や食前酒として、爽やかに楽しめる一杯。']
+      },
+      'ブッシュミルズ オリジナル': {
+        summary: ['1608年創業、世界最古の公認蒸留所のひとつ。アイルランドの誇り。','3回蒸留の伝統が生む、驚くほど軽くてスムースな飲み口が魅力。','「最古の蒸留所の味」を最もリーズナブルに体験できる入門版。'],
+        appeal: ['バニラ・蜂蜜・フルーツの軽くてスムースな飲みやすい甘み。','世界最古クラスの蒸留所の歴史と伝統をリーズナブルに体験できる。','「アイリッシュを試したい」という最初の一歩として最高の選択。'],
+        straight: ['バニラと蜂蜜の優しい甘みが穏やかに広がる。','口当たりは非常に軽くスムース。アルコール感が少ない。','余韻はすっきりとクリーン。飲みやすさが最大の魅力。'],
+        rocks: ['ロックで甘みが引き締まり、さっぱりとした飲み口に。','非常に飲みやすく、ウイスキー初心者に最もおすすめできる。','アイリッシュ入門のロックとして間違いない選択。'],
+        highball: ['炭酸でバニラと蜂蜜が爽快に弾けて非常に飲みやすいハイボール。','世界最古の蒸留所の味をハイボールで気軽に楽しめる。','どんな食事にも合う万能ハイボール。コスパも最高。']
+      },
+      'ブッシュミルズ ブラックブッシュ': {
+        summary: ['シェリー樽原酒を多めにブレンドしたブッシュミルズの上位版。','通常版の軽やかさにシェリーの甘みと深みが加わった完成形。','コスパが良くシェリー系の甘みを楽しめる、コストパフォーマンスの高い一本。'],
+        appeal: ['シェリー・バニラ・フルーツの甘みが通常版より豊かになった上位版。','スムースさを保ちながらシェリーの深みが加わった完成形。','「少しリッチな体験を」という場面に最高のコスパで応える一本。'],
+        straight: ['シェリーとバニラの甘い香りが穏やかに広がる。','口に含むとスムースな中にシェリーの甘みと深みが展開する。','余韻は通常版より長く、シェリーとウッディさが続く。'],
+        rocks: ['ロックでシェリーの甘みが引き締まり、飲みやすくなる。','通常版より深みがあり、ゆっくり楽しめる上位版の表情。','贈り物として持参すると喜ばれる、コスパ最強の一本。'],
+        highball: ['炭酸でシェリーとバニラが爽やかに弾けて深みあるハイボールに。','通常版より複雑な風味があり、食事との相性がより増す。','コスパ最強のシェリー系ハイボールとして特におすすめ。']
+      },
+      'コネマラ ピーテッド': {
+        summary: ['アイリッシュウイスキーでは珍しい、スモーキーなピートを使った異端児。','アイルランドの荒野コネマラの名を冠した、個性派アイリッシュ。','「アイリッシュにスモークがあるなんて」という驚きを与える一本。'],
+        appeal: ['アイリッシュの滑らかさとスコッチのスモークが融合した唯一無二の個性。','「アイリッシュ=スムース」という概念を覆す革命的な一杯。','スモーキー好きとアイリッシュ好き、両方が楽しめる橋渡し的な一本。'],
+        straight: ['アイリッシュらしいスムースさにピートのスモークが絡む独特の香り。','口に含むとスムースな甘みとスモークが意外な形で共存する。','余韻はスモークとフルーツが交互に現れる、ユニークな一本。'],
+        rocks: ['ロックでスモークが穏やかになり、アイリッシュのスムースさが際立つ。','スモーキーが苦手な方もロックなら楽しめる可能性がある。','アイリッシュとスコッチの中間を攻めた、珍しいロック体験。'],
+        highball: ['炭酸でスモークとフルーツが爽快に弾ける個性的なハイボール。','アイリッシュなのにスモーキーというギャップが面白いハイボール。','焼き鳥や炭火料理との相性が抜群のアイリッシュハイボール。']
+      },
+      'タラモア デュー': {
+        summary: ['1829年創業、アイルランド中部タラモアの老舗アイリッシュウイスキー。','モルト・グレーン・ポットスチルの三種を使ったトリプルディスティルド。','蜂蜜・バニラ・ミントの三重奏が万人に愛される親しみやすさを生む。'],
+        appeal: ['蜂蜜・バニラ・ミントのやさしくて甘い、万人に受け入れられる風味。','コスパが良く、日常飲みとして最高のアイリッシュウイスキー。','贈り物として持参しても必ず喜ばれる安心感のある一本。'],
+        straight: ['蜂蜜とバニラ、ミントの爽やかな甘みが穏やかに広がる。','口当たりはスムースで、優しい甘みとほんのりスパイスが続く。','余韻はすっきりとクリーン。毎日飲んでも飽きない心地よさ。'],
+        rocks: ['ロックで甘みが引き締まり、ミントの爽やかさが際立つ。','非常に飲みやすく、ウイスキー初心者に安心して勧められる一杯。','暑い夜の爽快な一杯として最高の選択。'],
+        highball: ['炭酸で蜂蜜とミントが爽快に弾けて清涼感あるハイボールに。','軽くて飲みやすい、万人が楽しめるアイリッシュハイボール。','和食・洋食どちらにも合う万能ハイボールとして使いやすい。']
+      },
+      'バスカー アイリッシュ ウイスキー': {
+        summary: ['ロイヤルオーク蒸留所から生まれた新星のアイリッシュウイスキー。','シェリー・マデイラ・バーボン樽の三種でトリプルカスクマチュアード。','フルーティーで軽やかなスタイルがアイリッシュ入門に最高の一本。'],
+        appeal: ['フルーティーで軽やかな甘みが非常に飲みやすく万人向け。','新星蒸留所ながらコスパが良く、品質の高さに驚かされる。','「アイリッシュを安く試したい」という入門者への最高の答え。'],
+        straight: ['リンゴとバニラの爽やかな香りが軽やかに広がる。','口当たりはスムースで、フルーティーな甘みがさわやかに続く。','余韻はすっきりとクリーン。コスパが信じられないほど良い。'],
+        rocks: ['ロックでフルーティーさがよりシャープに際立つ。','非常に飲みやすく、ウイスキー初心者に最もおすすめできる一杯。','コスパ最強のロックアイリッシュとして日常的に飲める。'],
+        highball: ['炭酸でフルーツとバニラが爽快に弾けて非常に飲みやすいハイボール。','アイリッシュハイボール入門として最高のコスパと飲みやすさ。','食事全般に合う万能ハイボールとして毎日飲めるコスパの良さ。']
+      },
+      'ミドルトン ベリーレア': {
+        summary: ['毎年わずかしか生産されないアイリッシュウイスキーの頂点。','アイルランドのミドルトン蒸留所が生む、最高峰の限定リリース。','出会えること自体が幸運。アイリッシュウイスキーの最終目標地点。'],
+        appeal: ['フルーツ・スパイス・クリーミーさが最高の熟成で調和した至高の一杯。','生産量の少なさが生む希少性と、品質の高さが相まった伝説的存在。','「一度は飲んでおきたいアイリッシュ」リストの唯一の一位。'],
+        straight: ['複雑で芳醇なフルーツとスパイスの香りが贅沢に広がる。','口に含むと深みある甘みとスパイスが層をなして押し寄せる。','余韻は果てしなく続く。これがアイリッシュの頂点の証明。'],
+        rocks: ['ロックで複雑さが穏やかになり、より楽しみやすくなる。','希少な一本をゆっくり堪能する、最も正しい飲み方の一つ。','氷が溶けるにつれ表情が変化する様子を楽しみながら飲む。'],
+        highball: ['炭酸でアイリッシュ最高峰の香りが優雅に解放される。','これでハイボールを飲む機会があれば、人生で最高の体験になる。','最高の食事と合わせて、最高の夜を過ごすための一杯。']
+      },
+      'カバラン クラシック シングルモルト': {
+        summary: ['台湾の亜熱帯気候が通常の3〜5倍の速さで熟成を進める「トロピカル効果」。','2010年、スコッチを抑えて世界一を獲得し、ウイスキー界に衝撃を与えた。','アジアが世界最高のウイスキーを生める事を証明した歴史的な一本。'],
+        appeal: ['マンゴー・パイナップル・バナナのトロピカルフルーツが溢れる個性。','台湾の気候が生む加速した熟成が、独自のトロピカルな風味を作る。','「アジアのウイスキーが世界一」という歴史を一口で体験できる。'],
+        straight: ['トロピカルフルーツの豊かな香りが一気に広がる。','口に含むとマンゴーとバニラの濃密な甘みが展開する。','余韻は長く、トロピカルな甘みが口の中に残る。'],
+        rocks: ['ロックでトロピカルさが引き締まり、よりシャープに際立つ。','冷えることでフルーツ感がよりクリアになり、爽快感が増す。','夏に最適なトロピカルロック。まるで南国気分になれる。'],
+        highball: ['炭酸でトロピカルフルーツが爆発的に弾けて最高の爽快感。','まるでトロピカルジュースのようなハイボールで驚かされる。','シーフードや台湾料理との相性が特に良い。']
+      },
+      'カバラン ソリスト バーボン': {
+        summary: ['バーボン樽のみで熟成した単一樽原酒のカバランの真骨頂。','WWAで世界最高のシングルモルトに選ばれた、伝説的な限定版。','台湾の気候がバーボン樽の風味を最大限に引き出した傑作。'],
+        appeal: ['バニラ・トロピカルフルーツ・スパイスが濃密に融合した圧倒的な甘み。','単一樽ゆえの一期一会の個性と、台湾気候が生む濃密さが唯一無二。','「世界最高のシングルモルト」のタイトルを持つ、歴史的な一本。'],
+        straight: ['バニラとトロピカルフルーツの濃密な香りが壮大に広がる。','口に含むとリッチで甘い風味が圧倒的な存在感で展開する。','余韻は非常に長く、トロピカルな甘みが消えない。'],
+        rocks: ['ロックで濃密な甘みが適度に緩み、フルーツが際立つ。','単一樽の個性が氷でより鮮明に感じられる面白さがある。','世界一の一本をゆっくり堪能する贅沢な飲み方。'],
+        highball: ['炭酸でバニラとトロピカルフルーツが解放されて豪快なハイボール。','世界最高のシングルモルトをハイボールで飲む贅沢な体験。','台湾料理やスパイシーな料理との相性が特に良い。']
+      },
+      'アムルット フュージョン': {
+        summary: ['インド・バンガロール産の大麦と泥炭地の大麦を「融合」させた傑作。','標高920mの高地に立つアムルット蒸留所。気候が急速熟成を促す。','「世界第三のウイスキー」として英国で高評価を得たインドの誇り。'],
+        appeal: ['スモーキー・フルーティー・スパイシーの複雑な個性が唯一無二。','インドウイスキーの概念を覆した、革命的な品質と複雑さ。','「インド産なの？」という驚きから始まる、最高の発見体験。'],
+        straight: ['ピートスモークとトロピカルフルーツが複雑に絡む独特の香り。','口に含むとスモーク・フルーツ・スパイスが複雑に展開する。','余韻は長くスモーキーで、インドの個性が心に刻まれる。'],
+        rocks: ['ロックでスモークが穏やかになり、フルーツが前面に出る。','複雑な個性が整理されて楽しみやすくなる飲み方。','インドウイスキー入門として、ロックから試すのが正解。'],
+        highball: ['炭酸でスモークとトロピカルフルーツが爽快に弾けて個性的なハイボール。','インドのウイスキーの実力をハイボールで確認できる体験。','スパイシーなインド料理・カレーとの相性は最高。']
+      },
+      'ポールジョン ブリリアンス': {
+        summary: ['インド・ゴアの太陽が育てたシングルモルトウイスキーの新星。','インドの高温多湿な気候が急速熟成を促し、独自のトロピカルさを生む。','「インドウイスキーの可能性」を世界に示した、希望の一本。'],
+        appeal: ['クリーミー・フルーティー・バニラのトロピカルな甘みが魅力。','ゴアの太陽が育てた、他では出せないトロピカルな個性。','「インド産でこのクオリティは」という驚きと感動がある。'],
+        straight: ['クリーミーなバニラとトロピカルフルーツの甘い香りが広がる。','口に含むとバニラ・フルーツ・スパイスがクリーミーに展開する。','余韻はトロピカルな甘みと軽いスパイスがゆっくり続く。'],
+        rocks: ['ロックでクリーミーさが際立ち、フルーツがよりシャープに。','非常に飲みやすく、インドウイスキー入門に最適な一杯。','夏の暑い日にトロピカルロックとして最高の体験ができる。'],
+        highball: ['炭酸でバニラとトロピカルフルーツが爽快に弾けて飲みやすいハイボール。','クリーミーなトロピカルハイボールとして、驚くほど飲みやすい。','シーフードや軽い料理との相性が良い、爽快な食中酒。']
+      },
+    };
+
+    // ===========================
+    // FILTER STATE
+    // ===========================
+    const state = { region:'all', flavor:'all', level:'all', type:'all', cask:'all', query:'' };
+
+    const regionLabel  = { scotch:'🏴󠁧󠁢󠁳󠁣󠁴󠁿 スコッチ', japanese:'🇯🇵 ジャパニーズ', american:'🇺🇸 アメリカン', irish:'🍀 アイリッシュ', other:'🌏 その他' };
+    const typeLabel    = { sm:'シングルモルト', bl:'ブレンデッド', bo:'バーボン', gr:'グレーン', ry:'ライ', ps:'ポットスチル' };
+    const caskLabel    = { sh:'シェリー樽', bu:'バーボン樽', wi:'ワイン樽', mi:'ミズナラ樽', vi:'バージンオーク', mx:'複数樽' };
+    const flavorLabel  = { sweet:'甘い', smoky:'スモーキー', fruity:'フルーティー', complex:'複雑' };
+    const flavorEmoji  = { sweet:'🍯', smoky:'🔥', fruity:'🍑', complex:'🌰' };
+    const levelLabel   = { beginner:'初心者向け', casual:'中級者向け', experienced:'上級者向け' };
+    const levelClass   = { beginner:'lv-bg', casual:'lv-ca', experienced:'lv-ex' };
+    const priceLabel   = { budget:'〜¥3,000', mid:'¥3,000〜8,000', premium:'¥8,000〜' };
+
+    // ===========================
+    // RENDER
+    // ===========================
+    function render() {
+      const grid = document.getElementById('brandsGrid');
+      const q = state.query.trim().toLowerCase();
+      const filtered = brands.filter(b =>
+        (state.region === 'all' || b.region === state.region) &&
+        (state.flavor === 'all' || b.flavor === state.flavor) &&
+        (state.level  === 'all' || b.level  === state.level)  &&
+        (state.type   === 'all' || b.type   === state.type)   &&
+        (state.cask   === 'all' || b.cask   === state.cask)   &&
+        (!q || b.name.toLowerCase().includes(q) || b.copy.toLowerCase().includes(q))
+      );
+      document.getElementById('brandCount').textContent = filtered.length;
+      grid.innerHTML = filtered.length === 0
+        ? '<p class="brands-empty">条件に合う銘柄が見つかりませんでした。フィルターを変えてみてください。</p>'
+        : filtered.map((b, i) => `
+          <div class="brand-card-v2 fade-up brand-card-v2--clickable" data-brand-index="${brands.indexOf(b)}">
+            <div class="bcv2-badges">
+              <span class="bcv2-badge bcv2-region">${regionLabel[b.region]}</span>
+              <span class="bcv2-badge bcv2-type">${typeLabel[b.type]}</span>
+            </div>
+            <div class="bcv2-name">${b.name}</div>
+            <p class="bcv2-copy">${b.copy}</p>
+            <div class="bcv2-meta">
+              <span class="bcv2-badge bcv2-flavor">${flavorEmoji[b.flavor]} ${flavorLabel[b.flavor]}</span>
+              <span class="bcv2-badge bcv2-level ${levelClass[b.level]}">${levelLabel[b.level]}</span>
+              <span class="bcv2-badge bcv2-cask">${caskLabel[b.cask]}</span>
+            </div>
+            <div class="bcv2-detail-hint">詳細を見る →</div>
+          </div>`).join('');
+
+      // scroll animation
+      grid.querySelectorAll('.fade-up').forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = `opacity 0.4s ease ${(i % 8) * 50}ms, transform 0.4s ease ${(i % 8) * 50}ms`;
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, 30);
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.brand-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(el);
+    }
+
+    // ===========================
+    // FILTER EVENTS
+    // ===========================
+    document.getElementById('filterPanel').addEventListener('click', e => {
+      const pill = e.target.closest('.filter-pill');
+      if (!pill) return;
+      const dim = pill.dataset.dim;
+      const val = pill.dataset.val;
+      state[dim] = val;
+      pill.closest('.filter-pills').querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      render();
     });
+
+    document.getElementById('filterReset').addEventListener('click', () => {
+      Object.keys(state).forEach(k => state[k] = 'all');
+      state.query = '';
+      document.getElementById('brandsSearch').value = '';
+      document.getElementById('brandsSearchClear').style.display = 'none';
+      document.querySelectorAll('.filter-pill').forEach(p =>
+        p.classList.toggle('active', p.dataset.val === 'all'));
+      render();
+    });
+
+    // Search
+    const searchInput = document.getElementById('brandsSearch');
+    const searchClear = document.getElementById('brandsSearchClear');
+    searchInput.addEventListener('input', () => {
+      state.query = searchInput.value;
+      searchClear.style.display = state.query ? 'flex' : 'none';
+      render();
+    });
+    searchClear.addEventListener('click', () => {
+      state.query = '';
+      searchInput.value = '';
+      searchClear.style.display = 'none';
+      searchInput.focus();
+      render();
+    });
+    searchClear.style.display = 'none';
+
+    render();
+
+    // ===========================
+    // CARD CLICK → MODAL
+    // ===========================
+    document.getElementById('brandsGrid').addEventListener('click', e => {
+      const card = e.target.closest('[data-brand-index]');
+      if (!card) return;
+      const b = brands[parseInt(card.dataset.brandIndex)];
+      if (!b) return;
+      if (!brandDetails[b.name] && !b.detail) return;
+      openBrandModal(b);
+    });
+
+    const modal    = document.getElementById('brandModal');
+    const modalBody = document.getElementById('brandModalBody');
+
+    function openBrandModal(b) {
+      const d = brandDetails[b.name] || b.detail;
+      const sections = [
+        { icon:'📖', label:'概要',           key:'summary'  },
+        { icon:'✨', label:'この銘柄の魅力',  key:'appeal'   },
+        { icon:'🥃', label:'ストレートの味わい', key:'straight' },
+        { icon:'🧊', label:'ロックの味わい',  key:'rocks'    },
+        { icon:'🍺', label:'ハイボールの味わい', key:'highball' },
+      ];
+      modalBody.innerHTML = `
+        <div class="bmd-header">
+          <div class="bmd-badges">
+            <span class="bcv2-badge bcv2-region">${regionLabel[b.region]}</span>
+            <span class="bcv2-badge bcv2-type">${typeLabel[b.type]}</span>
+            <span class="bcv2-badge bcv2-flavor">${flavorEmoji[b.flavor]} ${flavorLabel[b.flavor]}</span>
+          </div>
+          <h2 class="bmd-name">${b.name}</h2>
+          <p class="bmd-copy">${b.copy}</p>
+        </div>
+        <div class="bmd-sections">
+          ${sections.map(s => `
+            <div class="bmd-section">
+              <h3 class="bmd-section-title">${s.icon} ${s.label}</h3>
+              <ul class="bmd-list">
+                ${d[s.key].map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            </div>`).join('')}
+        </div>`;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBrandModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('brandModalClose').addEventListener('click', closeBrandModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeBrandModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBrandModal(); });
+
+    // URLパラメータから銘柄を受け取って自動でモーダルを開く
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandFromURL = urlParams.get('brand');
+    if (brandFromURL) {
+      const target = brands.find(b => b.name === brandFromURL);
+      if (target && (brandDetails[target.name] || target.detail)) {
+        setTimeout(() => openBrandModal(target), 150);
+      }
+    }
   </script>
 </body>
 </html>
