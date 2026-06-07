@@ -1026,6 +1026,142 @@ section {
 .result-retry {
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ===========================
+   DIAGNOSIS v2 — MODE SELECT
+   =========================== */
+
+.diag-mode-select { text-align: center; padding: 0.5rem 0; }
+
+.diag-mode-lead {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+
+.diag-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.diag-mode-btn {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 1.8rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.diag-mode-btn:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  transform: translateY(-2px);
+}
+
+.diag-mode-btn--featured {
+  border-color: var(--gold-dark);
+  background: rgba(201,168,76,0.05);
+}
+
+.diag-mode-emoji { font-size: 2rem; line-height: 1; }
+.diag-mode-label { font-size: 0.95rem; font-weight: 700; color: var(--gold-light); }
+.diag-mode-sub   { font-size: 0.72rem; color: var(--text-muted); }
+
+/* FREE TEXT */
+
+.diag-freetext { display: flex; flex-direction: column; gap: 1rem; }
+
+.diag-textarea {
+  width: 100%;
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  padding: 1rem;
+  resize: vertical;
+}
+
+.diag-textarea:focus {
+  outline: none;
+  border-color: var(--gold-dark);
+}
+
+.diag-back-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+  align-self: flex-start;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.diag-back-btn:hover { color: var(--gold); }
+
+/* RESULT CARDS (top 3) */
+
+.diag-result-lead {
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1.5rem;
+}
+
+.diag-result-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.diag-result-card {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.diag-result-card--top {
+  border-color: var(--gold-dark);
+  background: rgba(201,168,76,0.06);
+}
+
+.diag-rank      { font-size: 0.8rem; color: var(--gold); font-weight: 700; letter-spacing: 0.05em; }
+.diag-whisky-name { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; }
+.diag-origin    { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; }
+.diag-reason    { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.8; flex: 1; }
+
+@media (max-width: 768px) {
+  .diag-mode-grid    { grid-template-columns: 1fr; }
+  .diag-result-cards { grid-template-columns: 1fr; }
 }
 
 /* ===========================
